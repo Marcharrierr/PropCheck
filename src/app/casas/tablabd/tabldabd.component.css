@@ -1,0 +1,7 @@
+
+
+@media (max-width: 767px) {
+  .p-datatable {
+    max-width: 400px;
+  }
+}

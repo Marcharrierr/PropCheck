@@ -1,0 +1,6 @@
+
+
+.container {
+  max-width: 660px; /* Establece el ancho máximo en 660px */
+  margin: 0 auto; /* Centra el contenedor en la pantalla */
+}
