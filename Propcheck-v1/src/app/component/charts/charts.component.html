@@ -1,0 +1,188 @@
+<div class="card">
+  <div class="flex flex-wrap border-round">
+    <!-- chart global -->
+    <div class="col-4 ml-8 mr-8 justify-content-center">
+      <!--Propiedades totales -->
+      <h2 class="ml-6">Porcentaje global de deuda</h2>
+      <p-chart type="pie" [data]="data"></p-chart>
+      <!-- globos -->
+      <div class="col-11 card">
+        <div class="card-container justify-content-end m-2">
+          <!--Propiedades totales -->
+          <div class="flex justify-content-end border-round m-1">
+            <span></span>
+            <span></span>
+            <span
+              class="flex align-items-center justify-content-center text-900 font-medium m-2 text-sm"
+              >Total de propiedades:
+            </span>
+
+            <span
+              class="flex align-items-center justify-content-center text-900 text-center font-medium text-sm mr-7"
+            >
+              865
+            </span>
+          </div>
+          <!--Propiedades al día-->
+          <div class="flex justify-content-end border-round m-1">
+            <span
+              class="flex align-items-center justify-content-center text-600 font-medium m-2 text-sm"
+              >Propiedades al día:
+            </span>
+            <span
+              class="flex align-items-center justify-content-center text-green-600 text-center font-medium text-sm mr-7"
+            >
+              540
+            </span>
+
+            <!--Propiedades con deuda-->
+          </div>
+          <div class="flex justify-content-end border-round m-1">
+            <span
+              class="flex align-items-center justify-content-center text-600 font-medium m-2 text-sm"
+              >Propiedades con deuda:
+            </span>
+            <span
+              class="flex align-items-center justify-content-center text-red-600 text-center font-medium text-sm mr-7"
+            >
+              325
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- chart luz y Gc -->
+    <div class="col-2 ml-5 m-2">
+      <h4>Deudores de luz</h4>
+      <p-chart type="doughnut" [data]="dataLuz"></p-chart>
+      <p-divider></p-divider>
+      <h4>Deudores de Gasto común</h4>
+      <p-chart type="doughnut" [data]="dataGc"></p-chart>
+    </div>
+    <!-- chart Agua y contribuciones -->
+    <div class="col-2 m-1">
+      <h4>Deudores de agua</h4>
+      <p-chart type="doughnut" [data]="dataAgua"></p-chart>
+      <p-divider></p-divider>
+      <h4>Deudores de contribuciones</h4>
+      <p-chart type="doughnut" [data]="dataContri"></p-chart>
+    </div>
+    <!-- chart Gas y Aseo -->
+    <div class="col-2 m-1">
+      <h4>Deudores de gas</h4>
+      <p-chart type="doughnut" [data]="dataGas"></p-chart>
+      <p-divider></p-divider>
+      <h4 class="mt-0">Deudores derecho de Aseo</h4>
+      <p-chart type="doughnut" [data]="dataAseo"></p-chart>
+    </div>
+  </div>
+</div>
+
+<!-- Panel estadístico-->
+<div class="card sm:flex-wrap shadow-2 border-round">
+  <div
+    class="flex justify-content-start flex-wrap card-container bg-gray-100 border-round w-auto border-solid border-400"
+  >
+    <div class="w-1rem h-5rem bg-red-500"></div>
+
+    <div
+      class="block align-items-center justify-content-center font-bold border-round m-2"
+    >
+      <span
+        class="flex flex-wrap align-items-center justify-content-center text-900 font-medium m-2"
+      >
+        $ 2.370.000
+      </span>
+      <span
+        class="flex align-items-center justify-content-center text-600 font-medium m-2 text-sm"
+      >
+        Suma de Deuda Total
+      </span>
+    </div>
+
+    <div
+      class="block align-items-center justify-content-center font-bold border-round m-2"
+    >
+      <span
+        class="flex align-items-center justify-content-center text-900 font-medium m-2"
+      >
+        $ 150.000
+      </span>
+      <span
+        class="flex align-items-center justify-content-center text-600 font-medium m-2 text-sm"
+      >
+        Suma de DT. Luz
+      </span>
+    </div>
+    <div
+      class="block align-items-center justify-content-center font-bold border-round m-2"
+    >
+      <span
+        class="flex align-items-center justify-content-center text-900 font-medium m-2"
+      >
+        $ 150.000
+      </span>
+      <span
+        class="flex align-items-center justify-content-center text-600 font-medium m-2 text-sm"
+      >
+        Suma de DT. Agua
+      </span>
+    </div>
+    <div
+      class="block align-items-center justify-content-center font-bold border-round m-2"
+    >
+      <span
+        class="flex align-items-center justify-content-center text-900 font-medium m-2"
+      >
+        $ 150.000
+      </span>
+      <span
+        class="flex align-items-center justify-content-center text-600 font-medium m-2 text-sm"
+      >
+        Suma de DT. Gas
+      </span>
+    </div>
+    <div
+      class="block align-items-center justify-content-center font-bold border-round m-2"
+    >
+      <span
+        class="flex align-items-center justify-content-center text-900 font-medium m-2"
+      >
+        $ 150.000
+      </span>
+      <span
+        class="flex align-items-center justify-content-center text-600 font-medium m-2 text-sm"
+      >
+        Suma de DT. Gastos Comunes
+      </span>
+    </div>
+    <div
+      class="block align-items-center justify-content-center font-bold border-round m-2"
+    >
+      <span
+        class="flex align-items-center justify-content-center text-900 font-medium m-2"
+      >
+        $ 150.000
+      </span>
+      <span
+        class="flex align-items-center justify-content-center text-600 font-medium m-2 text-sm"
+      >
+        Suma de DT. Contribuciones
+      </span>
+    </div>
+    <div
+      class="block align-items-center justify-content-center font-bold border-round m-2"
+    >
+      <span
+        class="flex align-items-center justify-content-center text-900 font-medium m-2"
+      >
+        $ 150.000
+      </span>
+      <span
+        class="flex align-items-center justify-content-center text-600 font-medium m-2 text-sm"
+      >
+        Suma de DT. derecho Aseo
+      </span>
+    </div>
+  </div>
+</div>

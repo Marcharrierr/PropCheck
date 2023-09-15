@@ -1,0 +1,58 @@
+<div
+  style="background: #223d76"
+  class="flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden"
+>
+  <div class="flex flex-column align-items-center justify-content-center">
+    <!--  logo      -->
+    <img
+      src="/assets/img/Logo PropCheck final_blanco.jpeg"
+      height="150"
+      width="150"
+      alt="Logo Propcheck"
+      class="mb-3 w-10rem flex-shrink-0"
+    />
+
+    <!--  Degradé      -->
+
+    <!--  formato intup     -->
+    <div
+      class="pequeño w-32rem surface-card py-8 sm:px-5 p-4"
+      style="border-radius: 53px"
+    >
+      <div class="text-center">
+        <label class="block text-blue-600 font-medium text-lg"
+          ><h2>Inicia sesión para continuar</h2></label
+        >
+      </div>
+
+      <div class="flex-row p-2">
+        <span class="p-float-label text-center mb-5">
+          <input
+            pInputText
+            id="email1"
+            type="text"
+            class="w-full md:w-23rem p-3"
+          />
+          <label class="font-bold" htmlFor="usuario">Usuario</label>
+        </span>
+        <div class="flex-1 align-items-center justify-content-between mb-5">
+          <span class="p-float-label">
+            <p-password
+              [toggleMask]="true"
+              [feedback]="false"
+              inputStyleClass=" w-23rem max p-3 "
+            ></p-password>
+            <label class="font-bold" htmlFor="Contraseña">Contraseña</label>
+          </span>
+        </div>
+        <button
+          pButton
+          pRipple
+          label="Iniciar Sesión"
+          class="w-full p-3 text-xl p-button-warning"
+          routerLink="/casas/list"
+        ></button>
+      </div>
+    </div>
+  </div>
+</div>

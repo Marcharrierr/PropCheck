@@ -7,7 +7,7 @@ import { ListPageComponent } from './pages/list-page/list-page.component';
 import { PerfilCasasPageComponent } from './pages/perfil-casas-page/perfil-casas-page.component';
 
 
-//localhost/4200/casas
+//localhost/4200/propiedades
 const routes: Routes = [
   {
     path: '',

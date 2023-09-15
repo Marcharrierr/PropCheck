@@ -1,7 +1,7 @@
 <!--  Menu encabezado  -->
 <div
   style="background: #223d76"
-  class="py-2 px-2 mx-0 md:mx-1 lg:mx-1 lg:px-3 flex align-items-center justify-content-between relative lg:static"
+  class="py-2 px-2 mx-0 md:mx-1 lg:mx-1 lg:px-3 flex align-items-center justify-content-between relative lg:static border-round"
 >
   <a class="flex align-items-center">
     <p-image
@@ -103,7 +103,7 @@
         >PropCheck</span
       >
       <p
-        class="mb-4 text-700 line-height-3 animate__animated animate__fadeInLeftBig animate__delay-1s"
+        class="mb-4 text-700 line-height-3 font-bold animate__animated animate__fadeInLeftBig animate__delay-1s"
       >
         La solución de búsqueda de información de gastos comunes, servicios
         básicos y tributos asociados a un inmueble
@@ -116,13 +116,13 @@
       ></p-button>
     </section>
   </div>
-  <div class="col-9 md:col-4">
+  <div class="col-8 md:col-4">
     <img
       src="assets/img/main_blue.jpeg"
-      alt="Image"
-      class="md:mr-8 block animate__animated animate__fadeInUp"
-      height="360"
-      width="500"
+      alt="Main_blue"
+      class="animate__animated animate__fadeInUp block"
+      height="auto"
+      width="100%"
       style="clip-path: polygon(08% 0, 90% 0%, 100% 100%, 0 100%)"
     />
   </div>
@@ -140,7 +140,7 @@
       radial-gradient(277.36% 46.97% at 97.36% 57.52%, #bddcf2 0%, #ffffff 100%);
     clip-path: ellipse(150% 87% at 93% 24%);
   "
-  class="surface-section px-4 py-8 md:px-6 lg:px-8 text-center"
+  class="flex-wrap px-6 py-2 md:px-4 lg:px-6 text-center"
 >
   <div class="mb-3 font-bold text-3xl">
     <span class="text-900 animate__animated animate__fadeInUp"
@@ -153,10 +153,11 @@
   <div class="text-700 mb-6 animate__animated animate__fadeInUp">
     Te mostramos algunos de nuestros beneficios:
   </div>
-  <div class="grid">
-    <div
-      class="card col-12 m-4 animate__animated animate__fadeInUp animate__delay-4s"
-    >
+
+  <div
+    class="flex flex-wrap card-container justify-content-center align-items-center"
+  >
+    <div class="card m-4 animate__animated animate__fadeInUp animate__delay-4s">
       <span
         class="p-3 shadow-2 mb-3 mt-3 inline-block bg-blue-500"
         style="border-radius: 10px"
@@ -166,7 +167,7 @@
       <div class="text-blue-600 text-xl mb-3 mt-3 font-medium">
         Precisión y Calidad
       </div>
-      <span class="text-700 line-height-3 mt-2"
+      <span class="text-700 line-height-3 m-2"
         >Mediante la eliminación del error humano, garantizamos resultados
         precisos y de alta calidad en todas nuestras operaciones mediante
         nuestros procesos.</span
@@ -174,7 +175,7 @@
     </div>
 
     <div
-      class="card col-12 md:col-4 m-4 animate__animated animate__fadeInUp animate__delay-4s"
+      class="card col-12 m-4 animate__animated animate__fadeInUp animate__delay-4s"
     >
       <span
         class="p-3 shadow-2 mb-3 mt-3 inline-block bg-blue-500"
@@ -185,13 +186,13 @@
       <div class="text-blue-600 text-xl mt-3 mb-3 font-medium">
         Información exacta y en tiempo real
       </div>
-      <span class="text-700 line-height-3 mt-2"
+      <span class="text-700 line-height-3 m-2"
         >Proporcionamos datos precisos y actualizados al instante, permitiendo
         una toma de decisiones informada y ágil.</span
       >
     </div>
     <div
-      class="card col-12 md:col-4 m-4 animate__animated animate__fadeInUp animate__delay-4s"
+      class="card col-12 m-4 animate__animated animate__fadeInUp animate__delay-4s"
     >
       <span
         class="p-3 shadow-2 mt-3 mb-3 inline-block bg-blue-500"
@@ -202,13 +203,13 @@
       <div class="text-blue-600 text-xl mb-3 mt-3 font-medium">
         Eliminación de HH y reasignación de funciones
       </div>
-      <span class="text-700 line-height-3 text-overflow mt-2"
+      <span class="text-700 line-height-3 text-overflow m-2"
         >Al automatizar tareas, liberamos a los empleados de actividades
         repetitivas, para enfocarse en tareas de mayor valor agregado.</span
       >
     </div>
     <div
-      class="card col-12 md:col-4 m-4 animate__animated animate__fadeInUp animate__delay-5s"
+      class="card col-12 m-4 animate__animated animate__fadeInUp animate__delay-5s"
     >
       <span
         class="p-3 shadow-2 mb-2 mt-3 inline-block bg-blue-500"
@@ -219,17 +220,17 @@
       <div class="text-blue-600 text-xl font-medium mb-2 mt-2">
         Ahorro en costos presentes y ante futuros crecimientos
       </div>
-      <span class="text-700 line-height-3 text-overflow mt-2"
+      <span class="text-700 line-height-3 text-overflow m-2"
         >Nuestra solución proporciona eficiencias operativas y escalabilidad, lo
         que resulta en ahorros significativos tanto en el presente como en
         situaciones de crecimiento futuro.</span
       >
     </div>
     <div
-      class="card col-12 md:col-4 m-4 animate__animated animate__fadeInUp animate__delay-5s text-center"
+      class="card col-12 m-4 animate__animated animate__fadeInUp animate__delay-5s text-center"
     >
       <span
-        class="p-3 shadow-2 mb-3 mt-2 inline-block bg-blue-500"
+        class="p-3 shadow-2 mb-3 mt-3 inline-block bg-blue-500"
         style="border-radius: 10px"
       >
         <i class="pi pi-cog text-4xl text-yellow-300"></i>
@@ -237,14 +238,14 @@
       <div class="text-blue-600 text-xl mb-3 mt-2 font-medium">
         Herramienta de gestión oportuna
       </div>
-      <span class="text-700 line-height-3 text-justify mb-3"
+      <span class="text-700 line-height-3 text-justify m-2"
         >Nuestra plataforma ofrece herramientas de gestión y control en tiempo
         real, brindando una visión completa de las operaciones y permitiendo una
         respuesta rápida ante cambios o desafíos.
       </span>
     </div>
     <div
-      class="card col-12 md:col-4 m-4 text-center animate__animated animate__fadeInUp animate__delay-5s"
+      class="card col-12 m-4 text-center animate__animated animate__fadeInUp animate__delay-5s"
     >
       <span
         class="p-3 shadow-3 mb-3 mt-3 inline-block bg-blue-500"
@@ -255,7 +256,7 @@
       <div class="text-blue-600 text-xl mb-2 mt-2 font-medium">
         Socio tecnológico de nuestros clientes
       </div>
-      <span class="text-700 line-height-3 mt-2"
+      <span class="text-700 line-height-3 m-2"
         >Somos el socio estratégico para nuestros clientes, brindando soluciones
         tecnológicas innovadoras y un soporte constante para impulsar su éxito y
         crecimiento.</span
@@ -270,7 +271,10 @@
 
 <!-- footer  -->
 
-<div style="background: #223d76" class="py-2 px-4 mx-0 mt-0 lg:full">
+<div
+  style="background: #223d76"
+  class="py-2 px-4 mx-0 mt-0 lg:full border-round"
+>
   <div class="grid justify-content-between">
     <div class="col-12 md:col-3" style="margin-top: -1.5rem">
       <a

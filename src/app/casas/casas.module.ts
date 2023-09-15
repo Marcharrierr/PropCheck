@@ -1,3 +1,5 @@
+import { SidebarComponent } from './../component/sidebar/sidebar.component';
+
 
 
 import { NgModule } from '@angular/core';
@@ -47,6 +49,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ListPageComponent,
     PerfilCasasPageComponent,
     TablabdComponent,
+    SidebarComponent,
     SortByPipe,
     ReplaceCommaPipe,
 

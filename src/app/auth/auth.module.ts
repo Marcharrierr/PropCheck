@@ -10,6 +10,8 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
@@ -28,6 +30,7 @@ import { PasswordModule } from 'primeng/password';
     InputTextModule,
     PasswordModule,
     PrimengModule,
+    ReactiveFormsModule,
     RouterModule
 
   ]

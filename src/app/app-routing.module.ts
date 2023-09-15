@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { isAuthenticatedGuard } from './guards/is-authenticated.guard';
+
 
 import { HomePageComponent } from './home-page/home-page.component';
 
@@ -13,17 +15,18 @@ const routes: Routes = [
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
   },
   {
-    path: 'casas',
+    path: 'propiedades',
+    canActivate: [isAuthenticatedGuard],
     loadChildren: () => import('./casas/casas.module').then(m => m.CasasModule),
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: '',
     pathMatch: 'full'
   },
   {
     path: '**',
-    redirectTo: 'home'
+    redirectTo: ''
   }
 
 ];

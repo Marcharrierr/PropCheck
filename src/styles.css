@@ -7,7 +7,7 @@ body {
 
 @media (max-width: 660px) {
   body {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 @import "primeflex/primeflex.css";
