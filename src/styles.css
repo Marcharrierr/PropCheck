@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@media (max-width: 660px) {
+  body {
+    font-size: 14px;
+  }
+}
+@import "primeflex/primeflex.css";
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "animate.css";
+@import "primeicons/primeicons.css";
+
+

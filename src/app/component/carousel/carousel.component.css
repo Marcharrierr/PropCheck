@@ -1,0 +1,13 @@
+.image-card {
+    width: 400px;
+    height: 260px;
+    border-radius: 30px;
+    background: #ffff;
+    border: #7998db36 solid;
+}
+
+.centered-image {
+  width: 200px;
+  height: 150px;
+
+}

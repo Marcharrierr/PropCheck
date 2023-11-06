@@ -1,0 +1,332 @@
+<!--  Menu encabezado  -->
+<div
+  style="background: #223d76"
+  class="py-2 px-2 mx-0 md:mx-1 lg:mx-1 lg:px-3 flex align-items-center justify-content-between relative lg:static border-round"
+>
+  <a class="flex align-items-center">
+    <p-image
+      src="/assets/img/Logo PropCheck final_blanco.jpeg"
+      alt="Image"
+      height="100"
+      width="100"
+      class="ml-4 lg:mr-1 animate__animated animate__fadeInLeft"
+    ></p-image>
+  </a>
+  <a
+    pRipple
+    class="cursor-pointer block lg:hidden text-700"
+    pStyleClass="@next"
+    enterClass="hidden"
+    leaveToClass="hidden"
+    [hideOnOutsideClick]="true"
+  >
+    <i class="pi pi-bars text-yellow-600 text-4xl"></i>
+  </a>
+  <div
+    class="align-items-center flex-grow-1 justify-content-between hidden lg:flex absolute lg:static w-full left-0 px-6 lg:px-0 z-2"
+    style="top: 120px"
+  >
+    <ul
+      style="background: #223d76"
+      class="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row cursor-pointer"
+    >
+      <li>
+        <a pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 line-height-3">
+          <p-button
+            label="Inicio"
+            styleClass="text-white p-button-text animate__animated animate__fadeInDown"
+          ></p-button>
+        </a>
+      </li>
+      <li>
+        <a
+          pRipple
+          class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3"
+        >
+          <p-button
+            label="Nosotros"
+            styleClass="text-white p-button-text animate__animated animate__fadeInDown"
+          ></p-button>
+        </a>
+      </li>
+      <li>
+        <a pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900">
+          <p-button
+            label="Contáctanos"
+            styleClass=" text-white p-button-text animate__animated animate__fadeInDown"
+          ></p-button>
+        </a>
+      </li>
+    </ul>
+    <div
+      style="background: #223d76"
+      class="flex justify-content-between lg:block border-top-1 lg:border-top-none py-3 lg:py-0 mt-3 lg:mt-0"
+    >
+      <p-button
+        label="Iniciar Sesión"
+        styleClass="p-button-raised p-button-warning animate__animated animate__fadeInRight animate__delay-2s"
+        routerLink="auth"
+      ></p-button>
+    </div>
+  </div>
+</div>
+
+<!-- Mensaje de DEMO -->
+<p-messages severity="warn">
+  <ng-template pTemplate>
+    <i class="fa-solid fa-triangle-exclamation text-yellow-500"></i>
+    <div class="ml-2">Aplicación DEMO</div>
+  </ng-template>
+</p-messages>
+
+<!--  Portada cuerpo  -->
+<div class="grid surface-section text-800" style="background: #223d76">
+  <div
+    style="
+      background: linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 0.2),
+          rgba(255, 255, 255, 0.2)
+        ),
+        radial-gradient(
+          107.36% 256.97% at 77.36% 57.52%,
+          #ffffff 35%,
+          #bddcf2 130%
+        );
+      clip-path: ellipse(150% 87% at 93% 70%);
+    "
+    class="col-12 md:col-8 p-5 text-center md:text-left flex align-items-center"
+  >
+    <section>
+      <span
+        class="block text-gray-800 text-6xl font-bold mb-1 animate__animated animate__fadeInLeftBig"
+        >PropCheck</span
+      >
+      <p
+        class="mb-4 text-700 line-height-3 font-bold animate__animated animate__fadeInLeftBig animate__delay-1s"
+      >
+        La solución de búsqueda de información de gastos comunes, servicios
+        básicos y tributos asociados a un inmueble
+      </p>
+
+      <p-button
+        label="Ingresa aquí"
+        styleClass="p-button-raised p-button-warning animate__animated animate__fadeInUp animate__delay-2s"
+        routerLink="auth"
+      ></p-button>
+    </section>
+  </div>
+  <div class="col-8 md:col-4">
+    <img
+      src="assets/img/main_blue.jpeg"
+      alt="Main_blue"
+      class="animate__animated animate__fadeInUp block"
+      height="auto"
+      width="100%"
+      style="clip-path: polygon(08% 0, 90% 0%, 100% 100%, 0 100%)"
+    />
+  </div>
+</div>
+
+<!-- Feature informativo  -->
+
+<div
+  style="
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.2)
+      ),
+      radial-gradient(277.36% 46.97% at 97.36% 57.52%, #bddcf2 0%, #ffffff 100%);
+    clip-path: ellipse(150% 87% at 93% 24%);
+  "
+  class="flex-wrap px-6 py-2 md:px-4 lg:px-6 text-center"
+>
+  <div class="mb-3 font-bold text-3xl">
+    <span class="text-900 animate__animated animate__fadeInUp"
+      >Nuestro producto,
+    </span>
+    <span class="text-blue-600 animate__animated animate__fadeInUp"
+      >muchas soluciones</span
+    >
+  </div>
+  <div class="text-700 mb-6 animate__animated animate__fadeInUp">
+    Te mostramos algunos de nuestros beneficios:
+  </div>
+
+  <div
+    class="flex flex-wrap card-container justify-content-center align-items-center"
+  >
+    <div class="card m-4 animate__animated animate__fadeInUp animate__delay-4s">
+      <span
+        class="p-3 shadow-2 mb-3 mt-3 inline-block bg-blue-500"
+        style="border-radius: 10px"
+      >
+        <i class="pi pi-check text-4xl text-yellow-300"></i>
+      </span>
+      <div class="text-blue-600 text-xl mb-3 mt-3 font-medium">
+        Precisión y Calidad
+      </div>
+      <span class="text-700 line-height-3 m-2"
+        >Mediante la eliminación del error humano, garantizamos resultados
+        precisos y de alta calidad en todas nuestras operaciones mediante
+        nuestros procesos.</span
+      >
+    </div>
+
+    <div
+      class="card col-12 m-4 animate__animated animate__fadeInUp animate__delay-4s"
+    >
+      <span
+        class="p-3 shadow-2 mb-3 mt-3 inline-block bg-blue-500"
+        style="border-radius: 10px"
+      >
+        <i class="pi pi-clock text-4xl text-yellow-300"></i>
+      </span>
+      <div class="text-blue-600 text-xl mt-3 mb-3 font-medium">
+        Información exacta y en tiempo real
+      </div>
+      <span class="text-700 line-height-3 m-2"
+        >Proporcionamos datos precisos y actualizados al instante, permitiendo
+        una toma de decisiones informada y ágil.</span
+      >
+    </div>
+    <div
+      class="card col-12 m-4 animate__animated animate__fadeInUp animate__delay-4s"
+    >
+      <span
+        class="p-3 shadow-2 mt-3 mb-3 inline-block bg-blue-500"
+        style="border-radius: 10px"
+      >
+        <i class="pi pi-user-minus text-4xl text-yellow-300"></i>
+      </span>
+      <div class="text-blue-600 text-xl mb-3 mt-3 font-medium">
+        Eliminación de HH y reasignación de funciones
+      </div>
+      <span class="text-700 line-height-3 text-overflow m-2"
+        >Al automatizar tareas, liberamos a los empleados de actividades
+        repetitivas, para enfocarse en tareas de mayor valor agregado.</span
+      >
+    </div>
+    <div
+      class="card col-12 m-4 animate__animated animate__fadeInUp animate__delay-5s"
+    >
+      <span
+        class="p-3 shadow-2 mb-2 mt-3 inline-block bg-blue-500"
+        style="border-radius: 10px"
+      >
+        <i class="pi pi-money-bill text-4xl text-yellow-300"></i>
+      </span>
+      <div class="text-blue-600 text-xl font-medium mb-2 mt-2">
+        Ahorro en costos presentes y ante futuros crecimientos
+      </div>
+      <span class="text-700 line-height-3 text-overflow m-2"
+        >Nuestra solución proporciona eficiencias operativas y escalabilidad, lo
+        que resulta en ahorros significativos tanto en el presente como en
+        situaciones de crecimiento futuro.</span
+      >
+    </div>
+    <div
+      class="card col-12 m-4 animate__animated animate__fadeInUp animate__delay-5s text-center"
+    >
+      <span
+        class="p-3 shadow-2 mb-3 mt-3 inline-block bg-blue-500"
+        style="border-radius: 10px"
+      >
+        <i class="pi pi-cog text-4xl text-yellow-300"></i>
+      </span>
+      <div class="text-blue-600 text-xl mb-3 mt-2 font-medium">
+        Herramienta de gestión oportuna
+      </div>
+      <span class="text-700 line-height-3 text-justify m-2"
+        >Nuestra plataforma ofrece herramientas de gestión y control en tiempo
+        real, brindando una visión completa de las operaciones y permitiendo una
+        respuesta rápida ante cambios o desafíos.
+      </span>
+    </div>
+    <div
+      class="card col-12 m-4 text-center animate__animated animate__fadeInUp animate__delay-5s"
+    >
+      <span
+        class="p-3 shadow-3 mb-3 mt-3 inline-block bg-blue-500"
+        style="border-radius: 10px"
+      >
+        <i class="pi pi-link text-4xl text-yellow-300"></i>
+      </span>
+      <div class="text-blue-600 text-xl mb-2 mt-2 font-medium">
+        Socio tecnológico de nuestros clientes
+      </div>
+      <span class="text-700 line-height-3 m-2"
+        >Somos el socio estratégico para nuestros clientes, brindando soluciones
+        tecnológicas innovadoras y un soporte constante para impulsar su éxito y
+        crecimiento.</span
+      >
+    </div>
+  </div>
+</div>
+
+<!-- Carrusel  -->
+
+<app-carousel></app-carousel>
+
+<!-- footer  -->
+
+<div
+  style="background: #223d76"
+  class="py-2 px-4 mx-0 mt-0 lg:full border-round"
+>
+  <div class="grid justify-content-between">
+    <div class="col-12 md:col-3" style="margin-top: -1.5rem">
+      <a
+        class="flex flex-wrap align-items-center justify-content-center md:justify-content-start md:mb-0 mb-3 cursor-pointer"
+      >
+        <img
+          src="/assets/img/Logo PropCheck final_blanco.jpeg"
+          alt="footer PropCheck Logo"
+          width="140"
+          height="140"
+          class="mr-8 lg:mr-5 mt-8"
+        />
+      </a>
+    </div>
+
+    <div class="col-12 md:col-10 lg:col-7">
+      <div class="grid text-center md:text-left">
+        <div class="col-12 md:col-7">
+          <h4 class="font-medium text-2xl line-height-3 mb-3 text-100">
+            Nuestra empresa
+          </h4>
+          <a class="line-height-3 text-xl block cursor-pointer mb-2 text-200"
+            ><i class="pi pi-linkedin text-yellow-500"></i> LinkedIn
+          </a>
+          <a class="line-height-3 text-xl block cursor-pointer mb-2 text-200"
+            ><i class="pi pi-inbox text-yellow-500"></i> News
+          </a>
+          <a class="line-height-3 text-xl block cursor-pointer mb-2 text-200"
+            ><i class="pi pi-user-plus text-yellow-500"></i> Trabaja con
+            nosotros
+          </a>
+          <a class="line-height-3 text-xl block cursor-pointer mb-2 text-200"
+            ><i class="pi pi-envelope text-yellow-500"></i> Contacto
+          </a>
+        </div>
+
+        <div class="col-12 md:col-3 mt-4 md:mt-0">
+          <h4 class="font-medium text-2xl line-height-3 mb-3 text-100">
+            Condiciones
+          </h4>
+          <a class="line-height-3 text-xl block cursor-pointer mb-2 text-200"
+            ><i class="pi pi-comments text-yellow-500"></i> FAQ</a
+          >
+          <a class="line-height-3 text-xl block cursor-pointer mb-2 text-200"
+            ><i class="pi pi-info-circle text-yellow-500"></i>
+            Confidencialidad<img class="ml-2"
+          /></a>
+          <a class="line-height-3 text-xl block cursor-pointer mb-2 text-200"
+            ><i class="pi pi-minus-circle text-yellow-500"></i> Legal</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
