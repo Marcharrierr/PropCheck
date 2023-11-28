@@ -28,12 +28,14 @@ export class AppComponent {
 
     switch (this.authService.authStatus()) {
 
-      case AuthStatus.checking:
-        return;
-
       case AuthStatus.authenticated:
         this.router.navigateByUrl('/propiedades/list');
         return;
+
+
+      case AuthStatus.checking:
+        return;
+
 
       case AuthStatus.notAuthenticated:
         this.router.navigateByUrl('/');
@@ -43,10 +45,6 @@ export class AppComponent {
 
 
   })
-
-
-
-
 
 
 }

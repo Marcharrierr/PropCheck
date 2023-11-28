@@ -9,6 +9,7 @@ import { CarouselModule } from 'primeng/carousel';
 import { ChartModule } from 'primeng/chart';
 import { DividerModule } from 'primeng/divider';
 import { DropdownModule } from 'primeng/dropdown';
+import { FormsModule } from '@angular/forms';
 import { ImageModule } from 'primeng/image';
 import { InputTextModule } from 'primeng/inputtext';
 import { MenubarModule } from 'primeng/menubar';
@@ -34,6 +35,7 @@ import { RippleModule } from 'primeng/ripple';
     ChartModule,
     DividerModule,
     DropdownModule,
+    FormsModule,
     ImageModule,
     InputTextModule,
     MenubarModule,

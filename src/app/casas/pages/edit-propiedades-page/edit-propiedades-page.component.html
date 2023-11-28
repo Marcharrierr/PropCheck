@@ -1,0 +1,216 @@
+<!-- Flex -->
+
+<app-sidebar></app-sidebar>
+<!-- Contenedor Sidebar (Degradé) -->
+
+<div class="relative">
+  <div class="block">
+    <p-messages severity="warn">
+      <ng-template pTemplate>
+        <i class="fa-solid fa-triangle-exclamation text-yellow-500"></i>
+        <div class="ml-1">Aplicación DEMO</div>
+      </ng-template>
+    </p-messages>
+  </div>
+
+  <!--Perfil propiedad-->
+
+  <div class="card border-round shadow-3 justify-content-center m-3">
+    <div class="flex m-1 mr-3">
+      <div class="flex align-items-center justify-content-center">
+        <i
+          class="fa-solid fa-building text-blue-700 m-3"
+          style="font-size: 120px"
+        ></i>
+        <div class="block align-items-center justify-content-center">
+          <span class="flex align-items-center m-2 text-800 text-xl mt-4"
+            ><i class="fa-regular fa-building text-yellow-500 ml-2 mr-2"></i>
+            Comunidad
+            <input
+              class="m-2"
+              size="49"
+              id="disabled-input"
+              type="text"
+              pInputText
+              [disabled]="true"
+              [(ngModel)]="comunidad"
+            />
+          </span>
+          <span class="flex align-items-center m-2 text-800 text-xl"
+            ><i
+              class="fa-solid fa-map-location-dot text-yellow-500 ml-2 mr-2"
+            ></i>
+            Dirección
+            <span class="flex align-items-center m-2 mr-6 text-800 text-xl">
+              <input
+                class="m-1 ml-3"
+                size="50"
+                id="disabled-input"
+                type="text"
+                pInputText
+                [disabled]="true"
+                [(ngModel)]="direccion"
+              />
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex align-items-center card m-2">
+    <div class="flex align-items-center justify-content-center card-container">
+      <div
+        class="flex align-items-center justify-content-center font-bold m-2 border-round"
+      >
+        <div class="block shadow-3 m-2 border-round">
+          <!--Vacía para espacio-->
+          <div class="card mt-4">
+            <div class="block justify-content-between flex-wrap card-container">
+              <div
+                class="flex align-items-center justify-content-center text-700 font-bold text-xl"
+              ></div>
+              <div class="flex align-items-center justify-content-center"></div>
+              <div class="flex align-items-center justify-content-center">
+                <span class="text-700 font-bold text-xl ml-3"> </span>
+              </div>
+            </div>
+          </div>
+
+          <!--inicio cuentas-->
+          <div class="flex justify-content-center align-items-center m-2">
+            <span class="flex text-xl font-bold">
+              <i class="fa-solid fa-receipt text-yellow-500 mr-2"></i>
+              Cuentas:</span
+            >
+          </div>
+          <!-- Luz -->
+          <div class="card mt-3">
+            <div class="flex justify-content-between flex-wrap card-container">
+              <div
+                class="flex align-items-center justify-content-center text-700 font-bold text-xl m-2"
+              >
+                <i
+                  class="fa-solid fa-bolt text-yellow-500 justify-content-center m-2"
+                ></i>
+                Luz :
+              </div>
+              <div class="flex align-items-center justify-content-center"></div>
+              <div
+                class="flex align-items-center justify-content-center font-bold text-700 m-2"
+              >
+                <span class="text-700 font-bold text-xl ml-3"> 2634688-6 </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Agua -->
+          <div class="card mt-4">
+            <div class="flex justify-content-between flex-wrap card-container">
+              <div
+                class="flex align-items-center justify-content-center text-700 font-bold text-xl m-2"
+              >
+                <i
+                  class="fa-solid fa-droplet text-yellow-500 justify-content-center m-2"
+                ></i>
+                Agua:
+              </div>
+              <div class="flex align-items-center justify-content-center"></div>
+              <div class="flex align-items-center justify-content-center m-2">
+                <span class="text-700 font-bold text-xl ml-3"> 1685292 </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gas -->
+          <div class="card mt-4">
+            <div class="flex justify-content-between flex-wrap card-container">
+              <div
+                class="flex align-items-center justify-content-center text-700 font-bold text-xl m-2"
+              >
+                <i
+                  class="fa-brands fa-gripfire fa-lg text-yellow-500 justify-content-center m-2"
+                ></i>
+                Gas:
+              </div>
+              <div class="flex align-items-center justify-content-center"></div>
+              <div class="flex align-items-center justify-content-center m-2">
+                <span class="text-700 font-bold text-xl ml-3"> 900507703 </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gasto Común -->
+          <div class="card mt-4">
+            <div class="flex justify-content-between flex-wrap card-container">
+              <div
+                class="flex align-items-center justify-content-center text-700 font-bold text-xl m-1"
+              >
+                <i
+                  class="fa-solid fa-building-user text-yellow-500 justify-content-center m-2"
+                ></i>
+                Gasto Común:
+              </div>
+              <div class="flex align-items-center justify-content-center"></div>
+              <div class="flex align-items-center justify-content-center m-2">
+                <span class="text-700 font-bold text-xl ml-3">
+                  Com. Feliz
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aseo -->
+          <div class="card mt-4">
+            <div class="flex justify-content-between flex-wrap card-container">
+              <div
+                class="flex align-items-center justify-content-center text-700 font-bold text-xl m-1"
+              >
+                <i
+                  class="fa-solid fa-recycle text-yellow-500 justify-content-center m-2"
+                ></i>
+                Derecho Aseo:
+              </div>
+              <div class="flex align-items-center justify-content-center"></div>
+              <div class="flex align-items-center justify-content-center m-2">
+                <span class="text-700 font-bold text-xl ml-3"> 146-146 </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contri -->
+          <div class="card mt-4">
+            <div class="flex justify-content-between flex-wrap card-container">
+              <div
+                class="flex align-items-center justify-content-center text-700 font-bold text-xl m-1"
+              >
+                <i
+                  class="fa-solid fa-house-circle-exclamation text-yellow-500 justify-content-center m-2"
+                ></i>
+                Contribuciones:
+              </div>
+              <div class="flex align-items-center justify-content-center"></div>
+              <div class="flex align-items-center justify-content-center m-2">
+                <span class="text-700 font-bold text-xl ml-3">
+                  Rol no existe
+                </span>
+              </div>
+            </div>
+          </div>
+          <!--Vacía para espacio-->
+          <div class="card mt-4">
+            <div class="flex justify-content-between flex-wrap card-container">
+              <div
+                class="flex align-items-center justify-content-center text-700 font-bold text-xl m-1"
+              ></div>
+              <div class="flex align-items-center justify-content-center"></div>
+              <div class="flex align-items-center justify-content-center m-2">
+                <span class="text-700 font-bold text-xl ml-3"> </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -44,7 +44,7 @@ export class AuthService {
   //Loguear a usuario
   login(email: string, password: string): Observable<boolean> {
 
-    const url = `${this.baseUrl}/auth/login`;
+    const url = `${this.baseUrl}/api/auth/login`;
     const body = { email, password };
 
     return this.http.post<LoginResponse>(url, body)
@@ -57,16 +57,19 @@ export class AuthService {
 
   }
 
+
+
   //Ver estatus de token
   checkOutStatus(): Observable<boolean> {
-    const url = `${this.baseUrl}/check-token`;
+    const url = `${this.baseUrl}/auth/check-token`;
     const token = localStorage.getItem('token')
 
     if (!token) {
       localStorage.removeItem('token');
       this.logout();
+
     }
-    return of(false);
+
 
     const headers = new HttpHeaders()
       .set('Authorization', `Bearer ${token}`);
@@ -76,7 +79,7 @@ export class AuthService {
         map(({ user, token }) => this.setAuthentication(user, token)),
         catchError(() => {
           this._authStatus.set(AuthStatus.notAuthenticated);
-          localStorage.removeItem('token');
+
           return of(false)
         })
       );

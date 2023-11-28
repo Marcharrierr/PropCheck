@@ -40,6 +40,14 @@
         ></p-button>
 
         <p-button
+          icon="pi pi-list"
+          label="Ver propiedades"
+          styleClass="p-button-warning text-xl w-full mb-4"
+          routerLink="/propiedades/landing"
+          (click)="sidebarVisible = false"
+        ></p-button>
+
+        <p-button
           icon="pi pi-sign-out"
           label="Cerrar Sesión"
           styleClass="p-button-danger text-xl w-full mb-4"

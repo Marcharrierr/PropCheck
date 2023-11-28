@@ -20,6 +20,11 @@ const routes: Routes = [
     loadChildren: () => import('./casas/casas.module').then(m => m.CasasModule),
   },
   {
+    path: 'landing',
+    canActivate: [isAuthenticatedGuard],
+    loadChildren: () => import('./casas/pages/landing/landing.component').then(m => m.LandingComponent),
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'
@@ -32,7 +37,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
+  imports: [RouterModule.forRoot(routes,
+    {
+      scrollPositionRestoration: 'enabled',
+      useHash: true
+    }
+  )],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

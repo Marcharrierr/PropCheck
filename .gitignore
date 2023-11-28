@@ -5,6 +5,9 @@
 /tmp
 /out-tsc
 /bazel-out
+/nest-backend
+nest-backend
+mongo
 
 # Node
 /node_modules

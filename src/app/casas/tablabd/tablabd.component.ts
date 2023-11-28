@@ -1,12 +1,10 @@
 import { Component, EventEmitter, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 import { PrimeNGConfig } from 'primeng/api';
 
 import { Propiedades } from '../interfaces/propiedades.interface';
-
-
-
 
 
 @Component({
@@ -27,7 +25,15 @@ export class TablabdComponent implements OnInit {
 
   loading: boolean = true;
 
-  constructor(private config: PrimeNGConfig) { }
+  constructor(
+    private config: PrimeNGConfig,
+    private route: ActivatedRoute,
+  ) { }
+
+  isLandingComponent() {
+    return this.route.snapshot.url[0].path === 'landing';
+  }
+
 
   ngOnInit() {
 

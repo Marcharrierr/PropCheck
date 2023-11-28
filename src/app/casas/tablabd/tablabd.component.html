@@ -2,14 +2,14 @@
   <p-table
     #dt1
     [value]="propiedad"
-    scrollHeight="400px"
+    scrollHeight="450px"
     [scrollable]="true"
     [resizableColumns]="true"
     [rowHover]="true"
-    [rows]="4"
+    [rows]="6"
     [paginator]="true"
     dataKey="code"
-    [tableStyle]="{ 'min-width': '30rem' }"
+    [tableStyle]="{ 'min-width': '50rem' }"
     [globalFilterFields]="['comunidad', 'direccion', 'comuna']"
     [filterDelay]="0"
   >
@@ -20,7 +20,7 @@
         <span class="p-input-icon-left ml-auto">
           <i class="pi pi-search"></i>
           <input
-            size="40"
+            size="50"
             pInputText
             type="text"
             (input)="dt1.filterGlobal($any($event.target).value, 'contains')"
@@ -51,11 +51,23 @@
         </th>
         <th class="text-center">Detalles propiedad</th>
 
-        <th class="text-center" pSortableColumn="deuda">
+        <th
+          class="text-center"
+          pSortableColumn="deuda"
+          *ngIf="!isLandingComponent(); else showDeuda"
+        >
           Deudas
           <p-sortIcon field="deuda"></p-sortIcon>
         </th>
-        <th class="text-center">Ir a perfil</th>
+        <ng-template #showDeuda>
+          <th></th>
+        </ng-template>
+        <th class="text-center" *ngIf="!isLandingComponent(); else showPerfil">
+          Ir a perfil
+        </th>
+        <ng-template #showPerfil>
+          <th></th>
+        </ng-template>
       </tr>
       <tr>
         <th>
@@ -99,22 +111,7 @@
             />
           </span>
         </th>
-        <th>
-          <!-- <p-columnFilter field="status" matchMode="equals" [showMenu]="false">
-            <ng-template
-              pTemplate="filter"
-              let-value
-              let-filter="filterCallback"
-            >
-                <p-dropdown
-                  [options]="status"
-                  optionLabel="nombre"
-                  showMenu="false"
-                  matchMode="equals"
-                ></p-dropdown>
-            </ng-template>
-          </p-columnFilter> -->
-        </th>
+        <th></th>
         <th></th>
         <th></th>
       </tr>
@@ -173,20 +170,39 @@
             [disabled]="true"
           ></p-button>
         </td>
-        <td>
-          <h4 class="mb-1 mt-0 text-center">Total deudas:</h4>
-          <span class="flex justify-content-center">
-            $ {{ propiedad.deuda | replaceComma }}</span
-          >
-        </td>
-        <td>
+        <td *ngIf="isLandingComponent(); else showDeuda">
           <p-button
-            routerLink="/propiedades/perfil"
-            styleClass="p-button-info "
-          >
-            <i class="pi pi-external-link text-yellow-300"> </i>
-          </p-button>
+            styleClass="p-button-raised p-button-warning"
+            label="Editar"
+            icon="pi pi-pencil"
+            routerLink="/propiedades/editar-propiedad"
+          ></p-button>
         </td>
+        <ng-template #showDeuda>
+          <td>
+            <h4 class="mb-1 mt-0 text-center">Total deudas:</h4>
+            <span class="flex justify-content-center">
+              $ {{ propiedad.deuda | replaceComma }}</span
+            >
+          </td>
+        </ng-template>
+        <td *ngIf="isLandingComponent(); else showPerfil">
+          <p-button
+            styleClass="p-button-raised p-button-danger"
+            label="Eliminar"
+            icon="pi pi-trash"
+          ></p-button>
+        </td>
+        <ng-template #showPerfil>
+          <td>
+            <p-button
+              routerLink="/propiedades/perfil"
+              styleClass="p-button-info "
+            >
+              <i class="pi pi-external-link text-yellow-300"> </i>
+            </p-button>
+          </td>
+        </ng-template>
       </tr>
     </ng-template>
   </p-table>

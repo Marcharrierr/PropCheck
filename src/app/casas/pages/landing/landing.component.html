@@ -1,0 +1,28 @@
+<!-- Flex -->
+
+<app-sidebar></app-sidebar>
+<!-- Contenedor Sidebar (Degradé) -->
+
+<div class="relative"></div>
+
+<div class="block">
+  <p-messages severity="warn">
+    <ng-template pTemplate>
+      <i class="fa-solid fa-triangle-exclamation text-yellow-500"></i>
+      <div class="ml-1">Aplicación DEMO</div>
+    </ng-template>
+  </p-messages>
+
+  <div class="flex-initial flex m-3">
+    <p-button
+      label="Crear propiedad"
+      styleClass="p-button-raised p-button-success"
+      routerLink="/propiedades/crear-propiedad"
+    ></p-button>
+  </div>
+
+  <!-- Tabla bbdd -->
+  <div class="card w-auto m-2">
+    <app-tablabd></app-tablabd>
+  </div>
+</div>

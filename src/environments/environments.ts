@@ -3,6 +3,7 @@
 
 export const environment = {
 
-  baseUrl: 'http://localhost:3000'
+  baseUrl: 'https://nestsql-c6cnsk4xja-tl.a.run.app'
 
 }
+

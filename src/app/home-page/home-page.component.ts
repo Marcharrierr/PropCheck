@@ -17,4 +17,16 @@ export class HomePageComponent {
 
   }
 
+
+
+
+  correoElectronico: string = 'cgomez@propcheck.ai';
+
+  enviarCorreo() {
+    window.location.href = `mailto:${this.correoElectronico}`;
+  }
+
 }
+
+
+

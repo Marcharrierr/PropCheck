@@ -306,10 +306,28 @@
             ><i class="pi pi-user-plus text-yellow-500"></i> Trabaja con
             nosotros
           </a>
-          <a class="line-height-3 text-xl block cursor-pointer mb-2 text-200"
-            ><i class="pi pi-envelope text-yellow-500"></i> Contacto
-          </a>
+
+          <p-inputText
+            id="email"
+            (ngModel)="(correoElectronico)"
+            disabled
+            class="line-height-3 text-xl block cursor-pointer mb-2 text-200"
+            (click)="enviarCorreo()"
+          >
+            <i class="pi pi-envelope text-yellow-500"></i>
+            Contacto: {{ correoElectronico }}
+          </p-inputText>
         </div>
+
+        <!-- <div>
+          <label for="email">Correo Electrónico:</label>
+          <p-inputText
+            id="email"
+            (ngModel)="(correoElectronico)"
+            disabled
+          ></p-inputText>
+
+        </div> -->
 
         <div class="col-12 md:col-3 mt-4 md:mt-0">
           <h4 class="font-medium text-2xl line-height-3 mb-3 text-100">
