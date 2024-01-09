@@ -1,1 +1,147 @@
-<p>register-page works!</p>
+<div
+  style="background: #223d76"
+  class="flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden"
+>
+  <div class="flex flex-column align-items-center justify-content-center">
+    <img
+      src="/assets/img/Logo PropCheck final_blanco.jpeg"
+      height="150"
+      width="150"
+      alt="Logo Propcheck"
+      class="mb-3 w-10rem flex-shrink-0"
+    />
+
+    <div
+      class="w-32rem surface-card py-8 sm:px-5 p-4"
+      style="border-radius: 53px"
+    >
+      <div class="text-center">
+        <label class="block text-blue-600 font-medium text-lg">
+          <h2>Registrate para continuar</h2></label
+        >
+      </div>
+
+      <form (ngSubmit)="registro()" class="custom-form my-4">
+        <div class="card flex flex-column align-items-center">
+          <span class="p-float-label my-3">
+            <input
+              id="rut"
+              pInputText
+              formControlName="rut"
+              minlength="11"
+              maxlength="12"
+              placeholder="Ej: 12.345.678-K"
+              class="w-full md:w-23rem p-3 form-control"
+              (input)="formatRut(personaForm.get('rut')); validateRutPersona()"
+            />
+            <div *ngIf="!isValidRut" class="error-message">
+              {{ rutPersonaErrorMessage }}
+            </div>
+            <label class="font-bold" for="rut">RUT</label>
+          </span>
+        </div>
+
+        <div class="card flex flex-column align-items-center">
+          <span class="p-float-label my-3">
+            <input
+              id="nombre"
+              pInputText
+              formControlName="name"
+              minlength="3"
+              maxlength="30"
+              class="w-full md:w-23rem p-3"
+              (input)="formatText(personaForm.get('nombre'))"
+            />
+            <label class="font-bold" for="nombre">Nombres</label>
+          </span>
+        </div>
+
+        <div class="card flex flex-column align-items-center">
+          <span class="p-float-label my-3">
+            <input
+              id="apellido"
+              pInputText
+              formControlName="lastName"
+              minlength="3"
+              maxlength="30"
+              class="w-full md:w-23rem p-3"
+              (input)="formatText(personaForm.get('apellido'))"
+            />
+            <label class="font-bold" for="apellido">Apellidos</label>
+          </span>
+        </div>
+
+        <div class="card flex flex-column align-items-center">
+          <span class="p-float-label my-3">
+            <input
+              id="correo"
+              pInputText
+              formControlName="email"
+              class="w-full md:w-23rem p-3"
+            />
+            <label class="font-bold" for="correo">Correo</label>
+          </span>
+        </div>
+
+        <div class="card flex flex-column align-items-center">
+          <span class="p-float-label my-3">
+            <p-password
+              id="contrasena"
+              formControlName="password"
+              minlength="6"
+              maxlength="8"
+              inputStyleClass="w-23rem max p-3"
+              placeholder="Entre 6 a 8 caracteres"
+              [maxLength]="8"
+            ></p-password>
+            <label class="font-bold" for="contrasena">Contraseña</label>
+          </span>
+        </div>
+
+        <div class="card flex flex-column align-items-center">
+          <span class="p-float-label my-3">
+            <p-password
+              id="re-contrasena"
+              formControlName="rePassword"
+              minlength="6"
+              [maxlength="8"
+              inputStyleClass="w-23rem max p-3"
+              placeholder="Vuelva a ingresar la contraseña"
+            ></p-password>
+            <label class="font-bold" for="re-contrasena">Contraseña</label>
+          </span>
+        </div>
+
+        <div class="card flex flex-column align-items-center">
+          <span class="p-float-label my-3">
+            <input
+              id="rutEmpresa"
+              pInputText
+              formControlName="rutEmpresa"
+              minlength="11"
+              maxlength="12"
+              placeholder="Ej: 12.345.678-K"
+              class="w-full md:w-23rem p-3 form-control"
+              (input)="
+                formatRut(personaForm.get('rutEmpresa')); validateRutEmpresa()
+              "
+            />
+            <div *ngIf="!isValidRutEmpresa" class="error-message">
+              {{ rutEmpresaErrorMessage }}
+            </div>
+            <label class="font-bold" for="rutEmpresa">RUT Empresa</label>
+          </span>
+        </div>
+
+        <div class="card flex flex-column align-items-center">
+          <p-button
+            label="Registrar"
+            icon="pi pi-check"
+            type="submit"
+            [disabled]="!isFormValid"
+          ></p-button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

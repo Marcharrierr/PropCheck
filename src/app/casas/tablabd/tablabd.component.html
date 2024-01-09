@@ -1,7 +1,7 @@
 <div class="p-datatable card m-1 border-round shadow-2 border-solid border-300">
   <p-table
     #dt1
-    [value]="propiedad"
+    [value]="propiedades"
     scrollHeight="450px"
     [scrollable]="true"
     [resizableColumns]="true"
@@ -116,16 +116,16 @@
         <th></th>
       </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-propiedad>
+    <ng-template pTemplate="body" let-propiedades>
       <tr pSelectableRow="propiedad">
-        <td class="text-center">{{ propiedad.comunidad }}</td>
+        <td class="text-center">{{ propiedades.community_name }}</td>
         <td class="text-center">
-          {{ propiedad.direccion }}
+          {{ propiedades.address }}, Dpto {{ propiedades.department }}
           <span class="flex justify-content-center">
-            {{ propiedad.unidad }}</span
+            {{ propiedades.municipality }}</span
           >
         </td>
-        <td class="text-center">{{ propiedad.comuna }}</td>
+        <td class="text-center">{{ propiedades.municipality }}</td>
         <td class="flex justify-content-center flex-wrap card-container">
           <p-button
             pTooltip="Luz"
@@ -175,14 +175,14 @@
             styleClass="p-button-raised p-button-warning"
             label="Editar"
             icon="pi pi-pencil"
-            routerLink="/propiedades/editar-propiedad"
+            [routerLink]="['/propiedades/editar-propiedad', propiedades.id]"
           ></p-button>
         </td>
         <ng-template #showDeuda>
           <td>
             <h4 class="mb-1 mt-0 text-center">Total deudas:</h4>
             <span class="flex justify-content-center">
-              $ {{ propiedad.deuda | replaceComma }}</span
+              $ {{ propiedades.deuda | replaceComma }}</span
             >
           </td>
         </ng-template>

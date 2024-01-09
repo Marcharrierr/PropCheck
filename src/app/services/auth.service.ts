@@ -3,7 +3,7 @@ import { Injectable, inject, signal, computed } from '@angular/core';
 
 import { catchError, map, Observable, of, tap, throwError } from 'rxjs';
 
-import { environment } from 'src/environments/environments';
+import { environment } from '../../environments/environments';
 
 import { AuthStatus, User, LoginResponse, CheckTokenResponse } from '../interfaces'
 
@@ -31,10 +31,11 @@ export class AuthService {
   }
 
   //Reutilizando código
-  private setAuthentication(user: User, token: string): boolean {
+  private setAuthentication(user: User, token: string, id: string): boolean {
     this._currentUser.set(user);
     this._authStatus.set(AuthStatus.authenticated);
     localStorage.setItem('token', token);
+    localStorage.setItem('id', id.toString());
 
     return true
   }
@@ -49,7 +50,7 @@ export class AuthService {
 
     return this.http.post<LoginResponse>(url, body)
       .pipe(
-        map(({ user, token }) => this.setAuthentication(user, token)),
+        map(({ user, token, id }) => this.setAuthentication(user, token, id.toString())),
         catchError(err => {
           return throwError(() => err.error.message)
         })
@@ -76,7 +77,7 @@ export class AuthService {
 
     return this.http.get<CheckTokenResponse>(url, { headers })
       .pipe(
-        map(({ user, token }) => this.setAuthentication(user, token)),
+        map(({ user, token }) => this.setAuthentication(user, token, '')),
         catchError(() => {
           this._authStatus.set(AuthStatus.notAuthenticated);
 
@@ -88,6 +89,7 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('id');
     this._currentUser.set(null)
     this._authStatus.set(AuthStatus.notAuthenticated)
   }
