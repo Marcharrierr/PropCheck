@@ -19,7 +19,8 @@ const routes: Routes = [
       { path: 'perfil', component: PerfilCasasPageComponent },
       { path: 'landing', component: LandingComponent },
       { path: 'crear-propiedad', component: CreatePropiedadComponent },
-      { path: 'editar-propiedad', component: EditPropiedadesPageComponent },
+      { path: 'editar-propiedad/:id', component: EditPropiedadesPageComponent },
+      { path: ':id', component: EditPropiedadesPageComponent },
       { path: '**', redirectTo: 'list' },
 
     ]

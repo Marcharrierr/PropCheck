@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 
@@ -9,7 +10,7 @@ import { CarouselModule } from 'primeng/carousel';
 import { ChartModule } from 'primeng/chart';
 import { DividerModule } from 'primeng/divider';
 import { DropdownModule } from 'primeng/dropdown';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ImageModule } from 'primeng/image';
 import { InputTextModule } from 'primeng/inputtext';
 import { MenubarModule } from 'primeng/menubar';
@@ -33,6 +34,7 @@ import { RippleModule } from 'primeng/ripple';
     CardModule,
     CarouselModule,
     ChartModule,
+    CommonModule,
     DividerModule,
     DropdownModule,
     FormsModule,
@@ -40,6 +42,7 @@ import { RippleModule } from 'primeng/ripple';
     InputTextModule,
     MenubarModule,
     MessagesModule,
+    ReactiveFormsModule,
     SelectButtonModule,
     SidebarModule,
     TableModule,

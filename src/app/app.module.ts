@@ -1,3 +1,4 @@
+import { PrimengModule } from './primeng/primeng.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -54,6 +55,7 @@ import { MenubarModule } from 'primeng/menubar';
     MessagesModule,
     MenubarModule,
     ReactiveFormsModule,
+    PrimengModule,
     RippleModule,
     SharedModule,
     StyleClassModule,

@@ -16,12 +16,12 @@ const routes: Routes = [
   },
   {
     path: 'propiedades',
-    canActivate: [isAuthenticatedGuard],
+    //canActivate: [isAuthenticatedGuard],
     loadChildren: () => import('./casas/casas.module').then(m => m.CasasModule),
   },
   {
     path: 'landing',
-    canActivate: [isAuthenticatedGuard],
+    //canActivate: [isAuthenticatedGuard],
     loadChildren: () => import('./casas/pages/landing/landing.component').then(m => m.LandingComponent),
   },
   {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
@@ -7,7 +7,10 @@ import { Component } from '@angular/core';
 })
 
 
-export class LandingComponent {
+export class LandingComponent implements OnInit {
+  ngOnInit(): void {
+
+  }
 
 
 }
