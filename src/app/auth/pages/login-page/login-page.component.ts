@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
-  templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.css']
+  templateUrl: './login-page.component-n.html',
+  styleUrls: ['./login-page.component-n.css']
 })
 
 export class LoginPageComponent {
