@@ -19,6 +19,10 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { CheckboxModule } from 'primeng/checkbox';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { ProgressBarModule } from 'primeng/progressbar';
+import { ToastModule } from 'primeng/toast';
 import { PrimengModule } from './../primeng/primeng.module';
 import { RippleModule } from 'primeng/ripple';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
@@ -27,10 +31,10 @@ import { SortByPipe } from './pipes/sort-by.pipe';
 
 import { CasasRoutingModule } from './casas-routing.module';
 import { CreatePropiedadComponent } from './pages/create-propiedad/create-propiedad.component';
-import { ReplaceCommaPipe } from './pipes/replace-comma.pipe';
 import { LandingComponent } from './pages/landing/landing.component';
+import { ReplaceCommaPipe } from './pipes/replace-comma.pipe';
 import { SidebarComponent } from './../component/sidebar/sidebar.component';
-import { DropdownModule } from 'primeng/dropdown';
+import { SharedModule } from "../shared/shared.module";
 
 
 
@@ -54,11 +58,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     ReplaceCommaPipe,
     LandingComponent,
     CreatePropiedadComponent,
-
-
   ],
+  providers: [],
+  exports: [CasasRoutingModule],
   imports: [
-
     ButtonModule,
     CardModule,
     CheckboxModule,
@@ -66,22 +69,22 @@ export function HttpLoaderFactory(http: HttpClient) {
     DropdownModule,
     FormsModule,
     HttpClientModule,
+    InputSwitchModule,
     PrimengModule,
+    ProgressBarModule,
     ProgressSpinnerModule,
     ReactiveFormsModule,
     RippleModule,
     TableModule,
-
-
+    ToastModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
-  ],
-  providers: [],
-  exports: [CasasRoutingModule]
+    }),
+    SharedModule
+  ]
 })
 export class CasasModule { }

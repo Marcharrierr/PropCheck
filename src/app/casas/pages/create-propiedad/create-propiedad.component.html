@@ -14,6 +14,14 @@
     </p-messages>
   </div>
 
+  <!--Progressbar-->
+  <div class="card" *ngIf="loading">
+    <p-progressBar
+      mode="indeterminate"
+      [style]="{ height: '6px' }"
+    ></p-progressBar>
+  </div>
+
   <!--Perfil propiedad-->
 
   <div class="card border-round shadow-3 justify-content-center m-3">
@@ -207,14 +215,11 @@
         <div
           class="flex-auto flex align-items-center justify-content-center font-bold m-2 border-round"
         >
-          <p-checkbox
+          <p-inputSwitch
             formControlName="luzNoService"
-            [binary]="true"
             inputId="ns"
             (onChange)="onCheckboxChange($event, 'luz')"
-          ></p-checkbox>
-
-          <label for="ny"> Sin Servicio </label>
+          ></p-inputSwitch>
         </div>
       </div>
       <!-- Agua -->
@@ -253,13 +258,11 @@
         <div
           class="flex-auto flex align-items-center justify-content-center font-bold m-2 border-round"
         >
-          <p-checkbox
+          <p-inputSwitch
             formControlName="aguaNoService"
-            [binary]="true"
             inputId="ns"
             (onChange)="onCheckboxChange($event, 'agua')"
-          ></p-checkbox>
-          <label for="ny"> Sin Servicio </label>
+          ></p-inputSwitch>
         </div>
       </div>
       <!-- gas -->
@@ -268,7 +271,7 @@
           class="flex-auto flex align-items-center justify-content-center font-bold m-2 border-round"
         >
           <i
-            class="fa-solid fa-gripfire text-yellow-500 justify-content-center m-2"
+            class="fa-brands fa-gripfire fa-xl text-yellow-500 justify-content-center m-2"
           ></i>
           Gas :
         </div>
@@ -298,13 +301,11 @@
         <div
           class="flex-auto flex align-items-center justify-content-center font-bold m-2 border-round"
         >
-          <p-checkbox
+          <p-inputSwitch
             formControlName="gasNoService"
-            [binary]="true"
             inputId="ns"
             (onChange)="onCheckboxChange($event, 'gas')"
-          ></p-checkbox>
-          <label for="ny"> Sin Servicio </label>
+          ></p-inputSwitch>
         </div>
       </div>
       <!-- Gasto común -->
@@ -344,13 +345,11 @@
         <div
           class="flex-auto flex align-items-center justify-content-center font-bold m-2 border-round"
         >
-          <p-checkbox
+          <p-inputSwitch
             formControlName="ggccNoService"
-            [binary]="true"
             inputId="ns"
             (onChange)="onCheckboxChange($event, 'ggcc')"
-          ></p-checkbox>
-          <label for="ny"> Sin Servicio </label>
+          ></p-inputSwitch>
         </div>
       </div>
       <!-- Contribuciones y Aseo -->
@@ -402,6 +401,7 @@
           label="Crear propiedad"
           styleClass="p-button-raised p-button-success"
           (click)="onSubmitButton()"
+          [disabled]="!myProperty.valid"
         ></p-button>
       </div>
     </div>

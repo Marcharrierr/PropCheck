@@ -9,6 +9,9 @@ import { Message } from 'primeng/api';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent {
+
+  sidebarVisible!: boolean;
+
   messages: Message[] | undefined;
 
   ngOninit() {

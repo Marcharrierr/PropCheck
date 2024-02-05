@@ -36,11 +36,21 @@ export class TablabdComponent implements OnInit {
   clientId!: 3;
 
   ngOnInit() {
+    this.loading = true;
     this.propertyService.getPropertiesByClientId(this.clientId)
       .subscribe(propiedades => {
 
         this.propiedades = propiedades;
+        console.log(propiedades)
+        this.loading = false;
       });
+
   }
+
+
+  deleteProperty(id: number) {
+    console.log(id)
+  }
+
 
 }

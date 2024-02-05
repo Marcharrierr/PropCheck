@@ -1,4 +1,14 @@
-<div class="p-datatable card m-1 border-round shadow-2 border-solid border-300">
+<div class="card" *ngIf="loading">
+  <p-progressBar
+    mode="indeterminate"
+    [style]="{ height: '6px' }"
+  ></p-progressBar>
+</div>
+
+<div
+  class="p-datatable card m-1 border-round shadow-2 border-solid border-300"
+  *ngIf="!loading"
+>
   <p-table
     #dt1
     [value]="propiedades"
@@ -191,6 +201,7 @@
             styleClass="p-button-raised p-button-danger"
             label="Eliminar"
             icon="pi pi-trash"
+            (click)="deleteProperty(propiedades.id)"
           ></p-button>
         </td>
         <ng-template #showPerfil>

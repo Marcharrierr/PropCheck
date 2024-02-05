@@ -13,6 +13,8 @@ export interface Property {
   status: string;
   created: Date;
   modified: Date;
+
+  [key: string]: any;
 }
 
 
@@ -24,4 +26,15 @@ export interface PropertyService {
   service_client_id: string;
   created: string;
   modified: string;
+}
+
+
+export interface ServiceData {
+  id: number;
+  name: string;
+  description: string;
+  category: string;
+  created: string;
+  modified: string;
+  provider_id: number;
 }

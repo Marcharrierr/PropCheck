@@ -6,6 +6,7 @@ import { Region, Type } from 'src/app/interfaces/property_service.interface';
 import { PropertyServiceService } from '../../../services/property-service.service'
 import { CreateServiceService } from './../../../services/create-service.service';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,6 +15,7 @@ import Swal from 'sweetalert2';
 })
 export class CreatePropiedadComponent implements OnInit {
 
+  loading: boolean = true;
 
 
   public myProperty: FormGroup = this.fb.group({
@@ -64,7 +66,8 @@ export class CreatePropiedadComponent implements OnInit {
     private fb: FormBuilder,
     private propertyService: PropertyService,
     private propertyServiceService: PropertyServiceService,
-    private createService: CreateServiceService
+    private createService: CreateServiceService,
+    private router: Router
   ) { }
 
 
@@ -107,10 +110,10 @@ export class CreatePropiedadComponent implements OnInit {
       }
     });
 
-
+    this.loading = true;
     this.propertyServiceService.getServiceProperties().subscribe(data => {
       this.serviceProperties = data;
-
+      this.loading = false;
     });
 
 
@@ -180,6 +183,34 @@ export class CreatePropiedadComponent implements OnInit {
     }
   }
 
+  validateServices(): boolean {
+    const serviceNames = ['luz', 'agua', 'gas', 'ggcc', 'contri', 'aseo'];
+    let isValid = true;
+
+    for (let key of serviceNames) {
+      const nameNoService = `${key}NoService`;
+      const control = this.myPropertyService.get(key);
+      const controlControl = this.myPropertyService.get(`${key}Control`);
+      const noServiceControl = this.myPropertyService.get(nameNoService);
+
+      // Solo marca el campo como inválido si no se ha seleccionado un proveedor en el dropdown y no se ha activado el switch
+      if (!noServiceControl?.value && (!control?.value || !controlControl?.value?.length)) {
+        control?.markAsTouched();
+        control?.setErrors({ 'required': true });
+        isValid = false;
+      }
+      // Si el switch está activado, no es necesario que haya validación en el input ni en el dropdown
+      else if (noServiceControl?.value) {
+        control?.clearValidators();
+        controlControl?.clearValidators();
+      }
+    }
+
+    return isValid;
+  }
+
+
+
 
 
 
@@ -231,17 +262,32 @@ export class CreatePropiedadComponent implements OnInit {
 
   onSubmitButton() {
 
-    console.log('Datos property: ', this.myProperty.value)
-    console.log('Datos property_service: ', this.myPropertyService.value)
+    if (this.validateServices()) {
+      console.log('Datos property: ', this.myProperty.value)
+      console.log('Datos property_service: ', this.myPropertyService.value)
 
-    this.createService.crearProperty(this.myProperty.value).subscribe({
-      next: (property_id: number) => {
-        this.asociarServicios(property_id);
-      },
-      error: (error: any) => {
-        console.error("mensaje de error:", error);
-      }
-    });
+      this.createService.crearProperty(this.myProperty.value).subscribe({
+        next: (property_id: number) => {
+          this.asociarServicios(property_id);
+        },
+        error: (error: any) => {
+          console.error("mensaje de error:", error);
+          Swal.fire({
+            title: 'Error al crear la propiedad',
+            text: 'Ha ocurrido un error al intentar crear la propiedad. Por favor, inténtelo de nuevo más tarde.',
+            icon: 'error',
+            confirmButtonText: 'Entendido'
+          });
+        }
+      });
+    } else {
+      Swal.fire({
+        title: 'Error',
+        text: 'Por favor, revise los campos y sus proveedores.',
+        icon: 'error',
+        confirmButtonText: 'Entendido'
+      });
+    }
   }
 
   asociarServicios(property_id: number) {
@@ -268,9 +314,21 @@ export class CreatePropiedadComponent implements OnInit {
       next: (response: any) => {
         console.log("property:", this.myProperty.value)
         console.log(response);
+        Swal.fire({
+          title: '¡Propiedad creada con éxito!',
+          icon: 'success',
+          confirmButtonText: 'Aceptar',
+        }).then(() => {
+          this.router.navigate(['/propiedades/landing']);
+        });
       },
       error: (error: any) => {
         console.error(error);
+        Swal.fire({
+          title: 'Error al crear la propiedad',
+          icon: 'error',
+          confirmButtonText: 'Aceptar'
+        });
       }
     });
   }

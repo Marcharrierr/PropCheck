@@ -77,5 +77,11 @@ export class PropertyService {
 
 
 
+  deleteProperty(id: number) {
+
+  }
+
+
+
 
 }

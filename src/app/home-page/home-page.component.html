@@ -1,172 +1,187 @@
 <!--  Menu encabezado  -->
 <div
-  style="background: #223d76"
-  class="py-2 px-2 mx-0 md:mx-1 lg:mx-1 lg:px-3 flex align-items-center justify-content-between relative lg:static border-round"
+  class="bg-blue-primary-propcheck w-100 h-14 static flex align-items-center"
 >
-  <a class="flex align-items-center">
+  <p-button
+    styleClass="flex ml-4 c-bluenav text-white text-sm p-button-text"
+    (click)="sidebarVisible = true"
+    icon="pi pi-bars text-3xl "
+  ></p-button>
+  <div class="grow align-items-center">
     <p-image
       src="/assets/img/Logo PropCheck final_blanco.jpeg"
-      alt="Image"
-      height="100"
-      width="100"
-      class="ml-4 lg:mr-1 animate__animated animate__fadeInLeft"
+      alt="Propcheck Image"
+      height="40"
+      width="40"
+      class="m-1 ml-3 translate-x-3 animate__animated animate__fadeInLeft"
     ></p-image>
-  </a>
-  <a
-    pRipple
-    class="cursor-pointer block lg:hidden text-700"
-    pStyleClass="@next"
-    enterClass="hidden"
-    leaveToClass="hidden"
-    [hideOnOutsideClick]="true"
+  </div>
+
+  <!--SideBar-->
+
+  <p-sidebar
+    class="flex items-center justify-content-between"
+    [(visible)]="sidebarVisible"
+    [showCloseIcon]="false"
   >
-    <i class="pi pi-bars text-yellow-600 text-4xl"></i>
-  </a>
-  <div
-    class="align-items-center flex-grow-1 justify-content-between hidden lg:flex absolute lg:static w-full left-0 px-6 lg:px-0 z-2"
-    style="top: 120px"
-  >
-    <ul
-      style="background: #223d76"
-      class="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row cursor-pointer"
-    >
-      <li>
-        <a pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 line-height-3">
+    <div class="flex justify-start align-items-center select-none flex-column">
+      <p-image
+        src="/assets/img/Logo PropCheck final_blanco.jpeg"
+        alt="Propcheck Image"
+        height="120"
+        width="120"
+        class="m-3 mb-5 translate-x-3 animate__animated animate__fadeInLeft"
+      ></p-image>
+      <div class="flex flex-column">
+        <div class="flex md:ml-3 mb-3 animate__animated animate__fadeInDown">
           <p-button
             label="Inicio"
-            styleClass="text-white p-button-text animate__animated animate__fadeInDown"
+            styleClass="text-white p-button-text "
+            icon="fa-solid fa-house fa-lg text-white"
           ></p-button>
-        </a>
-      </li>
-      <li>
-        <a
-          pRipple
-          class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3"
+        </div>
+        <div
+          class="flex md:ml-3 mb-3 text-900 font-medium animate__animated animate__fadeInDown"
         >
           <p-button
-            label="Nosotros"
-            styleClass="text-white p-button-text animate__animated animate__fadeInDown"
+            label="Servicios"
+            styleClass="text-white p-button-text "
+            icon="fa fa-tasks fa-xl text-white"
           ></p-button>
-        </a>
-      </li>
-      <li>
-        <a pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900">
+        </div>
+
+        <div
+          class="flex md:ml-3 mb-3 text-900 animate__animated animate__fadeInDown"
+        >
           <p-button
             label="Contáctanos"
-            styleClass=" text-white p-button-text animate__animated animate__fadeInDown"
+            styleClass=" text-white text-sm p-button-text "
+            icon="far fa-comment-alt fa-xl text-white"
           ></p-button>
-        </a>
-      </li>
-    </ul>
-    <div
-      style="background: #223d76"
-      class="flex justify-content-between lg:block border-top-1 lg:border-top-none py-3 lg:py-0 mt-3 lg:mt-0"
-    >
-      <p-button
-        label="Iniciar Sesión"
-        styleClass="p-button-raised p-button-warning animate__animated animate__fadeInRight animate__delay-2s"
-        routerLink="auth"
-      ></p-button>
+        </div>
+        <div
+          class="flex md:ml-3 mb-3 text-900 font-medium animate__animated animate__fadeInDown"
+        >
+          <p-button
+            label="Verifica tu informe"
+            styleClass="text-white p-button-text "
+            icon="fa-regular fa-circle-check fa-xl text-white"
+          ></p-button>
+        </div>
+        <div
+          class="flex m-0 md:ml-3 mb-3 text-900 animate__animated animate__fadeInDown"
+        >
+          <p-button
+            label="Iniciar Sesión"
+            styleClass="text-white text-sm p-button-text"
+            icon="fa-regular fa-user fa-xl text-white"
+            ClassName="flex m-auto my-auto "
+            routerLink="auth"
+          ></p-button>
+        </div>
+      </div>
     </div>
+  </p-sidebar>
+
+  <div class="justify-items-end">
+    <p-button
+      label="Iniciar Sesión"
+      styleClass="text-white text-sm p-button-text"
+      ClassName=" font-['Helvetica']  leading-[normal] animate__animated animate__fadeInRight animate__delay-2s"
+      routerLink="auth"
+    ></p-button>
   </div>
 </div>
 
-<!-- Mensaje de DEMO -->
-<p-messages severity="warn">
-  <ng-template pTemplate>
-    <i class="fa-solid fa-triangle-exclamation text-yellow-500"></i>
-    <div class="ml-2">Aplicación DEMO</div>
-  </ng-template>
-</p-messages>
-
 <!--  Portada cuerpo  -->
-<div class="grid surface-section text-800" style="background: #223d76">
-  <div
-    style="
-      background: linear-gradient(
-          0deg,
-          rgba(255, 255, 255, 0.2),
-          rgba(255, 255, 255, 0.2)
-        ),
-        radial-gradient(
-          107.36% 256.97% at 77.36% 57.52%,
-          #ffffff 35%,
-          #bddcf2 130%
-        );
-      clip-path: ellipse(150% 87% at 93% 70%);
-    "
-    class="col-12 md:col-8 p-5 text-center md:text-left flex align-items-center"
-  >
-    <section>
-      <span
-        class="block text-gray-800 text-6xl font-bold mb-1 animate__animated animate__fadeInLeftBig"
-        >PropCheck</span
-      >
-      <p
-        class="mb-4 text-700 line-height-3 font-bold animate__animated animate__fadeInLeftBig animate__delay-1s"
-      >
-        La solución de búsqueda de información de gastos comunes, servicios
-        básicos y tributos asociados a un inmueble
-      </p>
-
-      <p-button
-        label="Ingresa aquí"
-        styleClass="p-button-raised p-button-warning animate__animated animate__fadeInUp animate__delay-2s"
-        routerLink="auth"
-      ></p-button>
-    </section>
-  </div>
-  <div class="col-8 md:col-4">
-    <img
-      src="assets/img/main_blue.jpeg"
-      alt="Main_blue"
-      class="animate__animated animate__fadeInUp block"
-      height="auto"
-      width="100%"
-      style="clip-path: polygon(08% 0, 90% 0%, 100% 100%, 0 100%)"
-    />
-  </div>
+<div className="w-[80rem] basis-0 h-0 static">
+  <img
+    class="w-max-[80rem] top-0 overflow-hidden static"
+    src="../../assets/img/Portada_casa_1.svg"
+    alt="Portada Home"
+  />
+</div>
+<div
+  class="fill-[#172D5B] w-52 opacity-50 blur-3xl top-50 left-50 inline-block absolute"
+>
+  <p class="text-black text-4xl font-bold font-['Helvetica'] absolute">
+    Descubre la solución más inteligente<br />para administrar tus inmuebles
+  </p>
 </div>
 
 <!-- Feature informativo  -->
 
-<div
-  style="
-    background: linear-gradient(
-        0deg,
-        rgba(255, 255, 255, 0.2),
-        rgba(255, 255, 255, 0.2)
-      ),
-      radial-gradient(277.36% 46.97% at 97.36% 57.52%, #bddcf2 0%, #ffffff 100%);
-    clip-path: ellipse(150% 87% at 93% 24%);
-  "
-  class="flex-wrap px-6 py-2 md:px-4 lg:px-6 text-center"
->
-  <div class="mb-3 font-bold text-3xl">
-    <span class="text-900 animate__animated animate__fadeInUp"
-      >Nuestro producto,
-    </span>
-    <span class="text-blue-600 animate__animated animate__fadeInUp"
-      >muchas soluciones</span
+<div class="flex justify-center md:justify-start">
+  <div class="flex-col items-center w-full md:w-1/2 hidden md:flex">
+    <div
+      class="flex bg-blue-nav rounded-3xl mt-7 ml-5 text-center w-96 h-64 items-center invisible md:visible"
     >
+      <p-image
+        src="/assets/img/Logo PropCheck final_blanco.jpeg"
+        alt="Propcheck Image"
+        height="150"
+        width="200"
+        class="mx-auto"
+      ></p-image>
+    </div>
   </div>
-  <div class="text-700 mb-6 animate__animated animate__fadeInUp">
-    Te mostramos algunos de nuestros beneficios:
+  <div class="flex flex-col items-center justify-center w-full md:w-1/2">
+    <div class="flex-col justify-center ml-10 flex-grow my-5 text-center">
+      <div
+        class="text-blue-nav text-xl md:text-3xl font-bold font-['Helvetica'] text-start md:my-2"
+      >
+        ¿Qué hacemos en PropCheck?
+      </div>
+      <p
+        class="text-slate-800 text-sm md:text-2xl font-normal font-['Helvetica']leading-9 text-justify my-3 mr-6"
+      >
+        PropCheck entrega un informe concentrado de las deudas asociadas a una
+        propiedad (casa, departamento, oficina, local comercial, bodega,
+        estacionamiento y otros), abarcando servicios básicos como:
+      </p>
+      <div
+        class="flex flex-row text-blue-900 text-sm md:text-2xl font-bold font-['Helvetica']leading-9 text-center my-2"
+      >
+        <div class="text-start w-1/4">
+          • Agua
+          <br />
+          • Luz
+          <br />
+          • Gas
+        </div>
+        <div class="text-start">
+          • Gastos comunes
+          <br />
+          • Contribuciones de bienes raíces
+          <br />
+          • Pago de derechos de aseo domiciliario
+        </div>
+      </div>
+    </div>
   </div>
+</div>
+
+<!-- Feature informativo con tarjetas -->
+
+<div class="bg-gray-200 flex-wrap px-6 py-2 md:px-4 lg:px-6 text-center">
+  <div class="mb-3 font-bold text-3xl md:visible m-3">
+    <span class="text-blue-nav">Oprimiza HOY </span>
+  </div>
+  <span class="text-blue-800 text-2xl"
+    >Tus procesos con nuestros beneficios</span
+  >
 
   <div
-    class="flex flex-wrap card-container justify-content-center align-items-center"
+    class="flex flex-wrap card-container justify-content-center align-items-center mt-3 mb-3"
   >
-    <div class="card m-4 animate__animated animate__fadeInUp animate__delay-4s">
+    <div class="card rounded-2xl shadow">
       <span
-        class="p-3 shadow-2 mb-3 mt-3 inline-block bg-blue-500"
+        class="p-3 shadow-2 mb-3 mt-3 inline-block"
         style="border-radius: 10px"
       >
-        <i class="pi pi-check text-4xl text-yellow-300"></i>
+        <p-image src="../../assets/img/medal 1.png" class=" "></p-image>
       </span>
-      <div class="text-blue-600 text-xl mb-3 mt-3 font-medium">
-        Precisión y Calidad
-      </div>
+      <div class="text-xl mb-3 mt-3 p-3 font-medium">Precisión y Calidad</div>
       <span class="text-700 line-height-3 m-2"
         >Mediante la eliminación del error humano, garantizamos resultados
         precisos y de alta calidad en todas nuestras operaciones mediante
@@ -174,16 +189,14 @@
       >
     </div>
 
-    <div
-      class="card col-12 m-4 animate__animated animate__fadeInUp animate__delay-4s"
-    >
+    <div class="card col-12 m-4">
       <span
-        class="p-3 shadow-2 mb-3 mt-3 inline-block bg-blue-500"
+        class="p-3 shadow-2 mb-3 mt-3 inline-block"
         style="border-radius: 10px"
       >
-        <i class="pi pi-clock text-4xl text-yellow-300"></i>
+        <p-image src="../../assets/img/clock 1.png" class=" "></p-image>
       </span>
-      <div class="text-blue-600 text-xl mt-3 mb-3 font-medium">
+      <div class="text-xl mt-3 mb-3 font-medium">
         Información exacta y en tiempo real
       </div>
       <span class="text-700 line-height-3 m-2"
@@ -191,16 +204,14 @@
         una toma de decisiones informada y ágil.</span
       >
     </div>
-    <div
-      class="card col-12 m-4 animate__animated animate__fadeInUp animate__delay-4s"
-    >
+    <div class="card col-12 m-4">
       <span
-        class="p-3 shadow-2 mt-3 mb-3 inline-block bg-blue-500"
+        class="p-3 shadow-2 mt-3 mb-3 inline-block"
         style="border-radius: 10px"
       >
-        <i class="pi pi-user-minus text-4xl text-yellow-300"></i>
+        <p-image src="../../assets/img/page-speed 1.png " class=" "></p-image>
       </span>
-      <div class="text-blue-600 text-xl mb-3 mt-3 font-medium">
+      <div class="text-xl mb-3 mt-3 font-medium">
         Eliminación de HH y reasignación de funciones
       </div>
       <span class="text-700 line-height-3 text-overflow m-2"
@@ -208,16 +219,17 @@
         repetitivas, para enfocarse en tareas de mayor valor agregado.</span
       >
     </div>
-    <div
-      class="card col-12 m-4 animate__animated animate__fadeInUp animate__delay-5s"
-    >
+    <div class="card col-12 m-4">
       <span
-        class="p-3 shadow-2 mb-2 mt-3 inline-block bg-blue-500"
+        class="p-3 shadow-2 mb-2 mt-3 inline-block"
         style="border-radius: 10px"
       >
-        <i class="pi pi-money-bill text-4xl text-yellow-300"></i>
+        <p-image
+          src="../../assets/img/financial-profit 1.png"
+          class=" "
+        ></p-image>
       </span>
-      <div class="text-blue-600 text-xl font-medium mb-2 mt-2">
+      <div class="text-xl font-medium mb-2 mt-2">
         Ahorro en costos presentes y ante futuros crecimientos
       </div>
       <span class="text-700 line-height-3 text-overflow m-2"
@@ -226,16 +238,17 @@
         situaciones de crecimiento futuro.</span
       >
     </div>
-    <div
-      class="card col-12 m-4 animate__animated animate__fadeInUp animate__delay-5s text-center"
-    >
+    <div class="card col-12 m-4">
       <span
-        class="p-3 shadow-2 mb-3 mt-3 inline-block bg-blue-500"
+        class="p-3 shadow-2 mb-3 mt-3 inline-block"
         style="border-radius: 10px"
       >
-        <i class="pi pi-cog text-4xl text-yellow-300"></i>
+        <p-image
+          src="../../assets/img/team-management 1.png"
+          class=" "
+        ></p-image>
       </span>
-      <div class="text-blue-600 text-xl mb-3 mt-2 font-medium">
+      <div class="text-xl mb-3 mt-2 font-medium">
         Herramienta de gestión oportuna
       </div>
       <span class="text-700 line-height-3 text-justify m-2"
@@ -244,16 +257,14 @@
         respuesta rápida ante cambios o desafíos.
       </span>
     </div>
-    <div
-      class="card col-12 m-4 text-center animate__animated animate__fadeInUp animate__delay-5s"
-    >
+    <div class="card col-12 m-4 text-center">
       <span
-        class="p-3 shadow-3 mb-3 mt-3 inline-block bg-blue-500"
+        class="p-3 shadow-3 mb-3 mt-3 inline-block"
         style="border-radius: 10px"
       >
-        <i class="pi pi-link text-4xl text-yellow-300"></i>
+        <p-image src="../../assets/img/future 1.png" class=" "></p-image>
       </span>
-      <div class="text-blue-600 text-xl mb-2 mt-2 font-medium">
+      <div class="text-xl mb-2 mt-2 font-medium">
         Socio tecnológico de nuestros clientes
       </div>
       <span class="text-700 line-height-3 m-2"
@@ -265,16 +276,75 @@
   </div>
 </div>
 
+<!-- Simples pasos -->
+
+<div class="container mx-auto my-9">
+  <div class="flex flex-col items-center justify-center">
+    <h1 class="text-3xl font-bold text-center text-blue-800 my-3">
+      En sólo 3 simples pasos
+    </h1>
+    <div class="flex flex-col md:flex-row w-full p-3">
+      <div
+        class="flex flex-col items-center justify-center w-full md:w-1/3 my-3"
+      >
+        <i
+          class="fa fa-thin fa-chalkboard-user text-8xl text-blue-700 mb-3 md:mb-3"
+        ></i>
+        <div class="flex">
+          <div
+            class="rounded-full bg-blue-800 text-white w-14 h-12 flex items-center justify-center shadow-md border-2"
+          >
+            1
+          </div>
+          <p class="flex text-center mt-3">
+            Ingresa los datos de la propiedad y selecciona el medio de pago
+          </p>
+        </div>
+      </div>
+      <div class="flex flex-col items-center justify-center w-full md:w-1/3">
+        <i class="fa fa-thin fa-credit-card text-8xl text-blue-700 mb-1"></i>
+        <div class="flex">
+          <div
+            class="rounded-full bg-blue-800 text-white w-14 h-12 flex items-center justify-center shadow-md mt-1 border-2"
+          >
+            2
+          </div>
+          <p class="flex text-center">
+            Selecciona el informe que deseas comprar e ingresa los datos que te
+            solicitan
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center justify-center w-full md:w-1/3">
+        <i
+          class="fa fa-thin fa-file-arrow-down text-8xl text-blue-700 mb-1"
+        ></i>
+        <div class="flex">
+          <div
+            class="rounded-full bg-blue-800 text-white w-14 h-12 flex items-center justify-center shadow-md mt-1 border-2"
+          >
+            3
+          </div>
+          <p class="flex text-center">
+            En breves instantes recibirás tu informe en el correo electrónico
+            que ingresaste
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-gray-100"></div>
+
 <!-- Carrusel  -->
 
 <app-carousel></app-carousel>
 
 <!-- footer  -->
 
-<div
-  style="background: #223d76"
-  class="py-2 px-4 mx-0 mt-0 lg:full border-round"
->
+<div class="py-2 px-4 mx-0 mt-0 lg:full border-round bg-blue-primary-propcheck">
   <div class="grid justify-content-between">
     <div class="col-12 md:col-3" style="margin-top: -1.5rem">
       <a
@@ -297,14 +367,13 @@
             Nuestra empresa
           </h4>
           <a class="line-height-3 text-xl block cursor-pointer mb-2 text-200"
-            ><i class="pi pi-linkedin text-yellow-500"></i> LinkedIn
+            ><i class="pi pi-linkedin"></i> LinkedIn
           </a>
           <a class="line-height-3 text-xl block cursor-pointer mb-2 text-200"
-            ><i class="pi pi-inbox text-yellow-500"></i> News
+            ><i class="pi pi-inbox"></i> News
           </a>
           <a class="line-height-3 text-xl block cursor-pointer mb-2 text-200"
-            ><i class="pi pi-user-plus text-yellow-500"></i> Trabaja con
-            nosotros
+            ><i class="pi pi-user-plus"></i> Trabaja con nosotros
           </a>
 
           <p-inputText
@@ -314,34 +383,24 @@
             class="line-height-3 text-xl block cursor-pointer mb-2 text-200"
             (click)="enviarCorreo()"
           >
-            <i class="pi pi-envelope text-yellow-500"></i>
+            <i class="pi pi-envelope"></i>
             Contacto: {{ correoElectronico }}
           </p-inputText>
         </div>
-
-        <!-- <div>
-          <label for="email">Correo Electrónico:</label>
-          <p-inputText
-            id="email"
-            (ngModel)="(correoElectronico)"
-            disabled
-          ></p-inputText>
-
-        </div> -->
 
         <div class="col-12 md:col-3 mt-4 md:mt-0">
           <h4 class="font-medium text-2xl line-height-3 mb-3 text-100">
             Condiciones
           </h4>
           <a class="line-height-3 text-xl block cursor-pointer mb-2 text-200"
-            ><i class="pi pi-comments text-yellow-500"></i> FAQ</a
+            ><i class="pi pi-comments"></i> FAQ</a
           >
           <a class="line-height-3 text-xl block cursor-pointer mb-2 text-200"
-            ><i class="pi pi-info-circle text-yellow-500"></i>
-            Confidencialidad<img class="ml-2"
+            ><i class="pi pi-info-circle"></i> Confidencialidad<img
+              class="ml-2"
           /></a>
           <a class="line-height-3 text-xl block cursor-pointer mb-2 text-200"
-            ><i class="pi pi-minus-circle text-yellow-500"></i> Legal</a
+            ><i class="pi pi-minus-circle"></i> Legal</a
           >
         </div>
       </div>

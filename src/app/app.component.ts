@@ -38,8 +38,8 @@ export class AppComponent {
 
 
       case AuthStatus.notAuthenticated:
-        this.router.navigateByUrl('/propiedades/editar-propiedad/1');
-        //this.router.navigateByUrl('/');  <-- Ruta original
+        //this.router.navigateByUrl('/propiedades/editar-propiedad/1');
+        this.router.navigateByUrl('/');
         return;
 
     }
