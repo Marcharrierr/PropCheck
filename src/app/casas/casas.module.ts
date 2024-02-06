@@ -62,6 +62,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   providers: [],
   exports: [CasasRoutingModule],
   imports: [
+    SharedModule,
     ButtonModule,
     CardModule,
     CheckboxModule,
