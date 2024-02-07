@@ -1,1 +1,40 @@
-<p>apps-card works!</p>
+<div class="container bg-white p-4">
+  <div class="grid grid-cols-3 gap-2">
+    <div *ngFor="let casa of casas" class="card-component rounded overflow-hidden shadow-lg mb-4 border border-gray-300 p-4">
+      <div class="flex justify-between items-center mb-2">
+        <div>
+          <h1 class="text-xl font-bold">{{ casa.comunidad }}</h1>
+          <p>{{ casa.direccion }}</p>
+          <p>{{ casa.comuna }}</p>
+        </div>
+        <i class="fa-solid fa-building text-7xl"></i>
+      </div>
+      <div class="flex space-x-2">
+        <!-- Botones con iconos de Font Awesome -->
+        <button class="p-button bg-green-500 text-white w-10 h-10 rounded-full focus:outline-none">
+          <i class="fa-solid fa-bolt fa-xl"></i>
+        </button>
+
+        <button class="p-button bg-green-500 text-white w-10 h-10 rounded-full focus:outline-none">
+          <i class="fa-solid fa-droplet fa-xl"></i>
+        </button>
+
+        <button class="p-button bg-green-500 text-white w-10 h-10 rounded-full focus:outline-none">
+          <i class="fa-brands fa-gripfire fa-xl"></i>
+        </button>
+
+        <button class="p-button bg-green-500 text-white w-10 h-10 rounded-full focus:outline-none">
+          <i class="fa-solid fa-recycle fa-xl"></i>
+        </button>
+
+        <button class="p-button bg-green-500 text-white w-10 h-10 rounded-full focus:outline-none">
+          <i class="fa-solid fa-building-user fa-xl"></i>
+        </button>
+
+        <button class="p-button bg-green-500 text-white w-10 h-10 rounded-full focus:outline-none">
+          <i class="fa-solid fa-house-circle-exclamation fa-xl"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

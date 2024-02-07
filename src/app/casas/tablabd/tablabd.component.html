@@ -1,9 +1,15 @@
 <div class="card" *ngIf="loading">
-  <p-progressBar
-    mode="indeterminate"
-    [style]="{ height: '6px' }"
-  ></p-progressBar>
+  <p-progressBar mode="indeterminate" [style]="{ height: '6px' }"></p-progressBar>
 </div>
 
-
-<app-apps-card></app-apps-card>
+<div class="bg-white p-4 flex flex-col h-full">
+  <div class="relative">
+    <input type="text" placeholder="Buscar por dirección o comuna" [(ngModel)]="searchText" (input)="filterData()"
+      class="w-1/4 h-9">
+    <i class="absolute top-0 right-0 mt-3 mr-3 fas fa-search text-gray-400 w-3/4 h-9"></i>
+  </div>
+  <app-apps-card [casas]="getCurrentPageData()"></app-apps-card>
+  <!-- Botones de paginación -->
+  <p-paginator [rows]="pageSize" [totalRecords]="casas.length" (onPageChange)="onPageChange($event)"
+    [showJumpToPageDropdown]="true" [showPageLinks]="false"></p-paginator>
+</div>
