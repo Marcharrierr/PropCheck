@@ -1,38 +1,41 @@
-<div class="container bg-white p-4">
-  <div class="grid grid-cols-3 gap-2">
-    <div *ngFor="let casa of casas" class="card-component rounded overflow-hidden shadow-lg mb-4 border border-gray-300 p-4">
-      <div class="flex justify-between items-center mb-2">
+<div class="container bg-white">
+  <div class="grid grid-cols-1 justify-center gap-4">
+    <div *ngFor="let casa of casas"
+      class="card-component rounded-lg overflow-hidden shadow-lg mt-1 border border-gray-300 p-3 pb-6 -mb-3">
+      <div class="flex justify-between items-center mb-2 p-3">
         <div>
           <h1 class="text-xl font-bold">{{ casa.comunidad }}</h1>
           <p>{{ casa.direccion }}</p>
           <p>{{ casa.comuna }}</p>
         </div>
-        <i class="fa-solid fa-building text-7xl"></i>
+        <i class="fa-solid fa-building text-blue-900 text-7xl"></i>
       </div>
       <div class="flex space-x-2">
         <!-- Botones con iconos de Font Awesome -->
-        <button class="p-button bg-green-500 text-white w-10 h-10 rounded-full focus:outline-none">
-          <i class="fa-solid fa-bolt fa-xl"></i>
+        <button class="w-1 h-1 rounded-full focus:outline-none">
+          <img src="assets/img/llama.svg" alt="Icono de llamada">
         </button>
 
-        <button class="p-button bg-green-500 text-white w-10 h-10 rounded-full focus:outline-none">
-          <i class="fa-solid fa-droplet fa-xl"></i>
+        <button class="w-1 h-1 rounded-full focus:outline-none">
+          <img src="assets/img/agua.svg" alt="Icono de llamada">
+        </button>
+        <button class="w-1 h-1 rounded-full focus:outline-none">
+          <img src="assets/img/fuego.svg" alt="Icono de llamada">
+        </button>
+        <button class="w-1 h-1 rounded-full focus:outline-none">
+          <img src="assets/img/reci.svg" alt="Icono de llamada">
         </button>
 
-        <button class="p-button bg-green-500 text-white w-10 h-10 rounded-full focus:outline-none">
-          <i class="fa-brands fa-gripfire fa-xl"></i>
+        <button class="w-1 h-1 rounded-full focus:outline-none">
+          <img src="assets/img/edificio.svg" alt="Icono de llamada">
         </button>
 
-        <button class="p-button bg-green-500 text-white w-10 h-10 rounded-full focus:outline-none">
-          <i class="fa-solid fa-recycle fa-xl"></i>
+        <button class="w-1 h-1 rounded-full focus:outline-none">
+          <img src="assets/img/casapago.svg" alt="Icono de llamada">
         </button>
-
-        <button class="p-button bg-green-500 text-white w-10 h-10 rounded-full focus:outline-none">
-          <i class="fa-solid fa-building-user fa-xl"></i>
-        </button>
-
-        <button class="p-button bg-green-500 text-white w-10 h-10 rounded-full focus:outline-none">
-          <i class="fa-solid fa-house-circle-exclamation fa-xl"></i>
+        <!-- Nuevo botón de descarga -->
+        <button class="w-1 h-1 rounded-full ml-8 focus:outline-none">
+          <img src="assets/img/circulodescarga.svg" alt="Icono de llamada">
         </button>
       </div>
     </div>
