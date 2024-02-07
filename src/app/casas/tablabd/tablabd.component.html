@@ -1,14 +1,11 @@
-<div class="card" *ngIf="loading">
+<!-- <div class="card" *ngIf="loading">
   <p-progressBar
     mode="indeterminate"
     [style]="{ height: '6px' }"
   ></p-progressBar>
-</div>
+</div> -->
 
-<div
-  class="p-datatable card m-1 border-round shadow-2 border-solid border-300"
-  *ngIf="!loading"
->
+<div class="p-datatable card m-1 border-round shadow-2 border-solid border-300">
   <p-table
     #dt1
     [value]="propiedades"
@@ -185,7 +182,7 @@
             styleClass="p-button-raised p-button-warning"
             label="Editar"
             icon="pi pi-pencil"
-            [routerLink]="['/propiedades/editar-propiedad', propiedades.id]"
+            routerLink="['/propiedades/editar-propiedad', propiedades.id]"
           ></p-button>
         </td>
         <ng-template #showDeuda>
