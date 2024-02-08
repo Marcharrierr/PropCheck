@@ -72,7 +72,6 @@ export class PropertyService {
 
   getPropertyServiceById(id: number): Observable<PropertyServices[]> {
     return this.http.get<PropertyServices[]>(`http://localhost:3000/api/property-service/${id}`);
-
   }
 
 
@@ -80,8 +79,4 @@ export class PropertyService {
   deleteProperty(id: number) {
 
   }
-
-
-
-
 }

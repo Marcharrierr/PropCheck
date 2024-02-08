@@ -12,6 +12,7 @@ import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
 import { ListPageComponent } from './pages/list-page/list-page.component';
 import { PerfilCasasPageComponent } from './pages/perfil-casas-page/perfil-casas-page.component';
 import { TablabdComponent } from './tablabd/tablabd.component';
+import { PaginatorModule } from 'primeng/paginator';
 
 
 
@@ -62,6 +63,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   providers: [],
   exports: [CasasRoutingModule],
   imports: [
+    PaginatorModule,
+    SharedModule,
     ButtonModule,
     CardModule,
     CheckboxModule,

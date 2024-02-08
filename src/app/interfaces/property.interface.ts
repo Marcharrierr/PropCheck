@@ -13,11 +13,8 @@ export interface Property {
   status: string;
   created: Date;
   modified: Date;
-
   [key: string]: any;
 }
-
-
 
 
 export interface PropertyService {
