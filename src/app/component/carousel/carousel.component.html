@@ -1,5 +1,5 @@
 <h1
-  class="text-center font-bold font-['Helvetica'] text-blue-800 text-3xl animate__animated animate__fadeInUp"
+  class="text-center font-bold font-['Helvetica'] text-blue-800 text-3xl animate__animated animate__fadeInUp m-3"
 >
   Quienes confían en nosotros
 </h1>
@@ -10,14 +10,13 @@
   [autoplayInterval]="2000"
 >
   <ng-template let-image pTemplate="item">
-    <div class="image-card m-2">
+    <div class="image-card mx-auto m-2">
       <img
-        class="flex m-auto border-round pt-3"
+        class="flex mx-auto"
         [src]="image"
         [alt]="name"
         style="width: 230px; height: 160px"
       />
-      <h2 class="text-center font-bold">{{ name[images.indexOf(image)] }}</h2>
     </div>
   </ng-template>
 </p-carousel>

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Municipality } from './../../../interfaces/property_service.interface';
+import { Municipality } from '../../../interfaces/property_service.interface';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { PropertyService } from '../../../services/property.service';
-import { Region, Type } from 'src/app/interfaces/property_service.interface';
+import { Region, Type } from '../../../interfaces/property_service.interface';
 import { PropertyServiceService } from '../../../services/property-service.service'
-import { CreateServiceService } from './../../../services/create-service.service';
+import { CreateServiceService } from '../../../services/create-service.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 

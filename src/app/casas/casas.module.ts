@@ -24,7 +24,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { ToastModule } from 'primeng/toast';
-import { PrimengModule } from './../primeng/primeng.module';
+import { PrimengModule } from '../primeng/primeng.module';
 import { RippleModule } from 'primeng/ripple';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { TableModule } from 'primeng/table';
@@ -34,7 +34,7 @@ import { CasasRoutingModule } from './casas-routing.module';
 import { CreatePropiedadComponent } from './pages/create-propiedad/create-propiedad.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { ReplaceCommaPipe } from './pipes/replace-comma.pipe';
-import { SidebarComponent } from './../component/sidebar/sidebar.component';
+import { SidebarComponent } from '../component/sidebar/sidebar.component';
 import { SharedModule } from "../shared/shared.module";
 
 
