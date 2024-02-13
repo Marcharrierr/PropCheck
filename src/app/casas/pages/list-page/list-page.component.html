@@ -2,22 +2,70 @@
 
 <app-sidebar></app-sidebar>
 <!-- Contenedor Sidebar (Degradé) -->
-
-<div class="relative"></div>
-
-<p-messages severity="warn">
+<!-- <p-messages severity="warn">
   <ng-template pTemplate>
     <i class="fa-solid fa-triangle-exclamation text-yellow-500"></i>
     <div class="ml-1">Aplicación DEMO</div>
   </ng-template>
-</p-messages>
+</p-messages> -->
 
-<!--Dashboard charts-->
-<div class="flex-wrap border-round m-2">
-  <app-charts></app-charts>
+
+<div class="grid lg-grid-rows-5 grid-flow-col gap-4 justify-center mt-7">
+  <!-- Primer gráfico grande -->
+  <div class="lg-row-span-3 justify-center items-center">
+    <app-maingraph></app-maingraph>
+  </div>
+
+  <!-- Primeros tres gráficos -->
+  <div class="ms-row-span-2 justify-center">
+    <div class="container1 grid md-grid-cols-3 gap-4 justify-center mb-6">
+      <!-- Primeras tres gráficas -->
+      <div>
+        <app-graph [titulo]="tituloLuz"></app-graph>
+      </div>
+      <div>
+        <app-graph [titulo]="tituloagua"></app-graph>
+      </div>
+      <div>
+        <app-graph [titulo]="titulogas"></app-graph>
+      </div>
+      <!-- Divs de container2, incluidos en container1 en pantallas pequeñas -->
+      <div class="lg:hidden">
+        <app-graph [titulo]="tituloGastosComunes"></app-graph>
+      </div>
+      <div class="lg:hidden">
+        <app-graph [titulo]="tituloContribuciones"></app-graph>
+      </div>
+      <div class="lg:hidden">
+        <app-graph [titulo]="tituloAseo"></app-graph>
+      </div>
+    </div>
+
+    <!-- container2 solo se muestra en pantallas grandes -->
+    <!-- container2 solo se muestra en pantallas grandes -->
+    <div class="hidden lg:block">
+      <div class="container2 grid lg-grid-cols-3 gap-4 lg-justify-center">
+        <div>
+          <app-graph [titulo]="tituloGastosComunes"></app-graph>
+        </div>
+        <div>
+          <app-graph [titulo]="tituloContribuciones"></app-graph>
+        </div>
+        <div>
+          <app-graph [titulo]="tituloAseo"></app-graph>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+
 </div>
 
+
 <!-- Tabla bbdd -->
-<div class="card w-auto">
-  <app-tablabd></app-tablabd>
+<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 justify-center mt-6">
+  <app-tablabd class="min-w-96"></app-tablabd>
 </div>

@@ -1,0 +1,15 @@
+<div class="relative container bg-white w-full">
+  <div class="card-component rounded-lg overflow-hidden shadow-lg border border-gray-300 p-3 -mb-3 min-w-350px mt-1 min-h-lg">
+    <p class="text-center">{{titulo}}</p>
+    <div class="absolute top-2/4 left-2/4 flex flex-col">
+      <p class="flex flex-row">
+        <img src="/assets/img/aldia.svg" alt="Al Dia Icon" class="mr-2" /> Al Dia
+      </p>
+      <p class="flex flex-row">
+        <img class="ml-6" src="/assets/img/deuda.svg" alt="Con Deuda Icon" class="mr-2" />
+        Con Deuda
+      </p>
+    </div>
+    <p-chart class="absolute float-left mt-4" type="doughnut" [data]="data" width="120px" height="120px"></p-chart>
+  </div>
+</div>
