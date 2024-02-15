@@ -10,12 +10,12 @@ export class MaingraphComponent {
   options: any;
   total = 30;
   deuda = 20;
+  titulo = "Porcentaje global de deuda"
   deudaPorcentaje = Math.round((this.deuda / this.total) * 100);
   constructor() {
 
 
     this.data = {
-      labels: ['Al Dia', `Deuda`],
       datasets: [
         {
           data: [this.total, this.deuda],
@@ -29,6 +29,7 @@ export class MaingraphComponent {
 
     this.options = {
       responsive: true,
+      borderWidth:10,
     };
   }
 }

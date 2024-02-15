@@ -1,5 +1,6 @@
 <div class="relative container bg-white w-full">
-  <div class="card-component rounded-lg overflow-hidden shadow-lg border border-gray-300 p-3 -mb-3 min-w-350px mt-1 min-h-lg">
+  <div
+    class="card-component rounded-lg overflow-hidden shadow-lg border border-gray-300 p-3 -mb-3 min-w-350px mt-1 min-h-lg">
     <p class="text-center">{{titulo}}</p>
     <div class="absolute top-2/4 left-2/4 flex flex-col">
       <p class="flex flex-row">
@@ -10,6 +11,8 @@
         Con Deuda
       </p>
     </div>
-    <p-chart class="absolute float-left mt-4" type="doughnut" [data]="data" width="120px" height="120px"></p-chart>
+    <p-chart class="absolute float-left mt-4" type="doughnut" [data]="data" [options]="options" width="140px"
+      height="140px"></p-chart>
+    <p class="absolute top-1/2 left-1/4 transform -translate-x-1/3 -translate-y-4/13 text-1xl mt-3">{{deudaPorcentaje}}%</p>
   </div>
 </div>

@@ -1,6 +1,20 @@
-<div class="container bg-white relative">
-  <div class="card-component rounded-lg overflow-hidden shadow-lg border border-gray-300 p-8">
-    <p-chart class="justify-center" type="doughnut" [data]="data" [options]="options"></p-chart>
-    <p class="absolute top-1/2 left-1/2 transform -translate-x-1/2 text-4xl">{{deudaPorcentaje}}%</p>
+<div class="container bg-white">
+  <div class="card-component rounded-lg overflow-hidden shadow-lg border border-gray-300 px-6 pb-4">
+    <p class="text-center mt-0 p-0 h-5">{{titulo}}</p>
+    <div class="text-center">
+      <div class="inline-block relative">
+        <p-chart type="doughnut" [data]="data" [options]="options"></p-chart>
+        <p class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl">{{deudaPorcentaje}}%</p>
+      </div>
+    </div>
+    <div class="grid lg-grid-rows-2 grid-flow-col mt-3 mb-3">
+      <div class="row-span-1 text-left mr-5 mt-5">
+        <p>Propiedades al día: 120</p>
+        <p class="text-red-500">Propiedades con deuda: 120</p>
+      </div>
+      <div class="row-span-1 text-right mt-6">
+        <p>Total propiedades:240</p>
+      </div>
+    </div>
   </div>
 </div>
