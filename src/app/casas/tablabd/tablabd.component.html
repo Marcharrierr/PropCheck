@@ -1,22 +1,27 @@
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4 justify-center"> <!-- Columnas de la plantilla de cuadrícula -->
-  <div class="card" *ngIf="loading">
-    <!-- <p-progressBar mode="indeterminate" [style]="{ height: '6px' }"></p-progressBar> -->
-  </div>
-  <div class="container bg-white p-7 border border-gray-300 rounded-lg overflow-hidden shadow-lg mb-4 px-9">
-    <!-- Contenedor flex con dirección de columna en pantallas pequeñas y dirección de fila en pantallas grandes -->
-    <div class="relative lg:mb-0 lg:ml-8 lg:w-1/3"> <!-- Contenedor para el buscador -->
-      <p class="font-helvetica">Buscador de Propiedades</p>
-      <input type="text" placeholder="Buscar por dirección o comuna" [(ngModel)]="searchText" (input)="filterData()"
-        class="w-5 h-7 lg:w-full lg:h-12 bg-white">
-      <i class="absolute right-0 mt-3 mr-3 fas fa-search text-gray-400"></i>
-    </div>
+<!-- <div class="card" *ngIf="loading">
+    <p-progressBar mode="indeterminate" [style]="{ height: '6px' }"></p-progressBar>
+  </div> -->
+<div class="container bg-white p-9 border border-gray-300 rounded-lg mb-8 px-9 lg:min-w-lg">
 
-    <!-- Cards y otros elementos -->
-    <div class="flex justify-center mb-5 mt-3"> <!-- Reducción del relleno a p-2 -->
-      <app-apps-card [casas]="getCurrentPageData()"></app-apps-card>
-    </div>
-    <!-- Botones de paginación -->
-    <p-paginator [rows]="pageSize" [totalRecords]="casas.length" (onPageChange)="onPageChange($event)"
-      [showJumpToPageDropdown]="true" [showPageLinks]="false"></p-paginator>
+  <!-- Contenedor flex con dirección de columna en pantallas pequeñas y dirección de fila en pantallas grandes -->
+<div class="relative lg:mb-6 items-center mb-2"> <!-- Contenedor para el buscador -->
+  <p class="font-helvetica lg:ml-8 ms:text-center">Buscador de Propiedades</p>
+  <div class="relative">
+    <input type="text" placeholder="Buscar por dirección o comuna" [(ngModel)]="searchText" (input)="filterData()"
+      class="h-9 border rounded-lg bg-white pr-10 pl-10 lg:w-4 lg:ml-8 w-full"> <!-- Usar w-full aquí -->
+    <i class="absolute right-0 justify-center fas fa-search text-gray-400 lg:min-w-search w-1 mt-2" ></i>
   </div>
+</div>
+  <!-- Cards y otros elementos -->
+  <div class="flex justify-center mb-5 mt-3"> <!-- Reducción del relleno a p-2 -->
+    <ng-container *ngIf="filteredCasas.length > 0; else noResults">
+      <app-apps-card [casas]="getCurrentPageData()"></app-apps-card>
+    </ng-container>
+    <ng-template #noResults>
+      <div class="text-center text-gray-600">No se encontraron resultados.</div>
+    </ng-template>
+  </div>
+  <!-- Botones de paginación -->
+  <p-paginator [rows]="pageSize" [totalRecords]="filteredCasas.length" (onPageChange)="onPageChange($event)"
+    [showJumpToPageDropdown]="true" [showPageLinks]="false"></p-paginator>
 </div>

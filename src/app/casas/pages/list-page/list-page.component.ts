@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, Output } from '@angular/core';
 import { Product } from '../../../domain/product';
 
 
@@ -15,13 +15,14 @@ import { Product } from '../../../domain/product';
 export class ListPageComponent implements OnInit {
 
   products!: Product[];
-
   selectedProduct!: Product;
-
   loading: boolean = true;
-
-
-
+  @Output() tituloLuz = 'Deudores de luz'
+  @Output() tituloagua = 'Deudores de agua'
+  @Output() titulogas = 'Deudores de gas'
+  @Output() tituloGastosComunes = 'Deudores de Gastos Comunes'
+  @Output() tituloContribuciones = 'Deudores de Contribuciones'
+  @Output() tituloAseo = 'Deudores de Aseo'
 
   // list-page.component.js
   @ViewChild('dt1', { static: false }) dt1!: ElementRef;
