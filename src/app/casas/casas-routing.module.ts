@@ -7,6 +7,7 @@ import { EditPropiedadesPageComponent } from './pages/edit-propiedades-page/edit
 import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
 import { ListPageComponent } from './pages/list-page/list-page.component';
 import { PerfilCasasPageComponent } from './pages/perfil-casas-page/perfil-casas-page.component';
+import { PropertiesComponent } from './pages/properties/properties.component';
 
 
 //localhost/4200/propiedades
@@ -16,6 +17,7 @@ const routes: Routes = [
     component: LayoutPageComponent,
     children: [
       { path: 'list', component: ListPageComponent },
+      { path: 'properties', component: PropertiesComponent },
       { path: 'perfil', component: PerfilCasasPageComponent },
       { path: 'landing', component: LandingComponent },
       { path: 'crear-propiedad', component: CreatePropiedadComponent },

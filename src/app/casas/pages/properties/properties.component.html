@@ -1,0 +1,45 @@
+<!-- Flex -->
+
+<app-sidebar></app-sidebar>
+<!-- Contenedor Sidebar (Degradé) -->
+<!-- <p-messages severity="warn">
+  <ng-template pTemplate>
+    <i class="fa-solid fa-triangle-exclamation text-yellow-500"></i>
+    <div class="ml-1">Aplicación DEMO</div>
+  </ng-template>
+</p-messages> -->
+
+<div class="grid lg:grid-cols-1 justify-center lg:h-screen relative">
+  <!-- <img src="/assets/img/edificio.jpg" alt="" class="w-full absolute z-0 inset-0"> -->
+  <div class="lg:flex lg:flex-col lg:h-1/6 rounded-lg overflow-hidden w-full relative mt-7">
+    <div class="justify-center lg:h-screen relative flex flex-col items-center">
+      <p class="font-helvetica text-center mb-2">Propiedades Disponibles</p>
+      <div class="relative">
+        <input type="text" placeholder="Buscar por dirección o comuna" [(ngModel)]="searchText" (input)="filterData()"
+        class="border rounded-lg bg-white pl-10 pr-4 w-96 h-12">
+        <i class="absolute right-3 top-1/2 transform -translate-y-1/2 fas fa-search text-gray-400"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="lg:flex lg:flex-col lg:h-5/6 rounded-t-large overflow-hidden shadow-lg border border-gray-300 w-full items-center justify-center relative z-3">
+    <div class="grid lg:grid-cols-2 w-full">
+      <p class=" lg:col-span-2 text-center ml-1 w-5 mt-3 font-helvetica">Propiedades encontradas:</p>
+      <button class="mb-3 ml-auto  w-3 mr-7"><img src="/assets/img/crearpropiedad.svg" alt=""></button>
+    </div>
+    <div class="flex justify-center mb-7"> <!-- Reducción del relleno a p-2 -->
+      <ng-container *ngIf="filteredCasas.length > 0; else noResults">
+        <app-apps-card [casas]="getCurrentPageData()"></app-apps-card>
+      </ng-container>
+      <ng-template #noResults>
+        <div class="text-center text-gray-600">No se encontraron resultados.</div>
+      </ng-template>
+    </div>
+
+    <!-- Botones de paginación -->
+    <p-paginator [rows]="pageSize" [totalRecords]="filteredCasas.length" (onPageChange)="onPageChange($event)"
+      [showJumpToPageDropdown]="true" [showPageLinks]="false" class="mt-1"></p-paginator>
+  </div>
+
+</div>
+

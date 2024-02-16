@@ -36,6 +36,7 @@ import { LandingComponent } from './pages/landing/landing.component';
 import { ReplaceCommaPipe } from './pipes/replace-comma.pipe';
 import { SidebarComponent } from '../component/sidebar/sidebar.component';
 import { SharedModule } from "../shared/shared.module";
+import { PropertiesComponent } from './pages/properties/properties.component';
 
 
 
@@ -59,6 +60,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ReplaceCommaPipe,
     LandingComponent,
     CreatePropiedadComponent,
+    PropertiesComponent,
   ],
   providers: [],
   exports: [CasasRoutingModule],

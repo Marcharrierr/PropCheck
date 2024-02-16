@@ -28,6 +28,9 @@ module.exports = {
         'none-sm': 'none', // Oculta en pantallas pequeñas
         'block-md': 'block', // Muestra en pantallas medianas
       },
+      borderRadius: {
+        'large': '40px', // Redondeo de 30px
+      },
     },
   },
   plugins: [],
