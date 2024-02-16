@@ -6,10 +6,6 @@ import { CommonModule } from '@angular/common';
 import { MaingraphComponent } from './maingraph/maingraph.component';
 import { GraphComponent } from './graph/graph.component';
 import { ChartModule } from 'primeng/chart';
-import { TuiRootModule } from '@taiga-ui/core';
-import { TuiMoneyModule } from '@taiga-ui/addon-commerce';
-import { TuiRingChartModule } from '@taiga-ui/addon-charts';
-import {TuiLegendItemModule} from '@taiga-ui/addon-charts';
 
 
 @NgModule({
@@ -20,7 +16,7 @@ import {TuiLegendItemModule} from '@taiga-ui/addon-charts';
     MaingraphComponent,
     GraphComponent,
   ],
-  imports: [CommonModule, ChartModule, TuiRootModule, TuiMoneyModule, TuiRingChartModule, TuiLegendItemModule],
+  imports: [CommonModule, ChartModule],
   exports: [
     Error404PageComponent,
     AppsCardComponent,
