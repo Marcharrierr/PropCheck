@@ -29,7 +29,7 @@ export class GraphComponent {
     };
 
     this.options = {
-      borderWidth:6,
+      cutout: '85%',
     };
   }
   activeItemIndex = NaN;

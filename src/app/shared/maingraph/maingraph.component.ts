@@ -29,7 +29,7 @@ export class MaingraphComponent {
 
     this.options = {
       responsive: true,
-      borderWidth:10,
+      cutout: '85%',
     };
   }
 }
