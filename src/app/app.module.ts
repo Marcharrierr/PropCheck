@@ -28,15 +28,11 @@ import { StyleClassModule } from 'primeng/styleclass';
 import { MenubarModule } from 'primeng/menubar';
 
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     CarouselComponent,
-
   ],
   imports: [
     AnimateModule,

@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { MaingraphComponent } from './maingraph/maingraph.component';
 import { GraphComponent } from './graph/graph.component';
 import { ChartModule } from 'primeng/chart';
+import { AppsCardPropertiesComponent } from './apps-card-properties/apps-card-properties.component';
 
 
 @NgModule({
@@ -15,13 +16,15 @@ import { ChartModule } from 'primeng/chart';
     AppsCardComponent,
     MaingraphComponent,
     GraphComponent,
+    AppsCardPropertiesComponent,
   ],
   imports: [CommonModule, ChartModule],
   exports: [
     Error404PageComponent,
     AppsCardComponent,
     GraphComponent,
-    MaingraphComponent
+    MaingraphComponent,
+    AppsCardPropertiesComponent
   ]
 })
 export class SharedModule { }

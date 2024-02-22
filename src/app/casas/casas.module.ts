@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
+import { TabViewModule } from 'primeng/tabview';
 
 
 import { EditPropiedadesPageComponent } from './pages/edit-propiedades-page/edit-propiedades-page.component';
@@ -37,6 +37,8 @@ import { ReplaceCommaPipe } from './pipes/replace-comma.pipe';
 import { SidebarComponent } from '../component/sidebar/sidebar.component';
 import { SharedModule } from "../shared/shared.module";
 import { PropertiesComponent } from './pages/properties/properties.component';
+import { PropertyDetailComponent } from './pages/property-detail/property-detail.component';
+import { PropertyUserProfileComponent } from './pages/property-user-profile/property-user-profile.component';
 
 
 
@@ -61,10 +63,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     LandingComponent,
     CreatePropiedadComponent,
     PropertiesComponent,
+    PropertyDetailComponent,
+    PropertyUserProfileComponent,
   ],
   providers: [],
   exports: [CasasRoutingModule],
   imports: [
+    TabViewModule,
     PaginatorModule,
     SharedModule,
     ButtonModule,
