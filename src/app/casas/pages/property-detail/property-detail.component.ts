@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./property-detail.component.css']
 })
 export class PropertyDetailComponent {
-
+  selectedCity: any;
 
   detailCuentas = [
     {

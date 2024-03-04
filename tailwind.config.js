@@ -7,22 +7,26 @@ module.exports = {
     extend: {
       colors:{
         "blue-primary-propcheck": "#172E5E",
-        "blue-nav": "#102E6E"
+        "blue-nav": "#102E6E",
+        "blue-text": "#2455BE",
       },
       maxWidth: {
-        '900': '1500px',
+        'cardList': '1500px',
       },
       minWidth: {
-        'lg': '50px', // Establece un min-width de 1500px solo en pantallas grandes
+        'lg': '50px',
         '350px': '335px',
         '400px': '435px',
         '320px': '290px',
         '800px': '890px',
-        'search': '920px'
+        'search': '920px',
+        'cardList': '1500px',
+        'icon': '45px',
       },
       minHeight: {
         'lg': '220px',
         'lg-500': '200px',
+        'icon': '15px',
       },
       screens: {
         'sm': '640px', // pantalla pequeña
@@ -37,6 +41,7 @@ module.exports = {
       borderRadius: {
         'large': '40px', // Redondeo de 30px
       },
+
     },
   },
   plugins: [],

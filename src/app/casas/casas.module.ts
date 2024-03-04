@@ -39,6 +39,8 @@ import { SharedModule } from "../shared/shared.module";
 import { PropertiesComponent } from './pages/properties/properties.component';
 import { PropertyDetailComponent } from './pages/property-detail/property-detail.component';
 import { PropertyUserProfileComponent } from './pages/property-user-profile/property-user-profile.component';
+import { UserResetPasswordComponent } from './pages/user-reset-password/user-reset-password.component';
+import { PropertyReportsComponent } from './pages/property-reports/property-reports.component';
 
 
 
@@ -65,6 +67,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     PropertiesComponent,
     PropertyDetailComponent,
     PropertyUserProfileComponent,
+    UserResetPasswordComponent,
+    PropertyReportsComponent,
   ],
   providers: [],
   exports: [CasasRoutingModule],

@@ -32,7 +32,7 @@ export class AppComponent {
 
       case AuthStatus.notAuthenticated:
         // this.router.navigateByUrl('/propiedades/list');
-        this.router.navigateByUrl('/propiedades/property-detail');
+        this.router.navigateByUrl('/propiedades/reports');
         return;
     }
   });
