@@ -8,10 +8,10 @@ import { Component } from '@angular/core';
 export class CarouselComponent {
 
   images: string[] = [
-    './assets/empresas/ProRenta.jpeg',
-    './assets/empresas/AsciendeYa.jpeg',
-    './assets/empresas/Cumbres Gestión inmobiliaria.jpeg',
-    './assets/empresas/Rentando.jpeg',
+    'assets/empresas/ProRenta.jpeg',
+    'assets/empresas/AsciendeYa.jpeg',
+    'assets/empresas/Cumbres Gestión inmobiliaria.svg',
+    'assets/empresas/Rentando.jpeg',
   ];
   name: string[] = [
     'ProRenta',

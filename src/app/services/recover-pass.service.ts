@@ -8,13 +8,13 @@ import { Observable, catchError, map, throwError } from 'rxjs';
 })
 export class RecoverPassService {
 
-  private readonly baseUrl:String = environment.baseUrld;
+  private readonly baseUrl: String = environment.baseUrld;
 
   private http = inject(HttpClient); //inject cliente http
 
-constructor() { }
+  constructor() { }
 
-  sendMail(to:string): Observable<any> {
+  sendMail(to: string): Observable<any> {
     const url = `${this.baseUrl}/send-email`;
     return this.http.post(url, { to }, { withCredentials: true });
   }

@@ -1,0 +1,64 @@
+<div
+  style="background: #223d76"
+  class="flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden"
+>
+  <div class="flex flex-column align-items-center justify-content-center">
+    <!--  logo      -->
+    <img
+      src="/assets/img/Logo PropCheck final_blanco.jpeg"
+      height="150"
+      width="150"
+      alt="Logo Propcheck"
+      class="mb-3 w-10rem flex-shrink-0"
+      routerLink="/"
+    />
+
+    <!--  Degradé      -->
+
+    <!--  formato intup     -->
+    <form
+      class="w-32rem surface-card py-8 sm:px-5 p-4"
+      style="border-radius: 53px"
+      autocomplete="off"
+      [formGroup]="myForm"
+      (ngSubmit)="login()"
+    >
+      <div class="text-center">
+        <label class="block text-blue-600 font-medium text-lg"
+          ><h2>Inicia sesión para continuar</h2></label
+        >
+      </div>
+
+      <div class="flex-row p-2">
+        <span class="p-float-label text-center mb-5">
+          <input
+            pInputText
+            formControlName="email"
+            type="text"
+            class="w-full md:w-23rem p-3"
+          />
+          <label class="font-bold" htmlFor="usuario">Usuario</label>
+        </span>
+        <div class="flex-1 align-items-center justify-content-between mb-5">
+          <span class="p-float-label">
+            <p-password
+              formControlName="password"
+              [toggleMask]="true"
+              inputStyleClass=" w-23rem max p-3 "
+            ></p-password>
+            <label class="font-bold" htmlFor="Contraseña">Contraseña</label>
+          </span>
+        </div>
+        <button
+          pButton
+          pRipple
+          type="submit"
+          [disabled]="myForm.invalid"
+          label="Iniciar Sesión"
+          class="w-full p-3 text-xl p-button-warning"
+        ></button>
+        <!--routerLink="/casas/list"-->
+      </div>
+    </form>
+  </div>
+</div>

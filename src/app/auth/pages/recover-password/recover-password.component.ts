@@ -25,6 +25,10 @@ function passwordMatchValidator(control: AbstractControl): ValidationErrors | nu
   styleUrls: ['./recover-password.component.css']
 })
 export class RecoverPasswordComponent implements OnInit {
+
+  sidebarVisible!: boolean;
+
+
   get isFormValid(): boolean {
     return this.passwordForm.valid;
   }
@@ -39,49 +43,49 @@ export class RecoverPasswordComponent implements OnInit {
     private changePasswordService: ChangePasswordService,
     private formBuilder: FormBuilder,
     private router: Router
-    ) {
-      this.passwordForm = this.formBuilder.group({
-        password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(8)]],
-        confirmPassword: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(8)]]
-      }, { validator: passwordMatchValidator })
-     }
+  ) {
+    this.passwordForm = this.formBuilder.group({
+      password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(8)]],
+      confirmPassword: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(8)]]
+    }, { validator: passwordMatchValidator })
+  }
 
-     ngOnInit() {
-      this.route.queryParams.subscribe(params => {
-        this.token = params['token'];
-    
-        // Verificar el token antes de permitir al usuario cambiar la contraseña
-        this.changePasswordService.verifyToken(this.token).subscribe(
-          (response) => {
-            if (response.success) {
-              const decodedToken = jwtDecode(this.token) as { email: string };
-              const userEmail = decodedToken.email;
-              console.log('Decoded Email:', userEmail);
-            } else {
-              console.error('El token ha expirado');
-              // Mostrar mensaje de error y redirigir al home
-              Swal.fire({
-                title: 'Error al cambiar contraseña',
-                text: 'El enlace ha caducado, solicitelo nuevamente.',
-                icon: 'error',
-              }).then(() => {
-                this.router.navigateByUrl('/')
-              });
-            }
-          },
-          (error) => {
-            console.error('Error al verificar el token', error);
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      this.token = params['token'];
+
+      // Verificar el token antes de permitir al usuario cambiar la contraseña
+      this.changePasswordService.verifyToken(this.token).subscribe(
+        (response) => {
+          if (response.success) {
+            const decodedToken = jwtDecode(this.token) as { email: string };
+            const userEmail = decodedToken.email;
+            console.log('Decoded Email:', userEmail);
+          } else {
+            console.error('El token ha expirado');
+            // Mostrar mensaje de error y redirigir al home
+            Swal.fire({
+              title: 'Error al cambiar contraseña',
+              text: 'El enlace ha caducado, solicitelo nuevamente.',
+              icon: 'error',
+            }).then(() => {
+              this.router.navigateByUrl('/')
+            });
           }
-        );
-      });
-    }
+        },
+        (error) => {
+          console.error('Error al verificar el token', error);
+        }
+      );
+    });
+  }
 
   onSubmit() {
     const password = this.passwordForm.get('password')?.value;
     const confirmPassword = this.passwordForm.get('confirmPassword')?.value;
 
     // Verificar que contraseñas coincidan antes de enviar la solicitud
-    if(password !== confirmPassword) {
+    if (password !== confirmPassword) {
       console.error('Las contraseñas no coinciden');
       return;
     }
@@ -98,18 +102,18 @@ export class RecoverPasswordComponent implements OnInit {
                 text: "Vuelva a iniciar sesión",
                 icon: "success"
               }).then(() => {
-                  this.router.navigateByUrl('/');
-            });
-            console.log('Contraseña actualizada exitosamente', response);
-          },
-          (error) => {
-            console.error('Error al actualizar la contraseña', error);
-            Swal.fire('Error', 'Failed to send email', 'error');
-            if (error instanceof HttpErrorResponse) {
-              console.error('Status Code:', error.status);
-              console.error('Error Message:', error.error?.message || 'Error desconocido')
+                this.router.navigateByUrl('/');
+              });
+              console.log('Contraseña actualizada exitosamente', response);
+            },
+            (error) => {
+              console.error('Error al actualizar la contraseña', error);
+              Swal.fire('Error', 'Failed to send email', 'error');
+              if (error instanceof HttpErrorResponse) {
+                console.error('Status Code:', error.status);
+                console.error('Error Message:', error.error?.message || 'Error desconocido')
+              }
             }
-          }
           );
         } else {
           console.error('El token ha expirado');
@@ -123,12 +127,12 @@ export class RecoverPasswordComponent implements OnInit {
 
   private getEmailFromToken(): string {
     try {
-      if(!this.token) {
+      if (!this.token) {
         console.error('Token no disponible');
         return '';
       }
 
-      const decodedToken = jwtDecode(this.token) as { email:string };
+      const decodedToken = jwtDecode(this.token) as { email: string };
       return decodedToken.email;
     } catch (error) {
       console.error('Error al decodificar el token', error);

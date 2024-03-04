@@ -1,60 +1,103 @@
 <!-- Sidebar -->
-<div style="background: #102e6e" class="justify-content-start">
-  <div class="flex align-center">
-    <p-menubar class="py-2 px-2 mx-0 md:mx-1 flex">
-      <p-button
-        styleClass="p-button-warning ml-auto"
-        (click)="sidebarVisible = true"
-        icon="pi pi-bars"
-      >
-      </p-button>
-    </p-menubar>
+<div
+  class="bg-blue-primary-propcheck w-100 h-14 static align-items-center flex"
+>
+  <p-button
+    styleClass="flex ml-4 text-white text-sm p-button-text"
+    (click)="sidebarVisible = true"
+    icon="pi pi-bars text-3xl"
+  ></p-button>
 
-    <img
+  <!--SideBar-->
+  <div class="grow align-items-center">
+    <p-image
       src="/assets/img/Logo PropCheck final_blanco.jpeg"
-      height="70"
-      width="75"
-      alt="Logo Propcheck"
-      class="mr-auto m-2"
-    />
-
-    <p-sidebar [(visible)]="sidebarVisible">
-      <!-- Logo internos Sidebar -->
-      <div class="card flex justify-content-center mb-4">
-        <p-image
-          src="/assets/img/Logo PropCheck final_blanco.jpeg"
-          alt="Propcheck"
-          height="130"
-          width="130"
-        ></p-image>
-      </div>
-
-      <!-- Contenido interno Sidebar -->
-      <ng-template pTemplate="body">
-        <p-button
-          icon="pi pi-list"
-          label="Lista de propiedades"
-          styleClass="p-button-warning text-xl w-full mb-4"
-          routerLink="/propiedades/list"
-          (click)="sidebarVisible = false"
-        ></p-button>
-
-        <p-button
-          icon="pi pi-list"
-          label="Ver propiedades"
-          styleClass="p-button-warning text-xl w-full mb-4"
-          routerLink="/propiedades/landing"
-          (click)="sidebarVisible = false"
-        ></p-button>
-
-        <p-button
-          icon="pi pi-sign-out"
-          label="Cerrar Sesión"
-          styleClass="p-button-danger text-xl w-full mb-4"
-          (click)="onLogout()"
-        ></p-button>
-      </ng-template>
-    </p-sidebar>
+      alt="Propcheck Image"
+      height="40"
+      width="40"
+      class="m-1 ml-3 translate-x-3 animate__animated animate__fadeInLeft"
+    ></p-image>
   </div>
-  <!-- Eliminar div de abajo para cambiar fondo blanco -->
+
+  <p-sidebar [(visible)]="sidebarVisible">
+    <!-- Logo internos Sidebar -->
+    <div class="card flex justify-content-center mb-4">
+      <p-image
+        src="/assets/img/Logo PropCheck final_blanco.jpeg"
+        alt="Propcheck"
+        height="130"
+        width="130"
+      ></p-image>
+    </div>
+    <!-- Contenido interno Sidebar -->
+    <ng-template pTemplate="body">
+      <div class="flex-row">
+        <div class="flex ml-5 mb-3 text-900 justify-content-start">
+          <img src="../../../assets/img/home-interno.svg" alt="" />
+          <p-button
+            label="Home"
+            styleClass=" text-white text-lg p-button-text "
+            routerLink="/propiedades/list"
+            (click)="sidebarVisible = false"
+          ></p-button>
+        </div>
+        <div class="flex ml-5 mb-3 text-900 justify-content-start">
+          <img src="../../../assets/img/propiedades.svg" alt="" />
+          <p-button
+            label="Propiedades"
+            styleClass=" text-white text-lg p-button-text "
+            routerLink="/propiedades/list"
+            (click)="sidebarVisible = false"
+          ></p-button>
+        </div>
+
+        <div class="flex ml-5 mb-3 text-900 justify-content-start">
+          <img src="../../../assets/img/informes.svg" alt="" />
+          <p-button
+            label="Tus informes"
+            styleClass=" text-white text-lg p-button-text "
+            routerLink="/propiedades/list"
+            (click)="sidebarVisible = false"
+          ></p-button>
+        </div>
+
+        <div class="flex ml-5 mb-3 text-900 justify-content-start">
+          <img src="../../../assets/img/user.svg" alt="" />
+          <p-button
+            label="Perfil"
+            styleClass=" text-white text-lg p-button-text "
+            routerLink="/propiedades/landing"
+            (click)="sidebarVisible = false"
+          ></p-button>
+        </div>
+
+        <div class="flex ml-5 mb-3 text-900 justify-content-start">
+          <img src="../../../assets/img/mesayuda.svg" alt="" />
+          <p-button
+            label="Mesa de ayuda"
+            styleClass=" text-white text-lg p-button-text "
+            routerLink="/propiedades/landing"
+            (click)="sidebarVisible = false"
+          ></p-button>
+        </div>
+
+        <div class="flex">
+          <div class="flex ml-5 mb-3 text-900 justify-content-start">
+            <img src="../../../assets/img/cerrarSesion.svg" alt="" />
+            <p-button
+              label="Cerrar Sesión"
+              styleClass=" text-white text-lg p-button-text "
+              (click)="onLogout()"
+            ></p-button>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-sidebar>
+  <div class="flex justify-items-end">
+    <label
+      class="px-24 text-white text-sm whitespace-nowrap p-button-text font-['Helvetica'] leading-[normal]"
+      >Bienvenido, Usuario</label
+    >
+  </div>
 </div>
