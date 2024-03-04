@@ -9,6 +9,9 @@ module.exports = {
         "blue-primary-propcheck": "#172E5E",
         "blue-nav": "#102E6E",
         "blue-text": "#2455BE",
+        "blue-footer": "#1D2B49",
+        "blue-tittle": "#102E6F",
+
       },
       maxWidth: {
         'cardList': '1500px',
