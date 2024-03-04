@@ -1,6 +1,4 @@
 import { Component, Input } from '@angular/core';
-import {tuiSum} from '@taiga-ui/cdk';
-
 @Component({
   selector: 'app-graph',
   templateUrl: './graph.component.html',
@@ -36,7 +34,6 @@ export class GraphComponent {
   colors = ['#ff0000', '#00ff00'];
   readonly value = [80,20];
   readonly labels = ['Al Dia', 'Con Deuda'];
-  readonly sum = tuiSum(...this.value);
 
   isItemActive(index: number): boolean {
       return this.activeItemIndex === index;
