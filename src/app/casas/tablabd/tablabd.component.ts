@@ -12,17 +12,219 @@ import { Property } from '../../interfaces/property.interface';
   styles: [],
 })
 export class TablabdComponent implements OnInit {
+  casas = [
+    {
+      comunidad: 'Comunida Feliz',
+      direccion: 'Merced 691',
+      unidad: 'DPTO 1011',
+      comuna: 'Santiago centro',
+      detProp: true,
+      deuda: 103557,
+    },
+    {
+      comunidad: 'Edifito',
+      direccion: 'Maria Auxiliadora 721',
+      unidad: 'DPTO 1401A',
+      comuna: 'San Miguel',
+      detProp: true,
+      deuda: 153625,
+    },
+    {
+      comunidad: 'Edifito',
+      direccion: 'Almirante Pastene 70',
+      unidad: 'DPTO 703',
+      comuna: 'Providencia',
+      detProp: true,
+      deuda: 160622,
+    },
+    {
+      comunidad: 'Comunida Feliz',
+      direccion: 'Merced 691',
+      unidad: 'DPTO 1011',
+      comuna: 'Santiago centro',
+      detProp: true,
+      deuda: 103557,
+    },
+    {
+      comunidad: 'Edifito',
+      direccion: 'Maria Auxiliadora 721',
+      unidad: 'DPTO 1401A',
+      comuna: 'San Miguel',
+      detProp: true,
+      deuda: 153625,
+    },
+    {
+      comunidad: 'Edifito',
+      direccion: 'Almirante Pastene 70',
+      unidad: 'DPTO 703',
+      comuna: 'Providencia',
+      detProp: true,
+      deuda: 160622,
+    },
+    {
+      comunidad: 'Comunida Feliz',
+      direccion: 'Merced 691',
+      unidad: 'DPTO 1011',
+      comuna: 'Santiago centro',
+      detProp: true,
+      deuda: 103557,
+    },
+    {
+      comunidad: 'Edifito',
+      direccion: 'Maria Auxiliadora 721',
+      unidad: 'DPTO 1401A',
+      comuna: 'San Miguel',
+      detProp: true,
+      deuda: 153625,
+    },
+    {
+      comunidad: 'Edifito',
+      direccion: 'Almirante Pastene 70',
+      unidad: 'DPTO 703',
+      comuna: 'Providencia',
+      detProp: true,
+      deuda: 160622,
+    },
+    {
+      comunidad: 'Comunida Feliz',
+      direccion: 'Merced 691',
+      unidad: 'DPTO 1011',
+      comuna: 'Santiago centro',
+      detProp: true,
+      deuda: 103557,
+    },
+    {
+      comunidad: 'Edifito',
+      direccion: 'Maria Auxiliadora 721',
+      unidad: 'DPTO 1401A',
+      comuna: 'San Miguel',
+      detProp: true,
+      deuda: 153625,
+    },
+    {
+      comunidad: 'Edifito',
+      direccion: 'Almirante Pastene 70',
+      unidad: 'DPTO 703',
+      comuna: 'Providencia',
+      detProp: true,
+      deuda: 160622,
+    },
+    {
+      comunidad: 'Edi',
+      direccion: 'Almirante Pastene 70',
+      unidad: 'DPTO 701',
+      comuna: 'Providencialmente',
+      detProp: true,
+      deuda: 160622,
+    },
+    {
+      comunidad: 'Edipro',
+      direccion: 'Villasana 1451',
+      unidad: 'DPTO 1205A',
+      comuna: 'Quinta Normal',
+      detProp: true,
+      deuda: 110652,
+    },
+    {
+      comunidad: 'Edipro',
+      direccion: 'El Molino 1755',
+      unidad: 'DPTO 307',
+      comuna: 'Independencia',
+      detProp: true,
+      deuda: 308245,
+    },
+    {
+      comunidad: 'Kastor',
+      direccion: 'José Manuel Balmaceda 3751',
+      unidad: 'DPTO 403D',
+      comuna: 'Renca',
+      detProp: true,
+      deuda: 235012,
+    },
+    {
+      comunidad: 'Comunidad en línea',
+      direccion: 'Carlos Antunez 1866',
+      unidad: 'DPTO 503',
+      comuna: 'Estación Central',
+      detProp: true,
+      deuda: 10505,
+    },
+    {
+      comunidad: 'Edipro',
+      direccion: 'Villasana 1451',
+      unidad: 'DPTO 1205A',
+      comuna: 'Quinta Normal',
+      detProp: true,
+      deuda: 110652,
+    },
+    {
+      comunidad: 'Edipro',
+      direccion: 'El Molino 1755',
+      unidad: 'DPTO 307',
+      comuna: 'Independencia',
+      detProp: true,
+      deuda: 308245,
+    },
+    {
+      comunidad: 'Kastor',
+      direccion: 'José Manuel Balmaceda 3751',
+      unidad: 'DPTO 403D',
+      comuna: 'Renca',
+      detProp: true,
+      deuda: 235012,
+    },
+    {
+      comunidad: 'Comunidad en línea',
+      direccion: 'Carlos Antunez 1866',
+      unidad: 'DPTO 503',
+      comuna: 'Estación Central',
+      detProp: true,
+      deuda: 10505,
+    },
+    {
+      comunidad: 'Edipro',
+      direccion: 'Villasana 1451',
+      unidad: 'DPTO 1205A',
+      comuna: 'Quinta Normal',
+      detProp: true,
+      deuda: 110652,
+    },
+    {
+      comunidad: 'Edipro',
+      direccion: 'El Molino 1755',
+      unidad: 'DPTO 307',
+      comuna: 'Independencia',
+      detProp: true,
+      deuda: 308245,
+    },
+    {
+      comunidad: 'Kastor',
+      direccion: 'José Manuel Balmaceda 3751',
+      unidad: 'DPTO 403D',
+      comuna: 'Renca',
+      detProp: true,
+      deuda: 235012,
+    },
+    {
+      comunidad: 'Comunidad en línea',
+      direccion: 'Carlos Antunez 1866',
+      unidad: 'DPTO 503',
+      comuna: 'Estación Central',
+      detProp: true,
+      deuda: 10505,
+    },
+  ];
   propiedades!: Property[];
 
   opcionSeleccionada: any;
 
   loading: boolean = true;
-  casas: any;
+  // casas: any;
   constructor(
     private config: PrimeNGConfig,
-    private route: ActivatedRoute,
-    private propertyService: PropertyService
-  ) {}
+    private route: ActivatedRoute
+  ) // private propertyService: PropertyService
+  {}
 
   isLandingComponent() {
     return this.route.snapshot.url[0].path === 'landing';
@@ -38,7 +240,9 @@ export class TablabdComponent implements OnInit {
   totalPages: number = 0; // Total de páginas
 
   ngOnInit() {
-    this.getproperties();
+    // this.getproperties();
+    this.filterData();
+    this.calculateTotalPages();
   }
 
   deleteProperty(id: number) {
@@ -63,9 +267,9 @@ export class TablabdComponent implements OnInit {
 
   matchSearchText(casa: any, searchText: string): boolean {
     return (
-      casa.municipality.toLowerCase().includes(searchText) ||
-      casa.address.toLowerCase().includes(searchText) ||
-      casa.region.toLowerCase().includes(searchText)
+      casa.comunidad.toLowerCase().includes(searchText) ||
+      casa.direccion.toLowerCase().includes(searchText) ||
+      casa.comuna.toLowerCase().includes(searchText)
     );
   }
 
@@ -95,22 +299,22 @@ export class TablabdComponent implements OnInit {
     this.filterData(); // Método para filtrar los datos según el criterio de búsqueda
     this.calculateTotalPages(); // Método para recalcular el total de páginas
   }
-  getproperties() {
-    try {
-      this.propertyService.getPropertiesByClientId(2).subscribe(
-        (properties) => {
-          this.casas = properties;
-          console.log(this.casas);
-          this.filterData();
-          this.calculateTotalPages();
-          this.loading = true;
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  // getproperties() {
+  //   try {
+  //     this.propertyService.getPropertiesByClientId(2).subscribe(
+  //       (properties) => {
+  //         this.casas = properties;
+  //         console.log(this.casas);
+  //         this.filterData();
+  //         this.calculateTotalPages();
+  //         this.loading = true;
+  //       },
+  //       (error) => {
+  //         console.log(error);
+  //       }
+  //     );
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
 }
