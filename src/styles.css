@@ -10,6 +10,30 @@ body {
     font-size: 14px;
   }
 }
+
+
+.p-tabview .p-tabview-nav li .p-tabview-nav-link:not(.p-disabled):focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: inset 0 0 0 0.2rem rgb(62, 99, 145);
+  background-color: #2d4474 !important;
+}
+
+.p-tabview .p-tabview-nav li .p-tabview-nav-link  {
+  background: #add1ee  !important;
+}
+.p-tabview-title {
+ color: rgb(255, 255, 255)  !important;
+}
+.p-tabview .p-tabview-nav {
+  padding-top: 20px !important;
+  padding-left: 20px !important;
+}
+
+.p-tabview .p-tabview-nav li  {
+  margin-left: 12px !important;
+}
+
 @import "primeflex/primeflex.css";
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "animate.css";

@@ -1,8 +1,8 @@
-<div class="container bg-white">
-  <div class="grid grid-cols-1 justify-center gap-4">
+<div class="container bg-white ">
+  <div class="grid grid-cols-1 justify-center gap-4 t">
     <div *ngFor="let casa of casas"
-      class="card-component rounded-lg overflow-hidden shadow-lg mt-1 border border-gray-300 p-3 pb-6 -mb-3">
-      <div class="flex justify-between items-center mb-2 p-3">
+      class="card-component rounded-lg overflow-hidden shadow-lg mt-1 border border-gray-300 p-3 pb-6 -mb-3 ">
+      <div class="flex justify-between items-center mb-2 p-1">
         <div>
           <h1 class="text-xl font-bold">{{ casa.comunidad }}</h1>
           <p>{{ casa.direccion }}</p>
@@ -10,31 +10,53 @@
         </div>
         <i class="fa-solid fa-building text-blue-900 text-7xl"></i>
       </div>
-      <div class="flex space-x-2 ml-3">
+      <div class="flex space-x-2 ">
         <!-- Botones con iconos de Font Awesome -->
-        <button class="w-1 h-1 rounded-full focus:outline-none">
-          <img src="assets/img/llama.svg" alt="Icono de llamada">
+        <div class="min-w-icon min-h-icon rounded-full flex items-center justify-center " [ngClass]="{'bg-green-500': casa.activo, 'bg-red-500': !casa.activo}">
+          <button class="w-6 h-8 rounded-full flex items-center justify-center"
+          >
+          <img src="assets/img/rayoo.svg" alt="Icono de llamada" class="w-9">
         </button>
+        </div>
 
-        <button class="w-1 h-1 rounded-full focus:outline-none">
-          <img src="assets/img/agua.svg" alt="Icono de llamada">
+        <div class="min-w-icon min-h-icon rounded-full flex items-center justify-center" [ngClass]="{'bg-green-500': casa.activo, 'bg-red-500': !casa.activo}">
+          <button class="w-6 h-8 rounded-full flex items-center justify-center"
+          >
+          <img src="assets/img/aguaa.svg" alt="Icono de llamada" class="w-9">
         </button>
-        <button class="w-1 h-1 rounded-full focus:outline-none">
-          <img src="assets/img/fuego.svg" alt="Icono de llamada">
-        </button>
-        <button class="w-1 h-1 rounded-full focus:outline-none">
-          <img src="assets/img/reci.svg" alt="Icono de llamada">
-        </button>
+        </div>
 
-        <button class="w-1 h-1 rounded-full focus:outline-none">
-          <img src="assets/img/edificio.svg" alt="Icono de llamada">
+        <div class="min-w-icon min-h-icon  rounded-full flex items-center justify-center" [ngClass]="{'bg-green-500': casa.activo, 'bg-red-500': !casa.activo}">
+          <button class="w-6 h-8 rounded-full flex items-center justify-center"
+          >
+          <img src="assets/img/fuegoo.svg" alt="Icono de llamada" class="w-12">
         </button>
+        </div>
 
-        <button class="w-1 h-1 rounded-full focus:outline-none">
-          <img src="assets/img/casapago.svg" alt="Icono de llamada">
+        <div class="min-w-icon min-h-icon rounded-full flex items-center justify-center" [ngClass]="{'bg-green-500': casa.activo, 'bg-red-500': !casa.activo}">
+          <button class="w-6 h-8 rounded-full flex items-center justify-center"
+          >
+          <img src="assets/img/recicla.svg" alt="Icono de llamada" class="w-9">
         </button>
+        </div>
+
+        <div class="min-w-icon min-h-icon rounded-full flex items-center justify-center" [ngClass]="{'bg-green-500': casa.activo, 'bg-red-500': !casa.activo}">
+          <button class="w-6 h-8 rounded-full flex items-center justify-center"
+          >
+          <img src="assets/img/property.svg" alt="Icono de llamada" class="w-9">
+        </button>
+        </div>
+
+        <div class="min-w-icon min-h-icon rounded-full flex items-center justify-center mr-8" [ngClass]="{'bg-green-500': casa.activo, 'bg-red-500': !casa.activo}">
+          <button class="w-6 h-8 rounded-full flex items-center justify-center"
+          >
+          <img src="assets/img/casaa.svg" alt="Icono de llamada" class="w-9">
+        </button>
+        </div>
+
+
         <!-- Nuevo botón de descarga -->
-        <button class="w-2 h-2 rounded-full ml-8 focus:outline-none" (click)="descargarInforme()">
+        <button class="w-12 h-12 rounded-full focus:outline-none" (click)="descargarInforme()">
           <img src="assets/img/down.svg" alt="Icono de llamada">
         </button>
       </div>

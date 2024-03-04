@@ -1,17 +1,11 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-
-import { PrimeNGConfig } from 'primeng/api';
-
-import { PropertyService } from '../../services/property.service';
-import { Property } from '../../interfaces/property.interface';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-tablabd',
-  templateUrl: './tablabd.component.html',
-  styles: [],
+  selector: 'app-properties',
+  templateUrl: './properties.component.html',
+  styleUrls: ['./properties.component.css'],
 })
-export class TablabdComponent implements OnInit {
+export class PropertiesComponent {
   casas = [
     {
       comunidad: 'Comunida Feliz',
@@ -214,21 +208,6 @@ export class TablabdComponent implements OnInit {
       deuda: 10505,
     },
   ];
-  propiedades!: Property[];
-
-  opcionSeleccionada: any;
-
-  loading: boolean = true;
-  // casas: any;
-  constructor(
-    private config: PrimeNGConfig,
-    private route: ActivatedRoute
-  ) // private propertyService: PropertyService
-  {}
-
-  isLandingComponent() {
-    return this.route.snapshot.url[0].path === 'landing';
-  }
 
   clientId!: 3;
   searchText: string = '';
@@ -240,7 +219,6 @@ export class TablabdComponent implements OnInit {
   totalPages: number = 0; // Total de páginas
 
   ngOnInit() {
-    // this.getproperties();
     this.filterData();
     this.calculateTotalPages();
   }
@@ -299,22 +277,4 @@ export class TablabdComponent implements OnInit {
     this.filterData(); // Método para filtrar los datos según el criterio de búsqueda
     this.calculateTotalPages(); // Método para recalcular el total de páginas
   }
-  // getproperties() {
-  //   try {
-  //     this.propertyService.getPropertiesByClientId(2).subscribe(
-  //       (properties) => {
-  //         this.casas = properties;
-  //         console.log(this.casas);
-  //         this.filterData();
-  //         this.calculateTotalPages();
-  //         this.loading = true;
-  //       },
-  //       (error) => {
-  //         console.log(error);
-  //       }
-  //     );
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
 }

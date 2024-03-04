@@ -1,0 +1,64 @@
+<!-- Flex -->
+
+<app-sidebar></app-sidebar>
+<!-- Contenedor Sidebar (Degradé) -->
+<!-- <p-messages severity="warn">
+  <ng-template pTemplate>
+    <i class="fa-solid fa-triangle-exclamation text-yellow-500"></i>
+    <div class="ml-1">Aplicación DEMO</div>
+  </ng-template>
+</p-messages> -->
+
+<div class="grid lg:grid-cols-1 justify-center lg:h-screen relative">
+  <img src="/assets/img/portada1.jpeg" alt="" class="w-full h-full absolute z-[-1] inset-0 opacity-50">
+  <div class="lg:flex lg:flex-col lg:h-1/6 rounded-lg overflow-hidden w-full static">
+    <div class="justify-center lg:h-screen relative flex flex-col items-center mb-3">
+      <p class="font-helvetica mr-auto text-blue-primary-propcheck font-bold  text-lg mb-2 mt-5 ml-8">Tus Informes</p>
+      <div class="relative mr-auto">
+        <input type="text" placeholder="Buscar por dirección o comuna" [(ngModel)]="searchText"
+          class="border rounded-lg bg-white pl-10 pr-4 w-96 h-12 ml-8">
+        <i class="absolute right-3 top-1/2 transform -translate-y-1/2 fas fa-search text-gray-400"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="lg:flex lg:flex-col lg:h-5/6 rounded-t-large overflow-hidden shadow-lg border bg-white w-full h-full">
+    <div class="grid lg:grid-cols-2 w-full ">
+      <p class=" lg:col-span-2 text-center w-4 mt-7 font-bold  text-lg mb-2 mr-8">Informes encontrados:</p>
+      <div class=" flex flex-row mb-3 mt-6 ml-auto w-auto mr-7">
+        <div class="mr-3">
+          <p>Tipo informe</p>
+          <p-dropdown formControlName="selectedCity" optionLabel="name" placeholder="Select a City"></p-dropdown>
+        </div>
+        <div>
+          <p>Fecha</p>
+          <p-dropdown formControlName="selectedCity" optionLabel="name" placeholder="Select a City"></p-dropdown>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center mb-4 w-full"> <!-- Reducción del relleno a p-2 -->
+      <ng-container *ngIf="1 > 0; else noResults">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:w-8 w-full justify-center mt-3">
+          <ng-container *ngFor="let report of reports">
+            <div class="card-component rounded-lg border border-gray-300 p-2 w-3 flex">
+              <div class="grid-row-">
+                <p>{{ report.fecha }}</p>
+                <p class="text-gray-600 mt-2">{{ report.cantidad }} Informe</p>
+              </div>
+              <button class="rounded-full border bg-blue-text text-gray-300 p-1 lg:w-3 w-5 h-12 ml-auto mt-2">VER</button>
+            </div>
+          </ng-container>
+        </div>
+
+      </ng-container>
+      <ng-template #noResults>
+        <div class="text-center font-bold text-gray-600">No se encontraron resultados.</div>
+      </ng-template>
+    </div>
+
+    <!-- Botones de paginación -->
+    <p-paginator [rows]="pageSize" [totalRecords]="filteredCasas.length" (onPageChange)="onPageChange($event)"
+      [showJumpToPageDropdown]="true" [showPageLinks]="false"></p-paginator>
+  </div>
+</div>

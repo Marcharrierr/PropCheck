@@ -20,7 +20,7 @@ export class MaingraphComponent {
         {
           data: [this.total, this.deuda],
           backgroundColor: [
-            '#999999',
+            '#8A96AE',
             '#FF0000',
           ]
         }
@@ -29,7 +29,7 @@ export class MaingraphComponent {
 
     this.options = {
       responsive: true,
-      borderWidth:10,
+      cutout: '85%',
     };
   }
 }
