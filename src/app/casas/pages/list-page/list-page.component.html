@@ -9,63 +9,60 @@
   </ng-template>
 </p-messages> -->
 
+<div class="bg-gray-100  justify-center ">
+  <div class="grid grid-rows gap-7 justify-center">
+    <!-- Primer gráfico grande -->
+    <div class="grid grid-rows gap-5 justify-center">
+      <!-- Primer gráfico grande -->
+      <div class="mt-5 gap-4 lg:col-span-2 lg:col-start-1">
+        <app-maingraph></app-maingraph>
+      </div>
 
-<div class="grid lg-grid-rows-2 grid-flow-col gap-4 justify-center mt-7">
-  <!-- Primer gráfico grande -->
-  <div class="lg-row-span-3 justify-center items-center">
-    <app-maingraph></app-maingraph>
-  </div>
+      <!-- Primeros tres gráficos -->
+      <div class="row-span-2 ms-justify-center mt-5">
+        <div class="container1 grid md-grid-cols gap-3 justify-center mb-6">
+          <!-- Primeras tres gráficas -->
+          <div>
+            <app-graph [titulo]="tituloLuz"></app-graph>
+          </div>
+          <div>
+            <app-graph [titulo]="tituloagua"></app-graph>
+          </div>
+          <div>
+            <app-graph [titulo]="titulogas"></app-graph>
+          </div>
+          <!-- Divs de container2, incluidos en container1 en pantallas pequeñas -->
+          <div class="lg:hidden">
+            <app-graph [titulo]="tituloGastosComunes"></app-graph>
+          </div>
+          <div class="lg:hidden">
+            <app-graph [titulo]="tituloContribuciones"></app-graph>
+          </div>
+          <div class="lg:hidden">
+            <app-graph [titulo]="tituloAseo"></app-graph>
+          </div>
+        </div>
 
-  <!-- Primeros tres gráficos -->
-  <div class="ms-row-span-2 justify-center">
-    <div class="container1 grid md-grid-cols-3 gap-4 justify-center mb-6">
-      <!-- Primeras tres gráficas -->
-      <div>
-        <app-graph [titulo]="tituloLuz"></app-graph>
-      </div>
-      <div>
-        <app-graph [titulo]="tituloagua"></app-graph>
-      </div>
-      <div>
-        <app-graph [titulo]="titulogas"></app-graph>
-      </div>
-      <!-- Divs de container2, incluidos en container1 en pantallas pequeñas -->
-      <div class="lg:hidden">
-        <app-graph [titulo]="tituloGastosComunes"></app-graph>
-      </div>
-      <div class="lg:hidden">
-        <app-graph [titulo]="tituloContribuciones"></app-graph>
-      </div>
-      <div class="lg:hidden">
-        <app-graph [titulo]="tituloAseo"></app-graph>
+        <!-- container2 solo se muestra en pantallas grandes -->
+        <div class="hidden lg:block">
+          <div class="container2 grid lg-grid-cols-3 gap-3 lg-justify-center">
+            <div>
+              <app-graph [titulo]="tituloGastosComunes"></app-graph>
+            </div>
+            <div>
+              <app-graph [titulo]="tituloContribuciones"></app-graph>
+            </div>
+            <div>
+              <app-graph [titulo]="tituloAseo"></app-graph>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- container2 solo se muestra en pantallas grandes -->
-    <!-- container2 solo se muestra en pantallas grandes -->
-    <div class="hidden lg:block">
-      <div class="container2 grid lg-grid-cols-3 gap-4 lg-justify-center">
-        <div>
-          <app-graph [titulo]="tituloGastosComunes"></app-graph>
-        </div>
-        <div>
-          <app-graph [titulo]="tituloContribuciones"></app-graph>
-        </div>
-        <div>
-          <app-graph [titulo]="tituloAseo"></app-graph>
-        </div>
-      </div>
-    </div>
 
-
-
+  <!-- Tabla bbdd -->
+  <div class="grid grid-cols-1 md:grid-cols-1 justify-center mt-1">
+    <app-tablabd></app-tablabd>
   </div>
-
-
-</div>
-
-
-<!-- Tabla bbdd -->
-<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 justify-center mt-6">
-  <app-tablabd class="min-w-96"></app-tablabd>
 </div>

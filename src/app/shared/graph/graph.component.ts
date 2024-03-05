@@ -20,7 +20,7 @@ export class GraphComponent {
           data: [10, 20], // Datos ficticios
           backgroundColor: [
             '#8A96AE',
-            '#FF0000',
+            '#D44848',
           ]
         }
       ],

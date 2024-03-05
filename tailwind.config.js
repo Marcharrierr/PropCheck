@@ -9,19 +9,21 @@ module.exports = {
         "blue-primary-propcheck": "#172E5E",
         "blue-nav": "#102E6E",
         "blue-text": "#2455BE",
+        "Property-debt": "#762222"
       },
       maxWidth: {
-        'cardList': '1500px',
+        'cardList': '1000px',
+        'maxcards': '1300px',
       },
       minWidth: {
         'lg': '50px',
-        '350px': '335px',
+        '350px': '250px',
         '400px': '435px',
         '320px': '290px',
         '800px': '890px',
-        'search': '920px',
-        'cardList': '1500px',
-        'icon': '45px',
+        'search': '10px',
+        'cardList': '800px',
+        'icon': '30px',
       },
       minHeight: {
         'lg': '220px',

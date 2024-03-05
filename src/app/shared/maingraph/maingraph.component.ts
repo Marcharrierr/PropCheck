@@ -21,7 +21,7 @@ export class MaingraphComponent {
           data: [this.total, this.deuda],
           backgroundColor: [
             '#8A96AE',
-            '#FF0000',
+            '#D44848',
           ]
         }
       ]
