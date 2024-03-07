@@ -14,6 +14,7 @@ module.exports = {
       maxWidth: {
         'cardList': '1000px',
         'maxcards': '1300px',
+        'textproperty': '250px'
       },
       minWidth: {
         'lg': '50px',

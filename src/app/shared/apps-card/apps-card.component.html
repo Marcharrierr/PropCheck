@@ -1,16 +1,16 @@
 <div class="container bg-white ">
   <div class="grid grid-cols-1 justify-center gap-4">
     <div *ngFor="let casa of casas"
-      class="card-component rounded-lg overflow-hidden shadow-lg mt-1 border border-gray-300 p-3 pb-6 -mb-3 ">
+      class="card-component rounded-lg overflow-hidden shadow-lg mt-1 border border-gray-300 p-3 pb-2  h-33">
       <div class="flex justify-between items-center mb-2 ">
         <div>
-          <h1 class="text-xl font-bold">{{ casa.comunidad }}</h1>
-          <p>{{ casa.direccion }}</p>
-          <p>{{ casa.comuna }}</p>
+          <h1 class="text-xl font-bold max-w-textproperty">{{ casa.community_name }}</h1>
+          <p>{{ casa.address }}, Dpto. {{casa.department}}</p>
+          <p>{{ casa.municipality }}</p>
         </div>
         <img src="assets/img/casa.svg" class="fa-solid fa-building text-blue-900">
       </div>
-      <div class="flex space-x-2 ">
+      <div class="flex space-x-2 mt-2">
         <!-- Botones con iconos de Font Awesome -->
         <div class="w-6 h-8 min-w-icon min-h-icon rounded-full flex items-center justify-center " [ngClass]="{'bg-green-500': casa.activo, 'bg-red-500': !casa.activo}">
           <button class="w-6 h-12 rounded-full flex items-center justify-center"

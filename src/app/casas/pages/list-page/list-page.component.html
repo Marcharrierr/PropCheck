@@ -15,7 +15,7 @@
     <div class="grid grid-rows gap-5 justify-center">
       <!-- Primer gráfico grande -->
       <div class="mt-5 gap-4 lg:col-span-2 lg:col-start-1">
-        <app-maingraph></app-maingraph>
+        <app-maingraph [propertiesdebt]='propertiesdebt'></app-maingraph>
       </div>
 
       <!-- Primeros tres gráficos -->
@@ -23,23 +23,23 @@
         <div class="container1 grid md-grid-cols gap-3 justify-center mb-6">
           <!-- Primeras tres gráficas -->
           <div>
-            <app-graph [titulo]="tituloLuz"></app-graph>
+            <app-graph [titulo]="tituloLuz" [gasto] = "gastoLuz"></app-graph>
           </div>
           <div>
-            <app-graph [titulo]="tituloagua"></app-graph>
+            <app-graph [titulo]="tituloagua" [gasto] = "gastoagua"></app-graph>
           </div>
           <div>
-            <app-graph [titulo]="titulogas"></app-graph>
+            <app-graph [titulo]="titulogas"  [gasto] = "gastogas"></app-graph>
           </div>
           <!-- Divs de container2, incluidos en container1 en pantallas pequeñas -->
           <div class="lg:hidden">
-            <app-graph [titulo]="tituloGastosComunes"></app-graph>
+            <app-graph [titulo]="tituloGastosComunes"  [gasto] = "gastoGastosComunes"></app-graph>
           </div>
           <div class="lg:hidden">
-            <app-graph [titulo]="tituloContribuciones"></app-graph>
+            <app-graph [titulo]="tituloContribuciones"  [gasto] = "gastoContribuciones"></app-graph>
           </div>
           <div class="lg:hidden">
-            <app-graph [titulo]="tituloAseo"></app-graph>
+            <app-graph [titulo]="tituloAseo"  [gasto] = "gastoAseo"></app-graph>
           </div>
         </div>
 
@@ -47,13 +47,13 @@
         <div class="hidden lg:block">
           <div class="container2 grid lg-grid-cols-3 gap-3 lg-justify-center">
             <div>
-              <app-graph [titulo]="tituloGastosComunes"></app-graph>
+              <app-graph [titulo]="tituloGastosComunes" [gasto] = "gastoGastosComunes"></app-graph>
             </div>
             <div>
-              <app-graph [titulo]="tituloContribuciones"></app-graph>
+              <app-graph [titulo]="tituloContribuciones" [gasto] = "gastoContribuciones"></app-graph>
             </div>
             <div>
-              <app-graph [titulo]="tituloAseo"></app-graph>
+              <app-graph [titulo]="tituloAseo" [gasto] = "gastoAseo"></app-graph>
             </div>
           </div>
         </div>
