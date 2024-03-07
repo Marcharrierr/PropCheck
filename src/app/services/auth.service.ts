@@ -45,7 +45,7 @@ export class AuthService {
   //Loguear a usuario
   login(email: string, password: string): Observable<boolean> {
 
-    const url = `${this.baseUrl}/api/auth/login`;
+    const url = `${this.baseUrl}/propcheck/auth/login`;
     const body = { email, password };
 
     return this.http.post<LoginResponse>(url, body)
