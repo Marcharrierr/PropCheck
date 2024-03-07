@@ -1,7 +1,7 @@
 <!-- <div class="card" *ngIf="loading">
     <p-progressBar mode="indeterminate" [style]="{ height: '6px' }"></p-progressBar>
   </div> -->
-<div class="container bg-white p-9 border border-gray-300 rounded-lg mb-8 px-9 lg:min-w-cardList">
+<div class="container bg-white p-9 border border-gray-300 rounded-lg mb-8 max-w-maxcards">
 
   <!-- Contenedor flex con dirección de columna en pantallas pequeñas y dirección de fila en pantallas grandes -->
 <div class="relative lg:mb-6 items-center mb-2"> <!-- Contenedor para el buscador -->
@@ -9,7 +9,7 @@
   <div class="relative">
     <input type="text" placeholder="Buscar por dirección o comuna" [(ngModel)]="searchText" (input)="filterData()"
       class="h-9 border rounded-lg bg-white pr-10 pl-10 lg:w-4 lg:ml-3 w-full"> <!-- Usar w-full aquí -->
-    <i class="absolute  right-0 justify-center fas fa-search text-gray-400 lg:min-w-search w-1 lg:mr-7 mt-2" ></i>
+    <i class="absolute  right-0 justify-center fas fa-search text-gray-400 lg:w-8 w-1 lg:mr-3 mt-2" ></i>
   </div>
 </div>
   <!-- Cards y otros elementos -->

@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, pipe, catchError, of } from 'rxjs';
+import { Observable, pipe, catchError, of, throwError } from 'rxjs';
 import { environment } from '../../environments/environments';
 import { Property } from '../interfaces/property.interface';
 import { Municipality, PropertyServices, Region, Type } from '../interfaces/property_service.interface';
+import { ApiResponse } from '../interfaces/dbtsSummary.dto';
 
 @Injectable({
   providedIn: 'root'
@@ -63,8 +64,17 @@ export class PropertyService {
 
 
   getPropertiesByClientId(clientId: number): Observable<Property[]> {
-    return this.http.get<Property[]>(`http://localhost:3000/api/propertys/2`);
+    return this.http.get<Property[]>(`http://34.173.203.168:3500/propcheck/client/3/property`);
   }
+  getPropertiesdebt(clientId: number): Observable<any> {
+    return this.http.get<any>(`http://34.173.203.168:3500/propcheck/client/4/debts-summary`).pipe(
+      catchError(error => {
+        console.log(error);
+        return throwError('Error fetching data');
+      })
+    );
+  }
+
 
   getPropertiesById(id: number): Observable<Property[]> {
     return this.http.get<Property[]>(`http://localhost:3000/api/propertys/id/${id}`);

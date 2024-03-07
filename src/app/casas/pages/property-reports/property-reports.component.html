@@ -39,9 +39,9 @@
     <div class="flex justify-center mb-4 w-full"> <!-- Reducción del relleno a p-2 -->
       <ng-container *ngIf="1 > 0; else noResults">
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:w-8 w-full justify-center mt-3">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:w-8 w-full justify-center mt-3 ">
           <ng-container *ngFor="let report of reports">
-            <div class="card-component rounded-lg border border-gray-300 p-2 w-3 flex">
+            <div class="card-component rounded-lg border border-gray-300 p-2 w-3 flex shadow-lg">
               <div class="grid-row-">
                 <p>{{ report.fecha }}</p>
                 <p class="text-gray-600 mt-2">{{ report.cantidad }} Informe</p>

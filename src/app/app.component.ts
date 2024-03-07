@@ -31,11 +31,12 @@ export class AppComponent {
         return;
 
       case AuthStatus.notAuthenticated:
-        this.router.navigateByUrl('/propiedades/list');
+        //this.router.navigateByUrl('/propiedades/list');
         //this.router.navigateByUrl('/');
         //this.router.navigateByUrl('/auth/recover');
         //this.router.navigateByUrl('/auth/login');
         //this.router.navigateByUrl('/propiedades/crear-propiedad');
+
 
         return;
     }

@@ -1,20 +1,27 @@
-<div class="container bg-white">
-  <div class="card-component rounded-lg overflow-hidden shadow-lg border border-gray-300 px-6 pb-4">
-    <p class="text-center mt-0 p-0 h-5">{{titulo}}</p>
-    <div class="text-center">
-      <div class="inline-block relative">
-        <p-chart type="doughnut" [data]="data" [options]="options"></p-chart>
-        <p class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl">{{deudaPorcentaje}}%</p>
-      </div>
+<div class="card-component rounded-lg overflow-hidden shadow-lg border bg-white border-gray-300 px-6 pb-2 w-66">
+  <p class="text-center mt-1 p-0 h-5 text-blue-primary-propcheck font-bold">{{titulo}}</p>
+  <div class="grid lg-grid-rows-2 absolute mt-1 mr-4">
+    <p class="flex flex-row ml-2 text-blue-primary-propcheck">
+      <img src="/assets/img/aldia.svg" alt="Al Dia Icon" class="mr-2" /> Propiedades al día
+    </p>
+    <p class="flex flex-row ml-6 text-blue-primary-propcheck">
+      <img class="ml-6" src="/assets/img/deuda.svg" alt="Con Deuda Icon" class="mr-2" />
+      Propiedades con deuda
+    </p>
+  </div>
+  <div class="text-center mt-4">
+    <div class="inline-block relative">
+      <p-chart type="doughnut" [data]="data" [options]="options"></p-chart>
+      <p class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl">{{deudaPorcentaje}}%</p>
     </div>
-    <div class="grid lg-grid-rows-2 grid-flow-col mt-3 mb-3">
-      <div class="row-span-1 text-left mr-5 mt-5">
-        <p>Propiedades al día: 120</p>
-        <p class="text-red-500">Propiedades con deuda: 120</p>
-      </div>
-      <div class="row-span-1 text-right mt-6">
-        <p>Total propiedades:240</p>
-      </div>
+  </div>
+  <div class="grid lg-grid-rows-2 grid-flow-col mt-3 mb-1">
+    <div class="row-span-1 text-left mr-5 mt-5">
+      <p>Propiedades al día: {{aldia}}</p>
+      <p class="text-Property-debt">Propiedades con deuda: {{deuda}}</p>
+    </div>
+    <div class="row-span-1 text-right mt-6">
+      <p>Total propiedades: {{total}}</p>
     </div>
   </div>
 </div>
