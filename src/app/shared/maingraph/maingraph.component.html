@@ -12,16 +12,16 @@
   <div class="text-center mt-4">
     <div class="inline-block relative">
       <p-chart type="doughnut" [data]="data" [options]="options"></p-chart>
-      <p class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl">{{deudaPorcentaje}}%</p>
+      <p class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-6xl font-bold text-blue-primary-propcheck">{{deudaPorcentaje}}%</p>
     </div>
   </div>
   <div class="grid lg-grid-rows-2 grid-flow-col mt-3 mb-1">
     <div class="row-span-1 text-left mr-5 mt-5">
-      <p>Propiedades al día: {{aldia}}</p>
+      <p class="text-blue-900">Propiedades al día: {{aldia}}</p>
       <p class="text-Property-debt">Propiedades con deuda: {{deuda}}</p>
     </div>
     <div class="row-span-1 text-right mt-6">
-      <p>Total propiedades: {{total}}</p>
+      <p class="text-blue-primary-propcheck">Total propiedades: {{total}}</p>
     </div>
   </div>
 </div>

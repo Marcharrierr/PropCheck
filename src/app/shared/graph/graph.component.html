@@ -13,6 +13,6 @@
     </div>
     <p-chart class="absolute float-left mt-4" type="doughnut" [data]="data" [options]="options" width="140px"
       height="140px"></p-chart>
-      <p class="absolute top-2/4 ml-7 transform -translate-x-1/3 -translate-y-5/13 text-1xl mt-1 text-sm">{{ total === 0 ? 'No tiene deuda' : deudaPorcentaje + '%' }}</p>
+      <p class="font-bold text-blue-primary-propcheck text-1x4 absolute top-2/4 ml-7 transform -translate-x-1/3 -translate-y-5/13 text-1xl mt-1">{{ total === 0 ? 'No tiene deuda' : deudaPorcentaje + '%' }}</p>
     </div>
 </div>

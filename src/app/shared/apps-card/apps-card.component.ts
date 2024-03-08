@@ -8,6 +8,17 @@ import { CommonModule } from '@angular/common';
 export class AppsCardComponent {
   @Input() casas: any[] = [];
 
+    iconos = [
+      { ruta: "assets/img/rayoo.svg" },
+      { ruta: "assets/img/aguaa.svg" },
+      { ruta: "assets/img/fuegoo.svg" },
+      { ruta: "assets/img/recicla.svg" },
+      { ruta: "assets/img/property.svg" },
+      { ruta: "assets/img/casaa.svg" }
+    ]
+
+
+
   descargarInforme(): void {
     const texto = "Aquí va el contenido de tu informe..."; // Contenido del informe
 

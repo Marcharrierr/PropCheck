@@ -25,7 +25,7 @@ module.exports = {
         '320px': '290px',
         '800px': '890px',
         'search': '10px',
-        'cardList': '800px',
+        'cardList': '1200px',
         'icon': '30px',
       },
       minHeight: {
