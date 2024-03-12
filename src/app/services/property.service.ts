@@ -64,10 +64,10 @@ export class PropertyService {
 
 
   getPropertiesByClientId(clientId: number): Observable<Property[]> {
-    return this.http.get<Property[]>(`http://34.173.203.168:3500/propcheck/client/3/property`);
+    return this.http.get<Property[]>(`https://api.propcheck.ai/propcheck/client/3/property`);
   }
   getPropertiesdebt(clientId: number): Observable<any> {
-    return this.http.get<any>(`http://34.173.203.168:3500/propcheck/client/4/debts-summary`).pipe(
+    return this.http.get<any>(`https://api.propcheck.ai/propcheck/client/4/debts-summary`).pipe(
       catchError(error => {
         console.log(error);
         return throwError('Error fetching data');

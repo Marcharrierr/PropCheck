@@ -18,7 +18,7 @@ export class PropertyServiceService {
 
 
   getServiceProperties(): Observable<any> {
-    return this.http.get<any>(`${this.API_URL}/service-propertys`);
+    return this.http.get<any>(`${this.baseUrl}/service-propertys`);
   }
 
 

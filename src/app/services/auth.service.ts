@@ -21,7 +21,7 @@ export class AuthService {
   private _authStatus = signal<AuthStatus>(AuthStatus.checking);
 
 
-  //Nadie fuera del servicio cambia el estado de autenticación, por hacerla pruvada con el _
+  //Nadie fuera del servicio cambia el estado de autenticación, por hacerla privada con el _
   public authStatus = computed(() => this._authStatus())
   public currentUser = computed(() => this._currentUser());
 
@@ -47,6 +47,7 @@ export class AuthService {
 
     const url = `${this.baseUrl}/propcheck/auth/login`;
     const body = { email, password };
+
 
     return this.http.post<LoginResponse>(url, body)
       .pipe(
