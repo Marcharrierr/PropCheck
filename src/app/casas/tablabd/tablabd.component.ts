@@ -305,7 +305,6 @@ export class TablabdComponent implements OnInit {
       this.propertyService.getPropertiesByClientId(2).subscribe(
         (properties) => {
           this.casas = properties;
-          console.log(this.casas)
           this.filterData();
           this.calculateTotalPages();
           this.loading = true;

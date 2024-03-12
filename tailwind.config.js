@@ -16,8 +16,9 @@ module.exports = {
       maxWidth: {
         'cardList': '1000px',
         'maxcards': '1300px',
-        'textproperty': '250px'
-      },
+        'textproperty': '250px',
+        'wReport': '1400px',
+        },
       minWidth: {
         'lg': '50px',
         '350px': '250px',
@@ -27,6 +28,9 @@ module.exports = {
         'search': '10px',
         'cardList': '1200px',
         'icon': '30px',
+        "wcardReport": '300px',
+        'list': '1000px',
+
       },
       minHeight: {
         'lg': '220px',
