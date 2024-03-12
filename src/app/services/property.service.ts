@@ -75,7 +75,7 @@ export class PropertyService {
     );
   }
   getPropertiesReports(clientId: number): Observable<any> {
-    return this.http.get<any>(`http://34.173.203.168:3500/propcheck/client/2/report?year=2024`).pipe(
+    return this.http.get<any>(`https://api.propcheck.ai/propcheck/client/2/report?year=2024`).pipe(
       catchError(error => {
         console.log(error);
         return throwError('Error fetching data');

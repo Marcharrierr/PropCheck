@@ -4,3 +4,7 @@
 ::ng-deep .p-menubar {
   background-color: #223d76 !important;
 }
+
+/* ::ng-deep .p-button {
+  @apply w-8 h-4 !important;
+} */
