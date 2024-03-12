@@ -3,7 +3,7 @@
   class="bg-blue-primary-propcheck w-100 h-16 static align-items-center flex justify-between"
 >
   <p-button
-    styleClass="flex w-auto h-auto ml-4 text-white text-sm p-button-text justify-start"
+    styleClass="flex w-auto h-3 ml-4 text-white text-sm p-button-text justify-start p-3"
     (click)="sidebarVisible = true"
     icon="pi pi-bars text-3xl"
   ></p-button>
@@ -35,7 +35,7 @@
           <img src="../../../assets/img/home-interno.svg" alt="" />
           <p-button
             label="Home"
-            styleClass=" w-auto h-auto text-white text-lg p-button-text "
+            styleClass=" w-auto h-auto text-white text-lg p-button-text p-1rem"
             routerLink="/propiedades/list"
             (click)="sidebarVisible = false"
           ></p-button>
@@ -44,7 +44,7 @@
           <img src="../../../assets/img/propiedades.svg" alt="" />
           <p-button
             label="Propiedades"
-            styleClass="w-auto h-auto text-white text-lg p-button-text "
+            styleClass="w-auto h-auto text-white text-lg p-button-text p-1rem"
             routerLink="/propiedades/properties"
             (click)="sidebarVisible = false"
           ></p-button>
@@ -54,7 +54,7 @@
           <img src="../../../assets/img/informes.svg" alt="" />
           <p-button
             label="Tus informes"
-            styleClass="w-auto h-auto text-white text-lg p-button-text "
+            styleClass="w-auto h-auto text-white text-lg p-button-text p-1rem"
             routerLink="/propiedades/reports"
             (click)="sidebarVisible = false"
           ></p-button>
@@ -64,7 +64,7 @@
           <img src="../../../assets/img/user.svg" alt="" />
           <p-button
             label="Perfil"
-            styleClass="w-auto h-auto text-white text-lg p-button-text "
+            styleClass="w-auto h-auto text-white text-lg p-button-text p-1rem"
             routerLink="/propiedades/property-user-profile"
             (click)="sidebarVisible = false"
           ></p-button>
@@ -74,7 +74,7 @@
           <img src="../../../assets/img/mesayuda.svg" alt="" />
           <p-button
             label="Mesa de ayuda"
-            styleClass="w-auto h-auto text-white text-lg p-button-text "
+            styleClass="w-auto h-auto text-white text-lg p-button-text p-1rem"
             routerLink="/propiedades/list"
             (click)="sidebarVisible = false"
           ></p-button>
@@ -85,7 +85,7 @@
             <img src="../../../assets/img/cerrarSesion.svg" alt="" />
             <p-button
               label="Cerrar Sesión"
-              styleClass="w-auto h-auto text-white text-lg p-button-text "
+              styleClass="w-auto h-auto text-white text-lg p-button-text p-1rem"
               (click)="onLogout()"
             ></p-button>
           </div>

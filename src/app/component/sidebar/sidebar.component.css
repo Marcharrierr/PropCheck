@@ -5,6 +5,9 @@
   background-color: #223d76 !important;
 }
 
-/* ::ng-deep .p-button {
-  @apply w-8 h-4 !important;
-} */
+::ng-deep .p-button {
+  padding: 1rem !important; /* Sobrescribe el padding con !important */
+ }
+:host .p-button .p-ink {
+   display: none !important;
+}
