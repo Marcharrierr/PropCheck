@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-property-detail',
@@ -7,7 +8,18 @@ import { Component } from '@angular/core';
 })
 export class PropertyDetailComponent {
   selectedCity: any;
+  property: any;
 
+  constructor(private route: ActivatedRoute,private router: Router) {}
+
+
+  ngOnInit(): void {
+    // Obtener el ID de la propiedad de los parámetros de la URL
+    const id = this.route.snapshot.paramMap.get('id');
+    // Obtener la información de la propiedad del localStorage
+    this.property = JSON.parse(localStorage.getItem('selectedProperty') || '{}');
+    console.log('this.property', this.property)
+  }
   detailCuentas = [
     {
       "icono": "assets/img/llama.svg",
@@ -66,5 +78,8 @@ export class PropertyDetailComponent {
   ]
 
 
-
+  volver() {
+    console.log('volver')
+    this.router.navigate(['/propiedades/properties']);
+  }
 }

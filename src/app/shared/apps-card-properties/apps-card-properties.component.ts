@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-apps-card-properties',
@@ -6,8 +7,17 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./apps-card-properties.component.css']
 })
 export class AppsCardPropertiesComponent {
-  @Input() casas: any[] = [];
+  constructor(private router: Router) {}
 
+  @Input() casas: any[] = [];
+  iconos = [
+    { ruta: "assets/img/rayoo.svg" },
+    { ruta: "assets/img/aguaa.svg" },
+    { ruta: "assets/img/fuegoo.svg" },
+    { ruta: "assets/img/recicla.svg" },
+    { ruta: "assets/img/property.svg" },
+    { ruta: "assets/img/casaa.svg" }
+  ]
   descargarInforme(): void {
     const texto = "Aquí va el contenido de tu informe..."; // Contenido del informe
 
@@ -21,5 +31,11 @@ export class AppsCardPropertiesComponent {
     document.body.appendChild(elemento);
     elemento.click();
     document.body.removeChild(elemento);
+  }
+
+  redirectToPropertyDetail(id: string) {
+    localStorage.setItem('selectedProperty', JSON.stringify(this.casas.find(casa => casa.id === id)));
+
+    this.router.navigate(['/propiedades/property-detail']);
   }
 }

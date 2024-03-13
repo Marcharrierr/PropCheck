@@ -63,6 +63,7 @@ export class PropertiesComponent {
       startIndex + this.pageSize,
       this.filteredCasas.length
     );
+    console.log(this.filteredCasas)
     return this.filteredCasas.slice(startIndex, endIndex);
   }
 
