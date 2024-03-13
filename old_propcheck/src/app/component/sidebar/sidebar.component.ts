@@ -17,6 +17,8 @@ export class SidebarComponent {
   onLogout() {
 
     this.authService.logout();
+    localStorage.removeItem('token');
+    localStorage.removeItem('id');
 
   }
 

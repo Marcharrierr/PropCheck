@@ -7,6 +7,8 @@
 
 ::ng-deep .p-button {
   padding: 1rem !important; /* Sobrescribe el padding con !important */
+  padding-left: 1rem !important; /* Sobrescribe el padding con !important */
+  padding-right: 1rem !important; /* Sobrescribe el padding con !important */
  }
 :host .p-button .p-ink {
    display: none !important;

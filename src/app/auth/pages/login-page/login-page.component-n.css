@@ -17,7 +17,7 @@
 ::ng-deep .p-password {
   @apply   rounded-full;
 }
-::ng-deep .p-button {
+:host .p-button {
   @apply px-40 py-4 rounded-3xl [font-family:Helvetica] text-base font-normal leading-[normal] !important;
 }
 
