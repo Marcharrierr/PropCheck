@@ -1,97 +1,4 @@
-<!--  Menu encabezado  -->
-<div
-  class="bg-blue-primary-propcheck w-100 h-14 static flex align-items-center"
->
-  <p-button
-    styleClass="flex ml-4 c-bluenav text-white text-sm p-button-text"
-    (click)="sidebarVisible = true"
-    icon="pi pi-bars text-3xl "
-  ></p-button>
-  <div class="grow align-items-center">
-    <p-image
-      src="/assets/img/Logo PropCheck final_blanco.jpeg"
-      alt="Propcheck Image"
-      height="40"
-      width="40"
-      class="m-1 ml-3 translate-x-3 animate__animated animate__fadeInLeft"
-    ></p-image>
-  </div>
-
-  <!--SideBar-->
-
-  <p-sidebar
-    class="flex items-center justify-content-between"
-    [(visible)]="sidebarVisible"
-    [showCloseIcon]="false"
-  >
-    <div class="flex justify-start align-items-center select-none flex-column">
-      <p-image
-        src="/assets/img/Logo PropCheck final_blanco.jpeg"
-        alt="Propcheck Image"
-        height="120"
-        width="120"
-        class="m-3 mb-5 translate-x-3 animate__animated animate__fadeInLeft"
-      ></p-image>
-      <div class="flex flex-column">
-        <div class="flex md:ml-3 mb-3 animate__animated animate__fadeInDown">
-          <p-button
-            label="Inicio"
-            styleClass="text-white p-button-text "
-            icon="fa-solid fa-house fa-lg text-white"
-          ></p-button>
-        </div>
-        <div
-          class="flex md:ml-3 mb-3 text-900 font-medium animate__animated animate__fadeInDown"
-        >
-          <p-button
-            label="Servicios"
-            styleClass="text-white p-button-text "
-            icon="fa fa-tasks fa-xl text-white"
-          ></p-button>
-        </div>
-
-        <div
-          class="flex md:ml-3 mb-3 text-900 animate__animated animate__fadeInDown"
-        >
-          <p-button
-            label="Contáctanos"
-            styleClass=" text-white text-sm p-button-text "
-            icon="far fa-comment-alt fa-xl text-white"
-          ></p-button>
-        </div>
-        <div
-          class="flex md:ml-3 mb-3 text-900 font-medium animate__animated animate__fadeInDown"
-        >
-          <p-button
-            label="Verifica tu informe"
-            styleClass="text-white p-button-text "
-            icon="fa-regular fa-circle-check fa-xl text-white"
-          ></p-button>
-        </div>
-        <div
-          class="flex m-0 md:ml-3 mb-3 text-900 animate__animated animate__fadeInDown"
-        >
-          <p-button
-            label="Iniciar Sesión"
-            styleClass="text-white text-sm p-button-text"
-            icon="fa-regular fa-user fa-xl text-white"
-            ClassName="flex m-auto my-auto "
-            routerLink="/auth/login"
-          ></p-button>
-        </div>
-      </div>
-    </div>
-  </p-sidebar>
-
-  <div class="justify-items-end">
-    <p-button
-      label="Iniciar Sesión"
-      styleClass="text-white text-sm p-button-text"
-      ClassName=" font-['Helvetica']  leading-[normal] animate__animated animate__fadeInRight animate__delay-2s"
-      routerLink="/auth/login"
-    ></p-button>
-  </div>
-</div>
+<home-sidebar></home-sidebar>
 
 <!--  Portada cuerpo  -->
 <div className="flex ">
@@ -110,7 +17,7 @@
 
   <img
     class="w-full"
-    src="../../assets/img/Portada_casa_1.svg"
+    src="../../assets/img/hero.png"
     alt="Portada Home"
   />
 </div>
@@ -466,7 +373,7 @@
         </div>
         <div class="flex justify-center mt-1">
           <a
-            href=""
+            href="/verifica-informe"
             class="text-blue-700 hover:text-blue-900 font-bold text-sm m-2"
             >Ver ejemplo de informe</a
           >
@@ -514,7 +421,10 @@
           <h4 class="font-medium text-lg line-height-3 mb-3 text-100">
             Nuestra empresa
           </h4>
-          <a class="line-height-3 text-sm block cursor-pointer mb-2 text-200">
+          <a
+            class="line-height-3 text-sm block cursor-pointer mb-2 text-200"
+            href="/quienes-somos"
+          >
             Quienes somos
           </a>
           <a class="line-height-3 text-sm block cursor-pointer mb-2 text-200">

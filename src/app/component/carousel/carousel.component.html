@@ -2,20 +2,23 @@
   class="text-center font-bold font-['Helvetica'] text-blue-800 text-3xl animate__animated animate__fadeInUp m-3"
 >
   Quienes confían en nosotros
-</h1>
-<p-carousel
-  [value]="images"
-  [numVisible]="3"
-  [circular]="true"
-  [autoplayInterval]="2000"
+</h1><p-carousel
+[value]="images"
+[numVisible]="3"
+[circular]="true"
+[autoplayInterval]="2000"
 >
-  <ng-template let-image pTemplate="item">
-    <div class="image-card mx-auto m-2 mt-4">
+<ng-template let-image pTemplate="item">
+  <div class="image-card mx-auto m-2 mt-4">
+    <a [href]="image.url" target="_blank">
       <img
         class="flex mx-auto"
-        [src]="image"
+        [src]="image.imageUrl"
+        [alt]="image.name"
         style="width: 230px; height: 160px"
+        (click)="openUrlInNewTab($event, image.url)"
       />
-    </div>
-  </ng-template>
+    </a>
+  </div>
+</ng-template>
 </p-carousel>
