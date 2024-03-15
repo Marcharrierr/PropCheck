@@ -1,6 +1,6 @@
 <!-- Sidebar -->
 <div class="bg-blue-primary-propcheck w-full">
-  <div class="max-w-7xl mx-auto flex justify-center items-center px-2">
+  <div class="max-w-7xl mx-auto flex justify-center items-center px-2 gap-2">
     <p-button
       styleClass="flex w-auto text-white text-sm p-button-text justify-start"
       (click)="sidebarVisible = true"
@@ -9,13 +9,16 @@
 
     <!--SideBar-->
     <div class="flex-1 align-items-center justify-items-start">
-      <p-image
+      <div class="logo">
+        <img class="max-w-8 max-h-8" src="/assets/img/Logo PropCheck final_blanco.jpeg" alt="Logo Propcheck">
+      </div>
+      <!-- <p-image
         src="/assets/img/Logo PropCheck final_blanco.jpeg"
         alt="Propcheck Image"
         height="35"
         width="35"
         class=""
-      ></p-image>
+      ></p-image> -->
     </div>
     <p-sidebar [(visible)]="sidebarVisible">
       <!-- Logo internos Sidebar -->
@@ -93,11 +96,9 @@
         </div>
       </ng-template>
     </p-sidebar>
-    <div class="flex justify-items-end flex-wrap">
-      <label
-        class="text-white text-sm whitespace-nowrap p-button-text font-['Helvetica'] leading-[normal]"
-        >Bienvenido {{ agentData.name }} - {{ clientData.name }}</label
-      >
+    <div class="flex justify-items-end flex-wrap font-['Helvetica'] text-white  text-sm gap-x-2">
+        <span class="inline-block">Bienvenido {{ agentData.name }}</span><span class="inline-block"> {{ clientData.name }}</span
+        >
     </div>
   </div>
 </div>

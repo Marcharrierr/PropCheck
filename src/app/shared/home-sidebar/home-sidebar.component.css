@@ -1,5 +1,5 @@
 ::ng-deep .p-button {
-    padding: 1rem !important; /* Sobrescribe el padding con !important */
-    padding-left: 1rem !important; /* Sobrescribe el padding con !important */
-    padding-right: 1rem !important; /* Sobrescribe el padding con !important */
+    padding: 1rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
    }
