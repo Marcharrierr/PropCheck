@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, pipe, catchError, of, throwError } from 'rxjs';
 import { environment } from '../../environments/environments';
 import { Property } from '../interfaces/property.interface';
@@ -82,7 +82,26 @@ export class PropertyService {
       })
     );
   }
+  deleteProperty(clientId: number): Observable<any> {
+    // Define el cuerpo de la solicitud DELETE
+    const body = { status: 'INACTIVO' };
 
+    // Realiza la solicitud DELETE con el cuerpo especificado
+    return this.http.patch<any>(`http://34.173.203.168:3500/propcheck/property/${clientId}/status`, body).pipe(
+      catchError(error => {
+        console.log(error);
+        return throwError('Error fetching data');
+      })
+    );
+  }
+  getPropertiesdebtdetail(clientId: number): Observable<any> {
+    return this.http.get<any>(`http://34.173.203.168:3500/propcheck/property/2/debt`).pipe(
+      catchError(error => {
+        console.log(error);
+        return throwError('Error fetching data');
+      })
+    );
+  }
 
   getPropertiesById(id: number): Observable<Property[]> {
     return this.http.get<Property[]>(`http://localhost:3000/api/propertys/id/${id}`);
@@ -90,11 +109,5 @@ export class PropertyService {
 
   getPropertyServiceById(id: number): Observable<PropertyServices[]> {
     return this.http.get<PropertyServices[]>(`http://localhost:3000/api/property-service/${id}`);
-  }
-
-
-
-  deleteProperty(id: number) {
-
   }
 }

@@ -270,7 +270,8 @@ export class TablabdComponent implements OnInit {
     return (
       casa.community_name.toLowerCase().includes(searchText) ||
       casa.address.toLowerCase().includes(searchText) ||
-      casa.municipality.toLowerCase().includes(searchText)
+      casa.municipality.toLowerCase().includes(searchText) ||
+      casa.department.toLowerCase().includes(searchText)
     );
   }
 

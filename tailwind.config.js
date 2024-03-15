@@ -30,7 +30,12 @@ module.exports = {
         'icon': '30px',
         "wcardReport": '300px',
         'list': '1000px',
-        'propertiesList': '410px'
+        'propertiesList': '410px',
+        'mincardmetrics': '1100px',
+        'mincardmetricsMs': '450px'
+      },
+      Width: {
+        '400px': '300px',
       },
       minHeight: {
         'lg': '220px',

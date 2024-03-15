@@ -24,7 +24,7 @@ const routes: Routes = [
       { path: 'property-user-profile', component:  PropertyUserProfileComponent},
       { path: 'reset-password', component:  UserResetPasswordComponent},
       { path: 'list', component: ListPageComponent },
-      { path: 'property-detail', component: PropertyDetailComponent },
+      { path: 'property-detail/:id', component: PropertyDetailComponent },
       { path: 'properties', component: PropertiesComponent },
       { path: 'perfil', component: PerfilCasasPageComponent },
       { path: 'landing', component: LandingComponent },

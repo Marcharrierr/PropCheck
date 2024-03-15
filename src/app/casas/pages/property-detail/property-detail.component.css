@@ -1,0 +1,4 @@
+/* Estilo personalizado para PrimeNG */
+::ng-deep .placeholder-black::placeholder {
+  color: black;
+}

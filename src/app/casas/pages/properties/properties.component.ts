@@ -12,7 +12,7 @@ export class PropertiesComponent {
     )
   {}
   casas: any;
-
+  status: 'success' | 'error' = 'success';
   clientId!: 3;
   searchText: string = '';
   filteredCasas: any = [];
@@ -38,7 +38,6 @@ export class PropertiesComponent {
       return;
     } else {
       const searchText = this.searchText.toLowerCase().trim();
-      console.log(searchText);
       this.filteredCasas = this.casas.filter((casa: any) =>
         this.matchSearchText(casa, searchText)
       );
@@ -52,7 +51,9 @@ export class PropertiesComponent {
     return (
       casa.community_name.toLowerCase().includes(searchText) ||
       casa.address.toLowerCase().includes(searchText) ||
-      casa.municipality.toLowerCase().includes(searchText)
+      casa.municipality.toLowerCase().includes(searchText) ||
+      casa.department.toLowerCase().includes(searchText)
+
     );
   }
 
@@ -63,7 +64,7 @@ export class PropertiesComponent {
       startIndex + this.pageSize,
       this.filteredCasas.length
     );
-    console.log(this.filteredCasas)
+    console.log(this.filteredCasas.slice(startIndex, endIndex))
     return this.filteredCasas.slice(startIndex, endIndex);
   }
 
@@ -87,13 +88,14 @@ export class PropertiesComponent {
     try {
       this.propertyService.getPropertiesByClientId(2).subscribe(
         (properties) => {
-          this.casas = properties;
+          this.casas = properties.filter((casa: any) => casa.status == 'ACTIVO');
           console.log(this.casas)
           this.filterData();
           this.calculateTotalPages();
-          // this.loading = true;
+          this.status = 'success';
         },
         (error) => {
+          this.status = 'error';
           console.log(error);
         }
       );

@@ -3,7 +3,7 @@
     <div *ngFor="let casa of casas"
       class="card-component rounded-lg overflow-hidden shadow-lg mt-1 border border-gray-300 p-3 pb-6 -mb-3 lg:min-w-propertiesList">
       <div class="flex justify-between items-center mb-2 p-3">
-        <div class="h-28">
+        <div class="h-28" (click)="redirectToPropertyDetail(casa.id)">
           <h1 class="text-lg font-bold">{{ casa.community_name }}</h1>
           <p>{{ casa.address }}, Dpto. {{casa.department}}</p>
           <p>{{ casa.department }}</p>
@@ -15,7 +15,7 @@
       <div class="grid grid-rows-2 mt-2">
         <div class="flex space-x-2 ml-4">
           <!-- Botones con iconos de Font Awesome -->
-          <div *ngFor="let icono of iconos" class="w-6 h-8 min-w-icon min-h-icon rounded-full flex items-center justify-center" [ngClass]="{'bg-green-500': casa.activo, 'bg-red-500': !casa.activo}">
+          <div *ngFor="let icono of iconos" class="w-6 h-8 min-w-icon min-h-icon rounded-full flex items-center justify-center" [ngClass]="{'bg-green-500': casa.activo, 'bg-gray-500': !casa.activo}">
             <button class="w-6 h-12 rounded-full flex items-center justify-center">
               <img [src]="icono.ruta" alt="Icono de llamada" class="w-12">
             </button>
@@ -23,14 +23,35 @@
           <!-- Nuevo botón de descarga -->
         </div>
         <div class="flex space-x-2 ml-auto">
-          <button class="w-3 h-3 rounded-full  focus:outline-none ml-6" (click)="redirectToPropertyDetail(casa.id)">
+          <button class="w-3 h-3 rounded-full  focus:outline-none ml-6">
             <img src="assets/img/editarCard.svg" alt="Icono de llamada">
           </button>
-          <button class="w-3 h-3 rounded-full focus:outline-none" (click)="descargarInforme()">
+          <!-- Modifica el botón para llamar a la función confirmDelete -->
+          <button class="w-3 h-3 rounded-full focus:outline-none" (click)="deleteProperty(casa.id)">
             <img src="assets/img/delete.svg" alt="Icono de llamada">
           </button>
+          <!-- Agrega el p-confirmDialog al HTML -->
+          <!-- <p-toast></p-toast> -->
+          <p-confirmDialog #cd *ngIf="mostrar">
+            <ng-template pTemplate="headless" let-message>
+                <div class="flex flex-column align-items-center p-5 surface-overlay border-round">
+                    <div class="border-circle bg-primary inline-flex justify-content-center align-items-center h-6rem w-6rem -mt-8">
+                        <i class="pi pi-question text-5xl"></i>
+                    </div>
+                    <span class="font-bold text-2xl block mb-2 mt-4">{{ message.header }}</span>
+                    <p class="mb-0">{{ message.message }}</p>
+                    <div class="flex align-items-center gap-2 mt-4">
+                        <button pButton label="Save" (click)="confirmDelete(true)" class="w-8rem">confirmar</button>
+                        <button pButton label="Cancel" (click)="confirmDelete(false)" class="p-button-outlined w-8rem ">cancelar</button>
+                    </div>
+                </div>
+            </ng-template>
+          </p-confirmDialog>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
