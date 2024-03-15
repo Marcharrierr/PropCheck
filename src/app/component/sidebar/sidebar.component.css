@@ -4,12 +4,13 @@
 ::ng-deep .p-menubar {
   background-color: #223d76 !important;
 }
-
+/* 
 ::ng-deep .p-button {
-  padding: 1rem !important; /* Sobrescribe el padding con !important */
-  padding-left: 1rem !important; /* Sobrescribe el padding con !important */
-  padding-right: 1rem !important; /* Sobrescribe el padding con !important */
- }
+  padding: 1rem !important; 
+  padding-left: 1rem !important; 
+  padding-right: 1rem !important;
+ } */
+
 :host .p-button .p-ink {
    display: none !important;
 }
