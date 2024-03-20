@@ -1,0 +1,60 @@
+<!-- Sidebar -->
+<div style="background: #102e6e" class="justify-content-start">
+  <div class="flex align-center">
+    <p-menubar class="py-2 px-2 mx-0 md:mx-1 flex">
+      <p-button
+        styleClass="p-button-warning ml-auto"
+        (click)="sidebarVisible = true"
+        icon="pi pi-bars"
+      >
+      </p-button>
+    </p-menubar>
+
+    <img
+      src="/assets/img/Logo PropCheck final_blanco.jpeg"
+      height="70"
+      width="75"
+      alt="Logo Propcheck"
+      class="mr-auto m-2"
+    />
+
+    <p-sidebar [(visible)]="sidebarVisible">
+      <!-- Logo internos Sidebar -->
+      <div class="card flex justify-content-center mb-4">
+        <p-image
+          src="/assets/img/Logo PropCheck final_blanco.jpeg"
+          alt="Propcheck"
+          height="130"
+          width="130"
+        ></p-image>
+      </div>
+
+      <!-- Contenido interno Sidebar -->
+      <ng-template pTemplate="body">
+        <p-button
+          icon="pi pi-list"
+          label="Lista de propiedades"
+          styleClass="p-button-warning text-xl w-full mb-4"
+          routerLink="/propiedades/list"
+          (click)="sidebarVisible = false"
+        ></p-button>
+
+        <p-button
+          icon="pi pi-list"
+          label="Ver propiedades"
+          styleClass="p-button-warning text-xl w-full mb-4"
+          routerLink="/propiedades/landing"
+          (click)="sidebarVisible = false"
+        ></p-button>
+
+        <p-button
+          icon="pi pi-sign-out"
+          label="Cerrar Sesión"
+          styleClass="p-button-danger text-xl w-full mb-4"
+          (click)="onLogout()"
+        ></p-button>
+      </ng-template>
+    </p-sidebar>
+  </div>
+  <!-- Eliminar div de abajo para cambiar fondo blanco -->
+</div>

@@ -1,0 +1,87 @@
+<div class="flex">
+  <div class="flex md:w-1/3 justify-center items-center">
+    <div class="flex w-screen h-full md:shrink-0 bg-blue-nav">
+      <p-image
+        src="/assets/img/Logo PropCheck final_blanco 1.svg"
+        alt="Propcheck Image"
+        height="150"
+        width="200"
+        class="mx-auto md:my-auto p-4 mt-16"
+      ></p-image>
+    </div>
+  </div>
+  <div class="flex items-center justify-center md:visible invisible static">
+    <div class="flex-col justify-center flex-grow text-center static">
+      <img
+        class="object-cover h-screen w-screen static"
+        src="assets/img/login-1.svg"
+        alt="Portada Login"
+      />
+      <!--Formulario login-->
+    </div>
+    <div
+      class="flex-grow shadow-xl visible absolute md:bottom-auto bottom-0 md:left-auto left-0 md:right-auto right-0 items-center"
+    >
+      <form
+        class="w-32rem pt-4 md:p-4 pb-32 rounded-t-3xl md:rounded-3xl bg-white"
+        autocomplete="off"
+        [formGroup]="myForm"
+        (ngSubmit)="login()"
+      >
+        <div class="text-center">
+          <label
+            class="block text-blue-800 text-2xl [font-family:Helvetica] text-[25px] font-bold leading-[normal] py-3"
+            ><h2>Inicia sesión</h2></label
+          >
+        </div>
+
+        <div class="flex-row mb-4">
+          <span class="p-float-label m-4 ml-5">
+            <input
+              pInputText
+              formControlName="email"
+              type="text"
+              class="w-21rem md:w-24rem shadow-sm"
+            />
+            <label
+              class="[font-family:Helvetica] text-[#909090] text-lg font-normal leading-[normal] ml-2"
+              htmlFor="usuario"
+              >Usuario</label
+            >
+          </span>
+          <div class="flex mb-4">
+            <span class="p-float-label m-5">
+              <p-password
+                formControlName="password"
+                [toggleMask]="true"
+                [feedback]="false"
+                inputStyleClass=" w-21rem md:w-24rem shadow-sm "
+              ></p-password>
+              <label
+                class="[font-family:Helvetica] text-[#909090] text-lg font-normal leading-[normal] ml-2"
+                htmlFor="Contraseña"
+                >Contraseña</label
+              >
+            </span>
+          </div>
+          <div class="flex justify-center">
+            <button
+              pButton
+              type="submit"
+              [disabled]="myForm.invalid"
+              label="Ingresar"
+            ></button>
+            <!--routerLink="/casas/list"-->
+          </div>
+          <div class="flex justify-center mt-3">
+            <a
+              href="/auth/recover"
+              class="text-blue-700 hover:text-blue-900 [font-family:Helvetica] text-[15px] font-bold leading-[normal] m-2"
+              >¿Olvidaste tu contraseña?</a
+            >
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

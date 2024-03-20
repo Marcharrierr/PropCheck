@@ -1,0 +1,42 @@
+.image {
+  height: 564px;
+  width: 1513px;
+}
+.image .composicion {
+  height: 564px;
+  left: 0;
+  object-fit: cover;
+  position: fixed;
+  top: 0;
+  width: 1512px;
+}
+
+::ng-deep .p-sidebar {
+  background-color: #102e6e !important;
+}
+
+.card {
+  width: 350px;
+  height: 350px;
+  background: rgb(255, 255, 255);
+  border-radius: 0.9em;
+  box-shadow: 0.3em 0.3em 0.7em #00000015;
+  transition: border 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: rgb(250, 250, 250) 0.2em solid;
+}
+
+.card:hover {
+  border: #006fff 0.2em solid;
+}
+.card1 {
+  background: rgb(255, 255, 255);
+  border-radius: 0.9em;
+  box-shadow: 0.3em 0.3em 0.7em #00000015;
+  transition: border 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: rgb(250, 250, 250) 0.2em solid;
+}
+
+.container1 {
+  width: 350px;
+  height: auto;
+}

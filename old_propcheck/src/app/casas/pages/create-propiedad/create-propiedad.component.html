@@ -1,0 +1,409 @@
+<!-- Flex -->
+
+<app-sidebar></app-sidebar>
+
+<!-- Contenedor Sidebar (Degradé) -->
+
+<div class="relative">
+  <div class="block">
+    <p-messages severity="warn">
+      <ng-template pTemplate>
+        <i class="fa-solid fa-triangle-exclamation text-yellow-500"></i>
+        <div class="ml-1">Aplicación DEMO</div>
+      </ng-template>
+    </p-messages>
+  </div>
+
+  <!--Progressbar-->
+  <div class="card" *ngIf="loading">
+    <p-progressBar
+      mode="indeterminate"
+      [style]="{ height: '6px' }"
+    ></p-progressBar>
+  </div>
+
+  <!--Perfil propiedad-->
+
+  <div class="card border-round shadow-3 justify-content-center m-3">
+    <div class="flex">
+      <div
+        class="flex align-items-center justify-content-center m-2 px-5 py-3 border-round"
+      >
+        <span class="flex text-xl">
+          <i class="fa-solid fa-receipt text-yellow-500 mr-2"></i>
+          Datos nueva propiedad:</span
+        >
+      </div>
+    </div>
+    <div class="flex align-items-center justify-content-center m-2">
+      <div class="flex align-items-center justify-content-center">
+        <div class="block align-items-center justify-content-center m-2">
+          <form [formGroup]="myProperty" (ngSubmit)="onSubmitProperty()">
+            <div class="flex align-items-start justify-content-start m-2">
+              <p-dropdown
+                [options]="type"
+                placeholder="Tipo"
+                formControlName="type"
+              ></p-dropdown>
+              <div class="flex align-items-center justify-content-start ml-3">
+                <p-dropdown
+                  [options]="region"
+                  placeholder="Región"
+                  formControlName="region"
+                ></p-dropdown>
+              </div>
+              <div class="flex align-items-center justify-content-start ml-3">
+                <p-dropdown
+                  placeholder="Municipalidad"
+                  [options]="municipalityControl.value"
+                  formControlName="municipality"
+                ></p-dropdown>
+              </div>
+            </div>
+
+            <div class="flex">
+              <div
+                class="flex-initial flex align-items-center justify-content-center border-round"
+              >
+                <div
+                  class="align-items-center justify-content-center m-2 text-xl border-round"
+                >
+                  <i
+                    class="fa-solid fa-door-closed text-yellow-500 justify-content-center m-2"
+                  ></i>
+                  Dirección :
+                </div>
+
+                <div
+                  class="flex-auto align-items-center justify-content-center text-700 m-2"
+                >
+                  <input
+                    class="m-2"
+                    id="address"
+                    size="25"
+                    type="text"
+                    pInputText
+                    formControlName="address"
+                  />
+                </div>
+              </div>
+              <div
+                class="flex-initial flex align-items-center justify-content-center border-round"
+              >
+                <div
+                  class="align-items-center justify-content-center m-2 text-xl border-round"
+                >
+                  <i
+                    class="fa-solid fa-door-closed text-yellow-500 justify-content-center m-2"
+                  ></i>
+                  Comunidad :
+                </div>
+
+                <div
+                  class="flex-auto align-items-center justify-content-center text-700 m-2"
+                >
+                  <input
+                    class="m-2"
+                    id="community_name"
+                    size="25"
+                    type="text"
+                    pInputText
+                    formControlName="community_name"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="flex">
+              <div
+                class="flex align-items-center justify-content-center m-2 text-xl border-round"
+              >
+                <i
+                  class="fa-solid fa-door-closed text-yellow-500 justify-content-center m-2"
+                ></i>
+                Departamento :
+              </div>
+
+              <div
+                class="flex-auto align-items-center justify-content-center text-700 m-2"
+              >
+                <input
+                  class="m-2"
+                  id="department"
+                  size="7"
+                  type="text"
+                  pInputText
+                  formControlName="department"
+                />
+              </div>
+              <div
+                class="flex-auto flex align-items-center justify-content-center m-2 text-xl border-round"
+              >
+                <i
+                  class="fa-solid fa-building text-yellow-500 justify-content-center m-2"
+                ></i>
+                Torre :
+              </div>
+
+              <div
+                class="flex-auto align-items-center justify-content-center text-700 m-2"
+              >
+                <input
+                  class="m-2"
+                  size="3"
+                  id="tower"
+                  type="text"
+                  pInputText
+                  formControlName="tower"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cuentas -->
+  <form [formGroup]="myPropertyService" (ngSubmit)="onSubmitPropertyService()">
+    <div class="overflow-hidden m-3 shadow-3 border-round">
+      <div class="flex">
+        <div
+          class="flex-auto flex align-items-center justify-content-center m-2 px-5 py-3 border-round"
+        >
+          <span class="flex text-xl">
+            <i class="fa-solid fa-receipt text-yellow-500 mr-2"></i>
+            Cuentas:</span
+          >
+        </div>
+      </div>
+      <!-- luz -->
+      <div class="flex">
+        <div
+          class="flex-auto flex align-items-center justify-content-center font-bold m-2 border-round"
+        >
+          <i
+            class="fa-solid fa-bolt text-yellow-500 justify-content-center m-2"
+          ></i>
+          Luz :
+        </div>
+        <div
+          class="flex-2 flex align-items-center justify-content-center font-bold text-700 m-2"
+        >
+          <input
+            class="m-2"
+            id="luz"
+            type="text"
+            size="12"
+            pInputText
+            formControlName="luz"
+          />
+        </div>
+        <div class="flex-2 flex align-items-center justify-content-center m-2">
+          <p-dropdown
+            *ngIf="serviceProperties"
+            [options]="serviceProperties['luz']"
+            placeholder="Proveedor"
+            optionLabel="description"
+            formControlName="luzControl"
+            (onChange)="onDropdownChange($event.value.id, 'luz')"
+          >
+            ></p-dropdown
+          >
+        </div>
+
+        <div
+          class="flex-auto flex align-items-center justify-content-center font-bold m-2 border-round"
+        >
+          <p-inputSwitch
+            formControlName="luzNoService"
+            inputId="ns"
+            (onChange)="onCheckboxChange($event, 'luz')"
+          ></p-inputSwitch>
+        </div>
+      </div>
+      <!-- Agua -->
+      <div class="flex">
+        <div
+          class="flex-auto flex align-items-center justify-content-center font-bold m-2 border-round"
+        >
+          <i
+            class="fa-solid fa-droplet text-yellow-500 justify-content-center m-2"
+          ></i>
+          Agua :
+        </div>
+        <div
+          class="flex-2 flex align-items-center justify-content-center font-bold text-700 m-2"
+        >
+          <input
+            class="m-2"
+            id="agua"
+            type="text"
+            size="10"
+            pInputText
+            formControlName="agua"
+          />
+        </div>
+        <div class="flex-2 flex align-items-center justify-content-center m-2">
+          <p-dropdown
+            *ngIf="serviceProperties"
+            [options]="serviceProperties['agua']"
+            placeholder="Proveedor"
+            optionLabel="description"
+            formControlName="aguaControl"
+            (onChange)="onDropdownChange($event.value.id, 'agua')"
+          ></p-dropdown>
+        </div>
+
+        <div
+          class="flex-auto flex align-items-center justify-content-center font-bold m-2 border-round"
+        >
+          <p-inputSwitch
+            formControlName="aguaNoService"
+            inputId="ns"
+            (onChange)="onCheckboxChange($event, 'agua')"
+          ></p-inputSwitch>
+        </div>
+      </div>
+      <!-- gas -->
+      <div class="flex">
+        <div
+          class="flex-auto flex align-items-center justify-content-center font-bold m-2 border-round"
+        >
+          <i
+            class="fa-brands fa-gripfire fa-xl text-yellow-500 justify-content-center m-2"
+          ></i>
+          Gas :
+        </div>
+        <div
+          class="flex-2 flex align-items-center justify-content-center font-bold text-700 m-2"
+        >
+          <input
+            class="m-2"
+            id="gas"
+            type="text"
+            size="10"
+            pInputText
+            formControlName="gas"
+          />
+        </div>
+        <div class="flex-2 flex align-items-center justify-content-center m-2">
+          <p-dropdown
+            *ngIf="serviceProperties"
+            [options]="serviceProperties['gas']"
+            placeholder="Proveedor"
+            optionLabel="description"
+            formControlName="gasControl"
+            (onChange)="onDropdownChange($event.value.id, 'gas')"
+          ></p-dropdown>
+        </div>
+
+        <div
+          class="flex-auto flex align-items-center justify-content-center font-bold m-2 border-round"
+        >
+          <p-inputSwitch
+            formControlName="gasNoService"
+            inputId="ns"
+            (onChange)="onCheckboxChange($event, 'gas')"
+          ></p-inputSwitch>
+        </div>
+      </div>
+      <!-- Gasto común -->
+
+      <div class="flex">
+        <div
+          class="flex-auto flex align-items-center justify-content-center font-bold m-2 border-round"
+        >
+          <i
+            class="fa-solid fa-building-user text-yellow-500 justify-content-center m-2"
+          ></i>
+          Gasto común :
+        </div>
+        <div
+          class="flex-2 flex align-items-center justify-content-center font-bold text-700 m-2"
+        >
+          <input
+            class="m-2"
+            id="ggcc"
+            type="text"
+            size="15"
+            pInputText
+            formControlName="ggcc"
+          />
+        </div>
+        <div class="flex-2 flex align-items-center justify-content-center m-2">
+          <p-dropdown
+            *ngIf="serviceProperties"
+            [options]="serviceProperties['ggcc']"
+            placeholder="Proveedor"
+            optionLabel="description"
+            formControlName="ggccControl"
+            (onChange)="onDropdownChange($event.value.id, 'ggcc')"
+          ></p-dropdown>
+        </div>
+
+        <div
+          class="flex-auto flex align-items-center justify-content-center font-bold m-2 border-round"
+        >
+          <p-inputSwitch
+            formControlName="ggccNoService"
+            inputId="ns"
+            (onChange)="onCheckboxChange($event, 'ggcc')"
+          ></p-inputSwitch>
+        </div>
+      </div>
+      <!-- Contribuciones y Aseo -->
+      <div class="flex">
+        <div
+          class="flex-auto flex align-items-center justify-content-center font-bold m-2 border-round"
+        >
+          <i
+            class="fa-solid fa-house-circle-exclamation text-yellow-500 justify-content-center m-2"
+          ></i>
+          Contribuciones :
+        </div>
+
+        <div
+          class="flex-auto align-items-center justify-content-center font-bold text-700 m-2"
+        >
+          <input
+            class="m-2"
+            id="contri"
+            type="text"
+            pInputText
+            formControlName="contri"
+          />
+        </div>
+        <div
+          class="flex-auto flex align-items-center justify-content-center font-bold m-2 border-round"
+        >
+          <i
+            class="fa-solid fa-recycle text-yellow-500 justify-content-center m-2"
+          ></i>
+          Aseo :
+        </div>
+
+        <div
+          class="flex-auto align-items-center justify-content-center font-bold text-700 m-2"
+        >
+          <input
+            class="m-2"
+            size="10"
+            id="aseo"
+            type="text"
+            pInputText
+            formControlName="aseo"
+          />
+        </div>
+      </div>
+      <div class="flex flex-row-reverse m-3">
+        <p-button
+          label="Crear propiedad"
+          styleClass="p-button-raised p-button-success"
+          (click)="onSubmitButton()"
+          [disabled]="!myProperty.valid"
+        ></p-button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,3 +1,4 @@
+import { PrimengModule } from './primeng/primeng.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -21,12 +22,12 @@ import { CardModule } from 'primeng/card';
 import { CarouselModule } from 'primeng/carousel';
 import { ImageModule } from 'primeng/image';
 import { MessagesModule } from 'primeng/messages';
+
 import { RippleModule } from 'primeng/ripple';
 import { StyleClassModule } from 'primeng/styleclass';
 import { MenubarModule } from 'primeng/menubar';
-
-
-
+import { InformeComponent } from './informe/informe.component';
+import { QuienessomosComponent } from './quienes-somos/quienessomos.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { MenubarModule } from 'primeng/menubar';
     AppComponent,
     HomePageComponent,
     CarouselComponent,
-
+    InformeComponent,
+    QuienessomosComponent,
   ],
   imports: [
     AnimateModule,
@@ -54,9 +56,11 @@ import { MenubarModule } from 'primeng/menubar';
     MessagesModule,
     MenubarModule,
     ReactiveFormsModule,
+    PrimengModule,
     RippleModule,
     SharedModule,
     StyleClassModule,
+
 
   ],
   providers: [],

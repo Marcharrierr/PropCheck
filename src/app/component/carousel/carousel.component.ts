@@ -1,28 +1,42 @@
 import { Component } from '@angular/core';
 
+interface CarouselItem {
+  imageUrl: string;
+  name: string;
+  url: string;
+}
+
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.css']
 })
 export class CarouselComponent {
-
-  images: string[] = [
-    './assets/empresas/ProRenta.jpeg',
-    './assets/empresas/AsciendeYa.jpeg',
-    './assets/empresas/Cumbres Gestión inmobiliaria.jpeg',
-    './assets/empresas/Rentando.jpeg',
+  images: CarouselItem[] = [
+    { 
+      imageUrl: 'assets/empresas/ProRenta.jpeg', 
+      name: 'ProRenta', 
+      url: '#'
+    },
+    { 
+      imageUrl: 'assets/empresas/AsciendeYa.jpeg', 
+      name: 'Asciende YA!', 
+      url: '#'
+    },
+    { 
+      imageUrl: 'assets/empresas/Cumbres.jpeg', 
+      name: 'Cumbres Gestión Inmobiliaria', 
+      url: '#'
+    },
+    { 
+      imageUrl: 'assets/empresas/Rentando.jpeg', 
+      name: 'Rentando', 
+      url: '#'
+    }
   ];
-  name: string[] = [
-    'ProRenta',
-    'Asciende YA!',
-    'Cumbres Gestión Inmobiliaria',
-    'Rentando'
-  ]
 
-  getImageName(imageUrl: string): string {
-    const imageName = imageUrl.substring(imageUrl.lastIndexOf('/') + 1);
-    return imageName;
+  openUrlInNewTab(event: MouseEvent, url: string): void {
+    event.preventDefault();
+    window.open(url, '_blank');
   }
-
 }

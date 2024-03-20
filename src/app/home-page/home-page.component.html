@@ -1,172 +1,100 @@
-<!--  Menu encabezado  -->
-<div
-  style="background: #223d76"
-  class="py-2 px-2 mx-0 md:mx-1 lg:mx-1 lg:px-3 flex align-items-center justify-content-between relative lg:static border-round"
->
-  <a class="flex align-items-center">
-    <p-image
-      src="/assets/img/Logo PropCheck final_blanco.jpeg"
-      alt="Image"
-      height="100"
-      width="100"
-      class="ml-4 lg:mr-1 animate__animated animate__fadeInLeft"
-    ></p-image>
-  </a>
-  <a
-    pRipple
-    class="cursor-pointer block lg:hidden text-700"
-    pStyleClass="@next"
-    enterClass="hidden"
-    leaveToClass="hidden"
-    [hideOnOutsideClick]="true"
-  >
-    <i class="pi pi-bars text-yellow-600 text-4xl"></i>
-  </a>
-  <div
-    class="align-items-center flex-grow-1 justify-content-between hidden lg:flex absolute lg:static w-full left-0 px-6 lg:px-0 z-2"
-    style="top: 120px"
-  >
-    <ul
-      style="background: #223d76"
-      class="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row cursor-pointer"
-    >
-      <li>
-        <a pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 line-height-3">
-          <p-button
-            label="Inicio"
-            styleClass="text-white p-button-text animate__animated animate__fadeInDown"
-          ></p-button>
-        </a>
-      </li>
-      <li>
-        <a
-          pRipple
-          class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3"
-        >
-          <p-button
-            label="Nosotros"
-            styleClass="text-white p-button-text animate__animated animate__fadeInDown"
-          ></p-button>
-        </a>
-      </li>
-      <li>
-        <a pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900">
-          <p-button
-            label="Contáctanos"
-            styleClass=" text-white p-button-text animate__animated animate__fadeInDown"
-          ></p-button>
-        </a>
-      </li>
-    </ul>
-    <div
-      style="background: #223d76"
-      class="flex justify-content-between lg:block border-top-1 lg:border-top-none py-3 lg:py-0 mt-3 lg:mt-0"
-    >
-      <p-button
-        label="Iniciar Sesión"
-        styleClass="p-button-raised p-button-warning animate__animated animate__fadeInRight animate__delay-2s"
-        routerLink="auth"
-      ></p-button>
-    </div>
-  </div>
-</div>
-
-<!-- Mensaje de DEMO -->
-<p-messages severity="warn">
-  <ng-template pTemplate>
-    <i class="fa-solid fa-triangle-exclamation text-yellow-500"></i>
-    <div class="ml-2">Aplicación DEMO</div>
-  </ng-template>
-</p-messages>
+<home-sidebar></home-sidebar>
 
 <!--  Portada cuerpo  -->
-<div class="grid surface-section text-800" style="background: #223d76">
+<div className="flex ">
   <div
-    style="
-      background: linear-gradient(
-          0deg,
-          rgba(255, 255, 255, 0.2),
-          rgba(255, 255, 255, 0.2)
-        ),
-        radial-gradient(
-          107.36% 256.97% at 77.36% 57.52%,
-          #ffffff 35%,
-          #bddcf2 130%
-        );
-      clip-path: ellipse(150% 87% at 93% 70%);
-    "
-    class="col-12 md:col-8 p-5 text-center md:text-left flex align-items-center"
+    class="bg-blue-primary-propcheck/50 w-9/12 h-20 mt-16 md:h-64 lg:h-2/6 blur-lg absolute ml-4 items-center justify-center"
+  ></div>
+  <div
+    class="flex w-8/12 h-48 md:h-64 lg:h-3/6 items-center justify-center absolute ml-4 md:ml-6"
   >
-    <section>
-      <span
-        class="block text-gray-800 text-6xl font-bold mb-1 animate__animated animate__fadeInLeftBig"
-        >PropCheck</span
-      >
-      <p
-        class="mb-4 text-700 line-height-3 font-bold animate__animated animate__fadeInLeftBig animate__delay-1s"
-      >
-        La solución de búsqueda de información de gastos comunes, servicios
-        básicos y tributos asociados a un inmueble
-      </p>
+    <p
+      class="flex text-white bg-transparent font-bold text-lg md:text-3xl lg:text-6xl font-['Helvetica'] overflow-hidden"
+    >
+      Descubre la solución más inteligente para administrar tus inmuebles
+    </p>
+  </div>
 
-      <p-button
-        label="Ingresa aquí"
-        styleClass="p-button-raised p-button-warning animate__animated animate__fadeInUp animate__delay-2s"
-        routerLink="auth"
-      ></p-button>
-    </section>
-  </div>
-  <div class="col-8 md:col-4">
-    <img
-      src="assets/img/main_blue.jpeg"
-      alt="Main_blue"
-      class="animate__animated animate__fadeInUp block"
-      height="auto"
-      width="100%"
-      style="clip-path: polygon(08% 0, 90% 0%, 100% 100%, 0 100%)"
-    />
-  </div>
+  <img
+    class="w-full"
+    src="../../assets/img/hero.png"
+    alt="Portada Home"
+  />
 </div>
 
 <!-- Feature informativo  -->
 
-<div
-  style="
-    background: linear-gradient(
-        0deg,
-        rgba(255, 255, 255, 0.2),
-        rgba(255, 255, 255, 0.2)
-      ),
-      radial-gradient(277.36% 46.97% at 97.36% 57.52%, #bddcf2 0%, #ffffff 100%);
-    clip-path: ellipse(150% 87% at 93% 24%);
-  "
-  class="flex-wrap px-6 py-2 md:px-4 lg:px-6 text-center"
->
-  <div class="mb-3 font-bold text-3xl">
-    <span class="text-900 animate__animated animate__fadeInUp"
-      >Nuestro producto,
-    </span>
-    <span class="text-blue-600 animate__animated animate__fadeInUp"
-      >muchas soluciones</span
+<div class="flex justify-center md:justify-start">
+  <div class="flex-col items-center w-full md:w-1/2 hidden md:flex">
+    <div
+      class="flex bg-blue-nav rounded-3xl mt-7 ml-5 text-center w-96 h-64 items-center invisible md:visible"
     >
+      <p-image
+        src="/assets/img/Logo PropCheck final_blanco.jpeg"
+        alt="Propcheck Image"
+        height="150"
+        width="200"
+        class="mx-auto"
+      ></p-image>
+    </div>
   </div>
-  <div class="text-700 mb-6 animate__animated animate__fadeInUp">
-    Te mostramos algunos de nuestros beneficios:
+  <div class="flex flex-col items-center justify-center w-full md:w-1/2">
+    <div class="flex-col justify-center ml-5 flex-grow my-5 mr-5 text-center">
+      <div
+        class="text-blue-nav text-xl md:text-3xl font-bold font-['Helvetica'] text-start md:my-2"
+      >
+        ¿Qué hacemos en PropCheck?
+      </div>
+      <p
+        class="text-slate-800 text-base md:text-2xl font-normal font-['Helvetica']leading-9 text-justify my-3 mr-2 md:mr-6"
+      >
+        PropCheck entrega un informe concentrado de las deudas asociadas a una
+        propiedad (casa, departamento, oficina, local comercial, bodega,
+        estacionamiento y otros), abarcando servicios básicos como:
+      </p>
+      <div
+        class="flex md:flex-row text-blue-900 text-sm md:text-xl font-bold font-['Helvetica'] text-center my-2"
+      >
+        <div class="text-start w-1/4">
+          • Agua
+          <br />
+          • Luz
+          <br />
+          • Gas
+        </div>
+        <div class="text-start">
+          • Gastos comunes
+          <br />
+          • Contribuciones de bienes raíces
+          <br />
+          • Pago de derechos de aseo
+        </div>
+      </div>
+    </div>
   </div>
+</div>
+
+<!-- Feature informativo con tarjetas -->
+
+<div class="bg-gray-200 flex-wrap px-6 py-2 md:px-4 lg:px-6 text-center">
+  <div class="mb-3 font-bold text-3xl md:visible m-3">
+    <span class="text-blue-nav">Optimiza HOY </span>
+  </div>
+  <span class="text-blue-800 text-2xl"
+    >Tus procesos con nuestros beneficios</span
+  >
 
   <div
-    class="flex flex-wrap card-container justify-content-center align-items-center"
+    class="flex flex-wrap card-container justify-content-center align-items-center mt-3 mb-3"
   >
-    <div class="card m-4 animate__animated animate__fadeInUp animate__delay-4s">
+    <div class="card col-12 shadow m-4">
       <span
-        class="p-3 shadow-2 mb-3 mt-3 inline-block bg-blue-500"
+        class="p-3 shadow-2 mb-3 mt-3 inline-block"
         style="border-radius: 10px"
       >
-        <i class="pi pi-check text-4xl text-yellow-300"></i>
+        <p-image src="../../assets/img/medal 1.png" class=" "></p-image>
       </span>
-      <div class="text-blue-600 text-xl mb-3 mt-3 font-medium">
-        Precisión y Calidad
-      </div>
+      <div class="text-xl mb-3 mt-3 p-3 font-medium">Precisión y Calidad</div>
       <span class="text-700 line-height-3 m-2"
         >Mediante la eliminación del error humano, garantizamos resultados
         precisos y de alta calidad en todas nuestras operaciones mediante
@@ -174,33 +102,29 @@
       >
     </div>
 
-    <div
-      class="card col-12 m-4 animate__animated animate__fadeInUp animate__delay-4s"
-    >
+    <div class="card col-12 m-4">
       <span
-        class="p-3 shadow-2 mb-3 mt-3 inline-block bg-blue-500"
+        class="p-3 shadow-2 mb-3 mt-3 inline-block"
         style="border-radius: 10px"
       >
-        <i class="pi pi-clock text-4xl text-yellow-300"></i>
+        <p-image src="../../assets/img/clock 1.png" class=" "></p-image>
       </span>
-      <div class="text-blue-600 text-xl mt-3 mb-3 font-medium">
+      <div class="text-xl mt-3 mb-3 font-medium">
         Información exacta y en tiempo real
       </div>
-      <span class="text-700 line-height-3 m-2"
+      <span class="text-700 line-height-3 text-overflow m-2"
         >Proporcionamos datos precisos y actualizados al instante, permitiendo
         una toma de decisiones informada y ágil.</span
       >
     </div>
-    <div
-      class="card col-12 m-4 animate__animated animate__fadeInUp animate__delay-4s"
-    >
+    <div class="card col-12 m-4">
       <span
-        class="p-3 shadow-2 mt-3 mb-3 inline-block bg-blue-500"
+        class="p-3 shadow-2 mt-3 mb-3 inline-block"
         style="border-radius: 10px"
       >
-        <i class="pi pi-user-minus text-4xl text-yellow-300"></i>
+        <p-image src="../../assets/img/page-speed 1.png " class=" "></p-image>
       </span>
-      <div class="text-blue-600 text-xl mb-3 mt-3 font-medium">
+      <div class="text-xl mb-3 mt-3 font-medium">
         Eliminación de HH y reasignación de funciones
       </div>
       <span class="text-700 line-height-3 text-overflow m-2"
@@ -208,16 +132,17 @@
         repetitivas, para enfocarse en tareas de mayor valor agregado.</span
       >
     </div>
-    <div
-      class="card col-12 m-4 animate__animated animate__fadeInUp animate__delay-5s"
-    >
+    <div class="card col-12 m-4">
       <span
-        class="p-3 shadow-2 mb-2 mt-3 inline-block bg-blue-500"
+        class="p-3 shadow-2 mb-2 mt-3 inline-block"
         style="border-radius: 10px"
       >
-        <i class="pi pi-money-bill text-4xl text-yellow-300"></i>
+        <p-image
+          src="../../assets/img/financial-profit 1.png"
+          class=" "
+        ></p-image>
       </span>
-      <div class="text-blue-600 text-xl font-medium mb-2 mt-2">
+      <div class="text-xl font-medium mb-2 mt-2">
         Ahorro en costos presentes y ante futuros crecimientos
       </div>
       <span class="text-700 line-height-3 text-overflow m-2"
@@ -226,16 +151,17 @@
         situaciones de crecimiento futuro.</span
       >
     </div>
-    <div
-      class="card col-12 m-4 animate__animated animate__fadeInUp animate__delay-5s text-center"
-    >
+    <div class="card col-12 m-4">
       <span
-        class="p-3 shadow-2 mb-3 mt-3 inline-block bg-blue-500"
+        class="p-3 shadow-2 mb-3 mt-3 inline-block"
         style="border-radius: 10px"
       >
-        <i class="pi pi-cog text-4xl text-yellow-300"></i>
+        <p-image
+          src="../../assets/img/team-management 1.png"
+          class=" "
+        ></p-image>
       </span>
-      <div class="text-blue-600 text-xl mb-3 mt-2 font-medium">
+      <div class="text-xl mb-3 mt-2 font-medium">
         Herramienta de gestión oportuna
       </div>
       <span class="text-700 line-height-3 text-justify m-2"
@@ -244,16 +170,14 @@
         respuesta rápida ante cambios o desafíos.
       </span>
     </div>
-    <div
-      class="card col-12 m-4 text-center animate__animated animate__fadeInUp animate__delay-5s"
-    >
+    <div class="card col-12 m-4 text-center">
       <span
-        class="p-3 shadow-3 mb-3 mt-3 inline-block bg-blue-500"
+        class="p-3 shadow-3 mb-3 mt-3 inline-block"
         style="border-radius: 10px"
       >
-        <i class="pi pi-link text-4xl text-yellow-300"></i>
+        <p-image src="../../assets/img/future 1.png" class=" "></p-image>
       </span>
-      <div class="text-blue-600 text-xl mb-2 mt-2 font-medium">
+      <div class="text-xl mb-2 mt-2 font-medium">
         Socio tecnológico de nuestros clientes
       </div>
       <span class="text-700 line-height-3 m-2"
@@ -265,66 +189,287 @@
   </div>
 </div>
 
+<!-- Simples pasos -->
+
+<div class="container mx-auto my-9">
+  <div class="flex flex-col items-center justify-center">
+    <h1 class="text-3xl font-bold text-center text-blue-800 my-3">
+      En sólo 3 simples pasos
+    </h1>
+    <div class="flex flex-col md:flex-row mx-auto my-auto">
+      <div
+        class="flex flex-col items-center justify-center mx-auto w-full md:w-1/3"
+      >
+        <img
+          class="text-8xl m-4"
+          src="../../assets/img/Group 9.png"
+          alt="Ingresa datos"
+        />
+        <div class="flex mx-2 my-auto">
+          <div class="flex justify-center items-center">
+            <img
+              class="flex w-16 h-16 mb-4"
+              src="../../assets/img/Elipse.svg"
+              alt="1"
+            />
+            <div
+              class="flex bg-transparent text-base md:text-sm text-white text-center absolute flex-col items-center mb-4"
+            >
+              1
+            </div>
+          </div>
+          <p class="flex text-justify mx-4 mt-1">
+            Selecciona el informe que deseas comprar e ingresa los datos que te
+            solicitan
+          </p>
+        </div>
+      </div>
+      <div
+        class="flex flex-col items-center justify-center mx-auto w-full md:w-1/3"
+      >
+        <img
+          class="text-8xl m-2 mt-4"
+          src="../../assets/img/Group 7.png"
+          alt="Ingresa datos"
+        />
+        <div class="flex mx-2 my-auto">
+          <div class="flex justify-center items-center">
+            <img
+              class="flex w-14 h-12"
+              src="../../assets/img/Elipse.svg"
+              alt="2"
+            />
+            <div
+              class="flex bg-transparent text-base md:text-sm text-white text-center absolute flex-col items-center"
+            >
+              2
+            </div>
+          </div>
+          <p class="flex text-justify mx-4">
+            Ingresa los datos de la propiedad y selecciona el medio de pago
+          </p>
+        </div>
+      </div>
+      <div
+        class="flex flex-col items-center justify-center mx-auto w-full md:w-1/3"
+      >
+        <img
+          class="text-8xl m-3"
+          src="../../assets/img/Group 8.png"
+          alt="Ingresa datos"
+        />
+        <div class="flex mx-2 my-auto md:">
+          <div class="flex justify-center items-center">
+            <img
+              class="flex w-16 h-15"
+              src="../../assets/img/Elipse.svg"
+              alt="3"
+            />
+            <div
+              class="flex bg-transparent text-base md:text-sm text-white text-center absolute flex-col items-center"
+            >
+              3
+            </div>
+          </div>
+          <p class="flex mx-3 text-justify">
+            En breves instantes recibirás tu informe en el correo electrónico
+            que ingresaste
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Tarjeta compra -->
+<div class="bg-gray-200 py-5">
+  <div class="container1 md:container mx-auto items-center">
+    <div class="bg-white rounded-xl shadow-2xl">
+      <div
+        class="flex bg-blue-footer text-center justify-center rounded-xl shadow-2xl"
+      >
+        <h1 class="text-xl font-bold text-white m-2">Informe Propcheck</h1>
+      </div>
+      <div class="py-2 px-4 mx-auto">
+        <p class="">
+          Con este informe puedes obtener el detalle de las deudas de servicio
+          de tus inmuebles.
+        </p>
+        <div class="flex flex-col mb-2 mt-2">
+          <div class="flex items-center mt-2 mb-2">
+            <p class="ml-2 font-bold">Valor base:</p>
+            <p class="text-blue-700 text-2xl font-bold ml-2">$4.990</p>
+            <p class="ml-2">(IVA incluido)</p>
+          </div>
+          <div class="flex">
+            <p class="flex">
+              Con este informe puedes obtener el detalle de las deudas de
+              servicio de tus inmuebles :
+            </p>
+          </div>
+          <div class="flex flex-col m-2 ml-2">
+            <ul
+              class="list-disc list-inside text-start text-blue-950 font-bold text-base md:text-lg"
+            >
+              <div class="flex flex-row">
+                <img
+                  class="flex text-sm mr-2"
+                  src="../../assets/img/agua-azul.svg"
+                  alt="Agua"
+                />
+                Agua
+              </div>
+
+              <div class="flex flex-row">
+                <img
+                  class="flex text-sm mr-2"
+                  src="../../assets/img/Luz.svg"
+                  alt="Luz"
+                />
+                Luz
+              </div>
+              <div class="flex flex-row">
+                <img
+                  class="flex text-sm mr-2"
+                  src="../../assets/img/Gas.svg"
+                  alt="Gas"
+                />
+                Gas
+              </div>
+
+              <div class="flex flex-row">
+                <img
+                  class="flex text-sm mr-2"
+                  src="../../assets/img/Gc.svg"
+                  alt="Gastos comunes"
+                />
+                Gastos Comunes
+              </div>
+              <div class="flex flex-row">
+                <img
+                  class="flex text-sm mr-2"
+                  src="../../assets/img/Contri.svg"
+                  alt="Contribuciones"
+                />
+                Contribuciones
+              </div>
+              <div class="flex flex-row">
+                <img
+                  class="flex text-sm mr-2"
+                  src="../../assets/img/Aseo.svg"
+                  alt="Aseo"
+                />
+                Aseo domiciliario
+              </div>
+            </ul>
+          </div>
+        </div>
+        <div class="flex justify-center">
+          <button
+            class="bg-blue-800 hover:bg-blue-900 font-bold px-28 py-2 text-white rounded-xl"
+          >
+            Lo quiero
+          </button>
+        </div>
+        <div class="flex justify-center mt-1">
+          <a
+            href="/verifica-informe"
+            class="text-blue-700 hover:text-blue-900 font-bold text-sm m-2"
+            >Ver ejemplo de informe</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Carrusel  -->
 
 <app-carousel></app-carousel>
 
 <!-- footer  -->
 
-<div
-  style="background: #223d76"
-  class="py-2 px-4 mx-0 mt-0 lg:full border-round"
->
+<div class="py-2 px-4 mx-0 mt-0 lg:full bg-blue-footer">
   <div class="grid justify-content-between">
-    <div class="col-12 md:col-3" style="margin-top: -1.5rem">
+    <div class="col-12 md:col-3 mt-4">
       <a
-        class="flex flex-wrap align-items-center justify-content-center md:justify-content-start md:mb-0 mb-3 cursor-pointer"
+        class="flex flex-wrap align-items-center justify-content-center md:justify-content-start mb-3 cursor-pointer"
       >
         <img
           src="/assets/img/Logo PropCheck final_blanco.jpeg"
           alt="footer PropCheck Logo"
           width="140"
           height="140"
-          class="mr-8 lg:mr-5 mt-8"
+          class="mx-auto my-auto"
+        />
+        <img
+          class="invisible md:visible"
+          src="../../assets/img/Line 1.svg"
+          alt=""
+        />
+        <img
+          class="visible md:invisible"
+          src="../../assets/img/Line 2.svg"
+          alt=""
         />
       </a>
     </div>
-
+    <hr class="text-white" />
     <div class="col-12 md:col-10 lg:col-7">
       <div class="grid text-center md:text-left">
-        <div class="col-12 md:col-7">
-          <h4 class="font-medium text-2xl line-height-3 mb-3 text-100">
+        <div class="col-12 md:col-3 my-auto md:mt-5">
+          <h4 class="font-medium text-lg line-height-3 mb-3 text-100">
             Nuestra empresa
           </h4>
-          <a class="line-height-3 text-xl block cursor-pointer mb-2 text-200"
-            ><i class="pi pi-linkedin text-yellow-500"></i> LinkedIn
+          <a
+            class="line-height-3 text-sm block cursor-pointer mb-2 text-200"
+            href="/quienes-somos"
+          >
+            Quienes somos
           </a>
-          <a class="line-height-3 text-xl block cursor-pointer mb-2 text-200"
-            ><i class="pi pi-inbox text-yellow-500"></i> News
+          <a class="line-height-3 text-sm block cursor-pointer mb-2 text-200">
+            Novedades
           </a>
-          <a class="line-height-3 text-xl block cursor-pointer mb-2 text-200"
-            ><i class="pi pi-user-plus text-yellow-500"></i> Trabaja con
-            nosotros
-          </a>
-          <a class="line-height-3 text-xl block cursor-pointer mb-2 text-200"
-            ><i class="pi pi-envelope text-yellow-500"></i> Contacto
+          <a class="line-height-3 text-sm block cursor-pointer mb-2 text-200">
+            Trabaja con nosotros
           </a>
         </div>
 
-        <div class="col-12 md:col-3 mt-4 md:mt-0">
-          <h4 class="font-medium text-2xl line-height-3 mb-3 text-100">
+        <div class="col-12 md:col-3 my-auto md:mt-5">
+          <h4 class="font-medium text-lg line-height-3 mb-3 text-100">
             Condiciones
           </h4>
-          <a class="line-height-3 text-xl block cursor-pointer mb-2 text-200"
-            ><i class="pi pi-comments text-yellow-500"></i> FAQ</a
+          <a class="line-height-3 text-sm block cursor-pointer mb-2 text-200">
+            FAQ</a
           >
-          <a class="line-height-3 text-xl block cursor-pointer mb-2 text-200"
-            ><i class="pi pi-info-circle text-yellow-500"></i>
+          <a class="line-height-3 text-sm block cursor-pointer mb-2 text-200">
             Confidencialidad<img class="ml-2"
           /></a>
-          <a class="line-height-3 text-xl block cursor-pointer mb-2 text-200"
-            ><i class="pi pi-minus-circle text-yellow-500"></i> Legal</a
+          <a class="line-height-3 text-sm block cursor-pointer mb-2 text-200">
+            Legal</a
           >
+        </div>
+        <div class="col-12 md:col-3 my-auto md:mt-5">
+          <h4 class="font-medium text-lg line-height-3 mb-3 text-100">
+            Contáctanos
+          </h4>
+          <p-inputText
+            id="email"
+            (ngModel)="(correoElectronico)"
+            disabled
+            class="line-height-3 text-sm block cursor-pointer mb-2 text-200"
+            (click)="enviarCorreo()"
+          >
+            Contacto: {{ correoElectronico }}
+          </p-inputText>
+          <a class="line-height-3 text-sm block cursor-pointer mb-2 text-200">
+            +569 9090 9090<img class="ml-2"
+          /></a>
+          <img
+            class="mx-auto md:mx-0"
+            src="../../assets/img/linkedin.svg"
+            alt="Linkedin"
+          />
         </div>
       </div>
     </div>

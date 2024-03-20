@@ -1,0 +1,18 @@
+<div class="relative container bg-white">
+  <div
+    class="card-component  rounded-lg overflow-hidden shadow-lg border border-gray-300 -mb-3 min-w-350px mt-1 min-h-lg p-2">
+    <p class="text-center text-blue-primary-propcheck font-bold text-sm">{{titulo}}</p>
+    <div class="absolute top-2/4  flex flex-col ml-8">
+      <p class="flex flex-row ml-7 text-xs mb-2 text-blue-primary-propcheck">
+        <img src="/assets/img/aldia.svg" alt="Al Dia Icon" class="mr-2" /> Al Dia
+      </p>
+      <p class="flex flex-row ml-7 text-xs text-blue-primary-propcheck">
+        <img class="ml-6" src="/assets/img/deuda.svg" alt="Con Deuda Icon" class="mr-2" />
+        Con Deuda
+      </p>
+    </div>
+    <p-chart class="absolute float-left mt-4" type="doughnut" [data]="data" [options]="options" width="140px"
+      height="140px"></p-chart>
+      <p class="font-bold text-blue-primary-propcheck text-1x4 absolute top-2/4 ml-7 transform -translate-x-1/3 -translate-y-5/13 text-1xl mt-1">{{ total === 0 ? 'No tiene deuda' : deudaPorcentaje + '%' }}</p>
+    </div>
+</div>

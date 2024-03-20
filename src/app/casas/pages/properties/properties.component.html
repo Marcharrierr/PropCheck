@@ -1,0 +1,86 @@
+<!-- Flex -->
+
+<app-sidebar></app-sidebar>
+<!-- Contenedor Sidebar (Degradé) -->
+<!-- <p-messages severity="warn">
+  <ng-template pTemplate>
+    <i class="fa-solid fa-triangle-exclamation text-yellow-500"></i>
+    <div class="ml-1">Aplicación DEMO</div>
+  </ng-template>
+</p-messages> -->
+
+<div class="grid lg:grid-cols-1 justify-center lg:h-screen relative">
+  <img
+    src="/assets/img/portada1.jpeg"
+    alt=""
+    class="w-full h-full absolute z-[-1] inset-0 opacity-50"
+  />
+  <div
+    class="lg:flex lg:flex-col lg:h-1/6 rounded-lg overflow-hidden w-full static"
+  >
+    <div
+      class="justify-center lg:h-screen relative flex flex-col items-center mb-3"
+    >
+      <p
+        class="font-helvetica text-center text-blue-800 font-bold text-lg mb-2 mt-5"
+      >
+        Propiedades Disponibles
+      </p>
+      <div class="relative">
+        <input
+          type="text"
+          placeholder="Buscar por dirección o comuna"
+          [(ngModel)]="searchText"
+          (input)="filterData()"
+          class="border rounded-lg bg-white pl-10 pr-4 w-96 h-12"
+        />
+        <i
+          class="absolute right-3 top-1/2 transform -translate-y-1/2 fas fa-search text-gray-400"
+        ></i>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="lg:flex lg:flex-col lg:h-5/6 rounded-t-large overflow-hidden shadow-lg border bg-white w-full h-full"
+  >
+    <div class="grid lg:grid-cols-2 w-full">
+      <p class="lg:col-span-2 text-center w-4 mt-7 font-bold text-lg mb-2">
+        Propiedades encontradas:
+      </p>
+      <button
+        [routerLink]="['/propiedades/crear-propiedad']"
+        class="hidden lg:block lg:col-span-2 mb-3 ml-auto w-3 mt-6"
+      >
+        <img src="/assets/img/crearpropiedad.svg" alt="" />
+      </button>
+      <button
+        class="flex lg:hidden mb-3 mt-7 ml-auto w-auto px-2 py-1.5 mr-4 rounded-full bg-blue-500 text-white"
+      >
+        <i class="fas fa-plus-circle mr-1 mt-1"></i>CREAR
+      </button>
+    </div>
+    <div class="flex justify-center mb-4">
+      <!-- Reducción del relleno a p-2 -->
+      <ng-container *ngIf="filteredCasas.length > 0; else noResults">
+        <app-apps-card-properties
+          [casas]="getCurrentPageData()"
+        ></app-apps-card-properties>
+      </ng-container>
+      <ng-template #noResults>
+        <div class="text-center font-bold text-gray-600">
+          No se encontraron resultados.
+        </div>
+      </ng-template>
+    </div>
+
+    <!-- Botones de paginación -->
+    <p-paginator
+      [rows]="pageSize"
+      [totalRecords]="filteredCasas.length"
+      (onPageChange)="onPageChange($event)"
+      [showJumpToPageDropdown]="true"
+      [showPageLinks]="false"
+    ></p-paginator>
+  </div>
+</div>

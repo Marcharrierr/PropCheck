@@ -1,0 +1,24 @@
+:host ::ng-deep .p-button {
+  background-color: #2455BE;
+  border-color: #2455BE;
+
+}
+
+:host ::ng-deep .p-button:hover {
+  background-color: #102E6E;
+  border-color: #102E6E;
+}
+
+
+::ng-deep .pInputText {
+  @apply  px-3 rounded-full;
+}
+
+::ng-deep .p-password {
+  @apply   rounded-full;
+}
+:host .p-button {
+  @apply px-40 py-4 rounded-3xl [font-family:Helvetica] text-base font-normal leading-[normal] !important;
+}
+
+

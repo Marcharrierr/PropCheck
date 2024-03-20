@@ -9,6 +9,9 @@ import { Message } from 'primeng/api';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent {
+
+  sidebarVisible!: boolean;
+
   messages: Message[] | undefined;
 
   ngOninit() {
@@ -17,4 +20,16 @@ export class HomePageComponent {
 
   }
 
+
+
+
+  correoElectronico: string = 'cgomez@propcheck.ai';
+
+  enviarCorreo() {
+    window.location.href = `mailto:${this.correoElectronico}`;
+  }
+
 }
+
+
+

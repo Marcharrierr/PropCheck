@@ -1,0 +1,82 @@
+<div class="container-principal" style="background: #102E6E;">
+    <div class="left-container">
+      <div class="logo">
+        <img
+        src="/assets/img/Logo PropCheck final_blanco.jpeg"
+        height="150"
+        width="150"
+        alt="Logo Propcheck"
+        class="pequeña logo"
+        />
+      </div>
+    </div>
+
+      <div class="right-container">
+        <img class="background-image" src="/assets/img/img-login.png">
+        <div class="form-container surface-card  ">
+          <form
+            class="container-form"
+            autocomplete="off"
+            [formGroup]="myForm"
+            (ngSubmit)="login()"
+            style="background-color: #FFFFFF"
+            >
+            <div class="text-center">
+              <label class="block text-blue-600 font-medium text-lg">
+                <h2 style="background-color: color #102E6F; color:#102E6F;">Iniciar sesión</h2>
+              </label>
+            </div>
+      
+            <div class="flex-row p-2">
+              <span class="p-float-label mb-4 email">
+                <input
+                  pInputText
+                  formControlName="email"
+                  type="text"
+                  class="text"
+                  style="width: 100%"
+                  />
+                <label class="font-normal" htmlFor="usuario">Usuario</label>
+              </span>
+              
+              <span class="p-float-label mb-4 password">
+                  <p-password
+                  formControlName="password"
+                  [toggleMask]="true"
+                  styleClass="p-password"
+                  [style]="{'width': '100%'}"
+                  class="email"
+                  [inputStyle]="{'width':'100%'}"
+              >
+                  </p-password>
+                  <label class="font-normal" htmlFor="Contraseña">Contraseña</label>
+              </span>
+      
+              <button
+                pButton
+                pRipple
+                type="submit"
+                [disabled]="myForm.invalid"
+                label="INGRESAR"
+                class=" boton-ingresar"
+                style="background-color: #2455BE; color:#FFFFFF;"
+              ></button>
+              <!--routerLink="/casas/list"-->
+      
+      
+              <div class="btnRecuperar">
+                <button jsname="btnRecuperarContrasena" type="button" routerLink="../auth/recover"
+                [routerLink]="['../recover']"
+                style="background-color: #FFFFFF; color: #102E6E; font-family: Helvetica; font-weight: bold; font-size: 14px;">
+              ¿Olvidaste la contraseña? </button>
+              </div>
+
+              
+      
+            </div>
+          </form>
+        </div>
+
+      </div>
+  </div>
+

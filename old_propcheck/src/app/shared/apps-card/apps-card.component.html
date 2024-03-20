@@ -1,0 +1,43 @@
+<div class="container bg-white">
+  <div class="grid grid-cols-1 justify-center gap-4">
+    <div *ngFor="let casa of casas"
+      class="card-component rounded-lg overflow-hidden shadow-lg mt-1 border border-gray-300 p-3 pb-6 -mb-3">
+      <div class="flex justify-between items-center mb-2 p-3">
+        <div>
+          <h1 class="text-xl font-bold">{{ casa.comunidad }}</h1>
+          <p>{{ casa.direccion }}</p>
+          <p>{{ casa.comuna }}</p>
+        </div>
+        <i class="fa-solid fa-building text-blue-900 text-7xl"></i>
+      </div>
+      <div class="flex space-x-2">
+        <!-- Botones con iconos de Font Awesome -->
+        <button class="w-1 h-1 rounded-full focus:outline-none">
+          <img src="assets/img/llama.svg" alt="Icono de llamada">
+        </button>
+
+        <button class="w-1 h-1 rounded-full focus:outline-none">
+          <img src="assets/img/agua.svg" alt="Icono de llamada">
+        </button>
+        <button class="w-1 h-1 rounded-full focus:outline-none">
+          <img src="assets/img/fuego.svg" alt="Icono de llamada">
+        </button>
+        <button class="w-1 h-1 rounded-full focus:outline-none">
+          <img src="assets/img/reci.svg" alt="Icono de llamada">
+        </button>
+
+        <button class="w-1 h-1 rounded-full focus:outline-none">
+          <img src="assets/img/edificio.svg" alt="Icono de llamada">
+        </button>
+
+        <button class="w-1 h-1 rounded-full focus:outline-none">
+          <img src="assets/img/casapago.svg" alt="Icono de llamada">
+        </button>
+        <!-- Nuevo botón de descarga -->
+        <button class="w-2 h-2 rounded-full ml-8 focus:outline-none">
+          <img src="assets/img/down.svg" alt="Icono de llamada">
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

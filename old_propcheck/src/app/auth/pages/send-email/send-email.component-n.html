@@ -1,0 +1,57 @@
+<div class="container-principal" style="background: #102E6E">
+  <div class="left-container">
+    <div class="logo">
+      <img
+      src="/assets/img/Logo PropCheck final_blanco.jpeg"
+      height="150"
+      width="150"
+      alt="Logo Propcheck"
+      class="pequeña"
+      />
+    </div>
+  </div>
+
+    <div class="right-container">
+      <img class="background-image" src="/assets/img/img-recover-password.png">
+      <div class="form-container surface-card">
+        <form
+          [formGroup]="personaForm"
+          (ngSubmit)="sendEmail()"
+          style="border-radius: 20px"
+          autocomplete="off"
+          >
+          <div class="text-center">
+            <label class="block text-blue-600 font-medium text-lg">
+              <h2 style="background-color: color #102E6F; color:#102E6F;">Recuperar Contraseña</h2>
+          </label>
+          </div>
+          
+          <div class="flex-row p-2">
+            <span class="p-float-label mb-4 email">
+              <input
+                pInputText
+                formControlName="email"
+                type="text"
+                class="text"
+                style="width: 100%;"
+              />
+              <label class="font-normal" htmlFor="usuario">Ingresa tu email</label>
+            </span>
+
+            <button
+              pButton
+              pRipple
+              type="submit"
+              [disabled]="false"
+              label="ENVIAR"
+              class="btn-enviar"
+              style="background-color: #2455BE; color:#FFFFFF;"
+            ></button>
+
+          </div>
+        </form>
+      </div>
+    </div>
+
+<!-- recover-page.component.html -->
+<router-outlet></router-outlet>

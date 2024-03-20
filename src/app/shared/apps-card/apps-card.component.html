@@ -1,0 +1,27 @@
+<div class="container bg-white">
+  <div class="grid grid-cols-1 sm:grid-cols-2 justify-center gap-2">
+    <div *ngFor="let casa of casas" class="card-component rounded-lg overflow-hidden shadow-lg mt-1 border border-gray-300 p-3 pb-2 h-33 lg:w-4 w-8 mb-2">
+      <div class="flex justify-between items-center mb-2 ">
+        <div class="h-28">
+          <h1 class="text-xl font-bold max-w-textproperty">{{ casa.community_name }}</h1>
+          <p class="">{{ casa.address }}, Dpto. {{casa.department}}</p>
+          <p class="">{{ casa.municipality }}</p>
+        </div>
+        <img src="assets/img/casa.svg" class="fa-solid fa-building text-blue-900">
+      </div>
+      <div class="flex space-x-2 mt-2">
+        <!-- Botones con iconos de Font Awesome -->
+        <div *ngFor="let icono of iconos" class="w-6 h-8 min-w-icon min-h-icon rounded-full flex items-center justify-center" [ngClass]="{'bg-green-500': casa.activo, 'bg-red-500': !casa.activo}">
+          <button class="w-6 h-12 rounded-full flex items-center justify-center">
+            <img [src]="icono.ruta" alt="Icono de llamada" class="w-12">
+          </button>
+        </div>
+
+        <!-- Nuevo botón de descarga -->
+        <button class="w-9 rounded-full focus:outline-none ml-7" (click)="descargarInforme()">
+          <img src="assets/img/down.svg" alt="Icono de llamada" class="12">
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

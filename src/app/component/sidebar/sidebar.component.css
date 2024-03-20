@@ -1,6 +1,16 @@
 ::ng-deep .p-sidebar {
-  background-color: #223d76 !important;
+  background-color: #102E6E !important;
 }
 ::ng-deep .p-menubar {
   background-color: #223d76 !important;
 }
+/* 
+::ng-deep .p-button {
+  padding: 1rem !important; 
+  padding-left: 1rem !important; 
+  padding-right: 1rem !important;
+ } */
+
+/* :host .p-button .p-ink {
+   display: none !important;
+} */
