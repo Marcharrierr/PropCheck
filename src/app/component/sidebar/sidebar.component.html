@@ -1,25 +1,29 @@
-<!-- Sidebar -->
+<!--  Menu encabezado  -->
 <div class="bg-blue-primary-propcheck w-full">
-  <div class="max-w-7xl mx-auto flex justify-center items-center px-2 gap-2">
-    <p-button
-      styleClass="flex w-auto text-white text-sm p-button-text justify-start"
-      (click)="sidebarVisible = true"
-      icon="pi pi-bars text-3xl"
-    ></p-button>
-
-    <!--SideBar-->
-    <div class="flex-1 align-items-center justify-items-start">
-      <div class="logo">
-        <img class="max-w-8 max-h-8" src="/assets/img/Logo PropCheck final_blanco.jpeg" alt="Logo Propcheck">
-      </div>
-      <!-- <p-image
-        src="/assets/img/Logo PropCheck final_blanco.jpeg"
-        alt="Propcheck Image"
-        height="35"
-        width="35"
-        class=""
-      ></p-image> -->
+  <div
+    class="max-w-7xl mx-auto flex justify-center items-center px-2 gap-2 min-h-16"
+  >
+    <button class="p-2" (click)="sidebarVisible = true">
+      <img
+        class="h-12 w-auto"
+        height="64px"
+        width="64px"
+        src="/assets/img/menu.svg"
+        alt="user logo"
+      />
+    </button>
+    <div class="grow align-items-center">
+      <a href="/" class="logo flex-shrink-0">
+        <img
+          class="h-12 w-auto"
+          height="64px"
+          width="64px"
+          src="/assets/img/Logo PropCheck.svg"
+          alt="Logo Propcheck"
+        />
+      </a>
     </div>
+
     <p-sidebar [(visible)]="sidebarVisible">
       <!-- Logo internos Sidebar -->
       <div class="card flex justify-content-center mb-4">
@@ -96,9 +100,11 @@
         </div>
       </ng-template>
     </p-sidebar>
-    <div class="flex justify-items-end flex-wrap font-['Helvetica'] text-white  text-sm gap-x-2">
-        <span class="inline-block">Bienvenido {{ agentData.name }}</span><span class="inline-block"> {{ clientData.name }}</span
-        >
+    <div
+      class="flex justify-items-end flex-wrap font-['Helvetica'] text-white text-sm gap-x-2"
+    >
+      <span class="inline-block">Bienvenido {{ agentData.name }}</span
+      ><span class="inline-block"> {{ clientData.name }}</span>
     </div>
   </div>
 </div>

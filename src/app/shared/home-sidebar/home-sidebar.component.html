@@ -1,116 +1,121 @@
 <!--  Menu encabezado  -->
-<div
-  class="bg-blue-primary-propcheck w-100 h-14 static flex align-items-center"
->
-  <p-button
-    styleClass="flex ml-4 c-bluenav text-white text-sm p-button-text"
-    (click)="sidebarVisible = true"
-    icon="pi pi-bars text-3xl "
-  ></p-button>
-  <div class="grow align-items-center">
-    <p-image
-      src="/assets/img/Logo PropCheck final_blanco.jpeg"
-      alt="Propcheck Image"
-      height="40"
-      width="40"
-      class="m-1 ml-3 translate-x-3 animate__animated animate__fadeInLeft"
-      routerLink="/"
-    ></p-image>
-  </div>
-
-  <!--SideBar-->
-
-  <p-sidebar
-    class="flex items-center justify-content-between"
-    [(visible)]="sidebarVisible"
-    [showCloseIcon]="false"
+<div class="bg-blue-primary-propcheck w-full">
+  <div
+    class="max-w-7xl mx-auto flex justify-center items-center px-2 gap-2 min-h-16"
   >
-    <div class="flex justify-start align-items-center select-none flex-col">
-      <a href="/">
-        <p-image
-          src="/assets/img/Logo PropCheck final_blanco.jpeg"
-          alt="Propcheck Image"
-          height="120"
-          width="120"
-          class="m-3 mb-5 translate-x-3 animate__animated animate__fadeInLeft"
-        ></p-image>
+    <button class="p-2" (click)="sidebarVisible = true">
+      <img
+        class="h-12 w-auto"
+        height="64px"
+        width="64px"
+        src="/assets/img/menu.svg"
+        alt="user logo"
+      />
+    </button>
+    <div class="grow align-items-center">
+      <a href="/" class="logo flex-shrink-0">
+        <img
+          class="h-12 w-auto"
+          height="64px"
+          width="64px"
+          src="/assets/img/Logo PropCheck.svg"
+          alt="Logo Propcheck"
+        />
       </a>
+    </div>
+    <!--SideBar-->
 
-      <div class="flex flex-column">
-        <div class="flex md:ml-3 mb-3 animate__animated animate__fadeInDown">
-          <p-button
-            label="Inicio"
-            ClassName=" font-['Helvetica']  leading-[normal] animate__animated animate__fadeInRight animate__delay-2s"
-            styleClass="text-white text-sm p-button-text"
-            icon="fa-solid fa-house fa-lg text-white"
-            routerLink="/"
-          ></p-button>
-        </div>
-        <div
-          class="flex md:ml-3 mb-3 text-900 font-medium animate__animated animate__fadeInDown"
-        >
-          <p-button
-            label="Servicios"
-            ClassName=" font-['Helvetica']  leading-[normal] animate__animated animate__fadeInRight animate__delay-2s"
-            styleClass="text-white text-sm p-button-text"
-            icon="fa fa-tasks fa-xl text-white"
-            routerLink="/#servicios"
-          ></p-button>
-        </div>
+    <p-sidebar
+      class="flex items-center justify-content-between"
+      [(visible)]="sidebarVisible"
+      [showCloseIcon]="false"
+    >
+      <div class="flex justify-start align-items-center select-none flex-col">
+        <a href="/">
+          <p-image
+            src="/assets/img/Logo PropCheck final_blanco.jpeg"
+            alt="Propcheck Image"
+            height="120"
+            width="120"
+            class="m-3 mb-5 translate-x-3 animate__animated animate__fadeInLeft"
+          ></p-image>
+        </a>
 
-        <div
-          class="flex md:ml-3 mb-3 text-900 animate__animated animate__fadeInDown"
-        >
-          <p-button
-            label="Contáctanos"
-            ClassName=" font-['Helvetica']  leading-[normal] animate__animated animate__fadeInRight animate__delay-2s"
-            styleClass="text-white text-sm p-button-text"
-            icon="far fa-comment-alt fa-xl text-white"
-            routerLink="/contacto"
-          ></p-button>
-        </div>
-        <div
-          class="flex md:ml-3 mb-3 text-900 font-medium animate__animated animate__fadeInDown"
-        >
-          <p-button
-            label="Verifica tu informe"
-            ClassName=" font-['Helvetica']  leading-[normal] animate__animated animate__fadeInRight animate__delay-2s"
-            styleClass="text-white text-sm p-button-text"
+        <div class="flex flex-column">
+          <div class="flex md:ml-3 mb-3 animate__animated animate__fadeInDown">
+            <p-button
+              label="Inicio"
+              ClassName=" font-['Helvetica']  leading-[normal] animate__animated animate__fadeInRight animate__delay-2s"
+              styleClass="text-white text-sm p-button-text"
+              icon="fa-solid fa-house fa-lg text-white"
+              routerLink="/"
+            ></p-button>
+          </div>
+          <div
+            class="flex md:ml-3 mb-3 text-900 font-medium animate__animated animate__fadeInDown"
+          >
+            <p-button
+              label="Servicios"
+              ClassName=" font-['Helvetica']  leading-[normal] animate__animated animate__fadeInRight animate__delay-2s"
+              styleClass="text-white text-sm p-button-text"
+              icon="fa fa-tasks fa-xl text-white"
+              routerLink="/#servicios"
+            ></p-button>
+          </div>
 
-            icon="fa-regular fa-circle-check fa-xl text-white"
-            routerLink="/verifica-informe/"
-          ></p-button>
-        </div>
-        <div
-          class="flex m-0 md:ml-3 mb-3 text-900 animate__animated animate__fadeInDown"
-        >
-          <p-button
-            label="Iniciar Sesión"
-            icon="fa-regular fa-user fa-xl text-white"
-            styleClass="text-white text-sm p-button-text"
-            ClassName=" font-['Helvetica']  leading-[normal] animate__animated animate__fadeInRight animate__delay-2s"
-            routerLink="/auth/login"
-          ></p-button>
+          <div
+            class="flex md:ml-3 mb-3 text-900 animate__animated animate__fadeInDown"
+          >
+            <p-button
+              label="Contáctanos"
+              ClassName=" font-['Helvetica']  leading-[normal] animate__animated animate__fadeInRight animate__delay-2s"
+              styleClass="text-white text-sm p-button-text"
+              icon="far fa-comment-alt fa-xl text-white"
+              routerLink="/contacto"
+            ></p-button>
+          </div>
+          <div
+            class="flex md:ml-3 mb-3 text-900 font-medium animate__animated animate__fadeInDown"
+          >
+            <p-button
+              label="Verifica tu informe"
+              ClassName=" font-['Helvetica']  leading-[normal] animate__animated animate__fadeInRight animate__delay-2s"
+              styleClass="text-white text-sm p-button-text"
+              icon="fa-regular fa-circle-check fa-xl text-white"
+              routerLink="/verifica-informe/"
+            ></p-button>
+          </div>
+          <div
+            class="flex m-0 md:ml-3 mb-3 text-900 animate__animated animate__fadeInDown"
+          >
+            <p-button
+              label="Iniciar Sesión"
+              icon="fa-regular fa-user fa-xl text-white"
+              styleClass="text-white text-sm p-button-text"
+              ClassName=" font-['Helvetica']  leading-[normal] animate__animated animate__fadeInRight animate__delay-2s"
+              routerLink="/auth/login"
+            ></p-button>
+          </div>
         </div>
       </div>
+    </p-sidebar>
+
+    <div class="justify-items-end">
+      <a href="/auth/login">
+        <button
+          class="p-1 px-4 bg-white rounded-xl shadow-md mx-4 flex justify-center items-center gap-1 font-['Helvetica']"
+        >
+          <img
+            class="h-4 w-auto"
+            height="15px"
+            width="15px"
+            src="/assets/img/user2.svg"
+            alt="user logo"
+          />
+
+          Iniciar Sesión
+        </button>
+      </a>
     </div>
-  </p-sidebar>
-
-  <div class="justify-items-end">
-    <a href="/auth/login">
-
-      <button class="p-1 px-4 bg-white rounded-xl shadow-md mx-4 flex justify-center items-center gap-1  font-['Helvetica'] ">
-        <p-image
-        src="/assets/img/user2.svg"
-        alt="Propcheck Image"
-        height="15"
-        width="15"
-        class=" "
-        routerLink="/"
-      ></p-image>
-        Iniciar Sesión
-      </button>
-    </a>
-
   </div>
 </div>
