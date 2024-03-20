@@ -36,10 +36,10 @@ body {
 }
 
 .p-toast .p-toast-message.p-toast-message-warn {
-  background: #fff2e2;
+  background: #ffffffc0;
   border: none !important;
-  border-width: 0 0 0 6px;
-  color: #cc8925;
+  border-width: 1 0 0 6px;
+  color: #cc2525;
 }
 
 
