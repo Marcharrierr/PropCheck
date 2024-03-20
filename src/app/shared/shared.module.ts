@@ -10,6 +10,10 @@ import { AppsCardPropertiesComponent } from './apps-card-properties/apps-card-pr
 import { ConfirmationService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+
+import {ButtonModule} from 'primeng/button';
+import {RippleModule} from 'primeng/ripple';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,7 @@ import { ToastModule } from 'primeng/toast';
     GraphComponent,
     AppsCardPropertiesComponent,
   ],
-  imports: [CommonModule, ChartModule,ConfirmDialogModule, ToastModule],
+  imports: [CommonModule, ChartModule,ConfirmDialogModule, ToastModule, ProgressSpinnerModule,ButtonModule, RippleModule],
   exports: [
     Error404PageComponent,
     AppsCardComponent,

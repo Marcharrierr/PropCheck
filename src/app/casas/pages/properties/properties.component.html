@@ -44,7 +44,7 @@
       <div class="flex justify-center mb-4">
         <!-- Reducción del relleno a p-2 -->
         <ng-container *ngIf="filteredCasas.length > 0; else noResults">
-          <app-apps-card-properties [casas]="getCurrentPageData()"></app-apps-card-properties>
+          <app-apps-card-properties [casas]="getCurrentPageData()" [status] = "status"></app-apps-card-properties>
         </ng-container>
         <ng-template #noResults>
           <div class="text-center font-bold text-gray-600">

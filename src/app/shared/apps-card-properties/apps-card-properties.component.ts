@@ -1,18 +1,30 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import { Component, Input, SimpleChanges, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { PropertyService } from '../../services/property.service';
+import { MessageService } from 'primeng/api';
+import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
   selector: 'app-apps-card-properties',
   templateUrl: './apps-card-properties.component.html',
   styleUrls: ['./apps-card-properties.component.css'],
+  providers: [MessageService],
 })
 export class AppsCardPropertiesComponent {
   constructor(
     private router: Router,
-    private propertyService: PropertyService
+    private propertyService: PropertyService,
+    private messageService: MessageService,
+    private primengConfig: PrimeNGConfig
   ) {}
-  status: any;
+
+  ngOnInit() {
+    this.primengConfig.ripple = true;
+  }
+
+  newProperties: any
+  deleteproperty: any;
+  @Input() status: 'success' | 'error' | 'loading' = 'loading';
   @Input() casas: any[] = [];
   iconos = [
     { ruta: 'assets/img/rayoo.svg' },
@@ -22,6 +34,15 @@ export class AppsCardPropertiesComponent {
     { ruta: 'assets/img/property.svg' },
     { ruta: 'assets/img/casaa.svg' },
   ];
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['casas']) {
+      const newValue = changes['casas'].currentValue;
+      if (Array.isArray(newValue)) {
+        this.casas = newValue; // Asignar el nuevo valor solo si es un array
+      }
+    }
+  }
+
   descargarInforme(): void {
     const texto = 'Aquí va el contenido de tu informe...'; // Contenido del informe
 
@@ -52,45 +73,48 @@ export class AppsCardPropertiesComponent {
   idPropertyToDelete: any;
   @ViewChild('cd') confirmDialog: any;
 
-  // Función para mostrar el diálogo de confirmación y establecer el id de la propiedad
-  confirmDeleteProperty(idProperty: any) {
-    this.mostrar = true;
-    this.idPropertyToDelete = idProperty; // Almacena el id de la propiedad
+  showConfirm(idProperty: any) {
+    this.messageService.clear();
+    this.messageService.add({
+      key: 'c',
+      sticky: true,
+      severity: 'warn',
+      summary: 'Eliminar propiedad',
+      detail: '¿Estás seguro que quieres eliminar esta propiedad?',
+    });
+    this.idPropertyToDelete = idProperty;
+    this.deleteproperty = this.casas.filter(item => item.id == this.idPropertyToDelete )[0]
+    console.log('this.deleteproperty', this.deleteproperty)
   }
-
-  // Función para manejar la confirmación o cancelación
-  confirmDelete(confirm: boolean) {
-    if (confirm) {
-      // Si el usuario confirma, realizar la acción de eliminación
-      this.deleteProperty(this.idPropertyToDelete);
-    } else {
-      // Si el usuario cancela, no hacer nada o manejar según sea necesario
-    }
-    this.mostrar = false; // Oculta el diálogo después de manejar la acción
+  onConfirm() {
+    this.messageService.add({severity:'success', summary: 'Success', detail: 'Propiedad eliminada'});
+    this.deleteProperty(this.idPropertyToDelete)
+    this.messageService.clear('c');
   }
-
+  onReject() {
+    this.messageService.add({severity:'error', summary: 'Error', detail: 'No fue eliminada la propiedad'});
+    this.messageService.clear('c');
+  }
   // Función para eliminar la propiedad
   deleteProperty(idProperty: any) {
     try {
       this.propertyService.deleteProperty(idProperty).subscribe(
         (properties) => {
-          this.casas = properties;
-          console.log('delete',this.casas);
-          const index = this.casas.findIndex(casa => casa.id === idProperty);
-
+          const index = this.casas.findIndex((casa) => casa.id === idProperty);
+          console.log('index', index)
           // Si se encontró la casa, eliminarla del array
           if (index !== -1) {
             this.casas.splice(index, 1);
+            // Asigna el array actualizado a uno nuevo para que Angular detecte el cambio y actualice la vista
+            this.casas = [...this.casas];
+            this.newProperties =[...this.casas]
+            console.log('this.casas', this.casas)
           }
-
         },
         (error) => {
-          this.status = 'error';
           console.log(error);
         }
       );
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   }
 }

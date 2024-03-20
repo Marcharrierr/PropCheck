@@ -9,6 +9,9 @@ import { formatDate } from '@angular/common';
   styleUrls: ['./property-detail.component.css'],
 })
 export class PropertyDetailComponent {
+truncateWords(arg0: any,arg1: number) {
+throw new Error('Method not implemented.');
+}
   selectedCity: any;
   property: any;
   propertydataildebt: any;

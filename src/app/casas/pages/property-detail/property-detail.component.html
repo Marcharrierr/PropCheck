@@ -64,28 +64,28 @@
               </div>
               <div class="mr-auto ml-1">
                 <p class="text-xl">{{ cuenta.category }}</p>
-                <p class="font-bold">{{ cuenta.service_client_id }}</p>
+                <p class="font-bold">{{ cuenta.service_client_id.slice(0, 30) + '...' }}</p>
               </div>
             </div>
 
             <div class="grid lg-grid-col mt-1">
               <p class="text-sm w-5 ml-5 font-bold">Deuda Actual</p>
-              <p class=" text-sm w-4 ml-auto">{{ cuenta.invoice_amount }}</p>
+              <p class=" text-sm w-4 ml-auto font-bold">{{ cuenta.invoice_amount | chileanCurrency}}</p>
             </div>
 
             <div class="grid lg-grid-col mt-1">
               <p class="text-sm w-5 ml-5 font-bold">Deuda Anterior</p>
-              <p class=" text-sm w-4 ml-auto lg:mt-1 mt-4">{{ cuenta.last_invoice_amount }}</p>
+              <p class=" text-sm w-4 ml-auto font-bold">{{ cuenta.last_invoice_amount | chileanCurrency }}</p>
             </div>
 
             <div class="grid lg-grid-col mt-1">
               <p class="text-sm w-5 ml-5 font-bold">Fecha vencimiento</p>
-              <p class=" text-sm lg:w-4 lg:ml-auto ml-6 lg:mt-1 mt-4">{{ cuenta.invoice_due_date_chile }}</p>
+              <p class="text-sm w-4 ml-auto font-bold">{{ cuenta.invoice_due_date_chile }}</p>
             </div>
 
             <div class="grid lg-grid-col mt-1 mb-1">
               <p class="text-sm w-5 ml-5 font-bold">Último pago</p>
-              <p class=" text-sm w-4 ml-auto">{{ cuenta.last_payment_amount }}</p>
+              <p class="text-sm w-4 ml-auto font-bold">{{  cuenta.last_payment_amount | chileanCurrency }}</p>
             </div>
 
           </div>

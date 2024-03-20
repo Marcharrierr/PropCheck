@@ -12,7 +12,7 @@ export class PropertiesComponent {
     )
   {}
   casas: any;
-  status: 'success' | 'error' = 'success';
+  status: 'success' | 'error'| 'loading' = 'loading';
   clientId!: 3;
   searchText: string = '';
   filteredCasas: any = [];
@@ -86,6 +86,7 @@ export class PropertiesComponent {
   }
   getproperties() {
     try {
+      this.status = 'loading';
       this.propertyService.getPropertiesByClientId(2).subscribe(
         (properties) => {
           this.casas = properties.filter((casa: any) => casa.status == 'ACTIVO');
