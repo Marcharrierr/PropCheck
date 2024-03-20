@@ -12,6 +12,13 @@ import { ImageModule } from 'primeng/image';
 import { SidebarModule } from 'primeng/sidebar';
 import { RouterModule } from '@angular/router';
 
+import { ConfirmationService } from 'primeng/api';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ToastModule } from 'primeng/toast';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import {RippleModule} from 'primeng/ripple';
+
+
 @NgModule({
   declarations: [
     Error404PageComponent,
@@ -28,6 +35,10 @@ import { RouterModule } from '@angular/router';
     ImageModule,
     SidebarModule,
     RouterModule,
+    ConfirmDialogModule,
+    ToastModule,
+    ProgressSpinnerModule,
+    RippleModule,
   ],
   exports: [
     Error404PageComponent,
@@ -36,7 +47,7 @@ import { RouterModule } from '@angular/router';
     MaingraphComponent,
     AppsCardPropertiesComponent,
     HomeSidebarComponent,
-    RouterModule
+    RouterModule,
   ],
 })
 export class SharedModule {}

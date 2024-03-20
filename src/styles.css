@@ -1,13 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
 
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@media (max-width: 660px) {
+  body {
+    font-size: 14px;
+  }
+}
+.toast {
+  background-color: white !important; /* Establecer el color de fondo en blanco */
+}
+
+.p-toast .p-toast-message .p-toast-message-content {
+  padding: 1rem;
+  border-width: 0 0 0 6px;
+  background: rgb(255, 255, 255);
+}
+.p-tabview .p-tabview-nav li .p-tabview-nav-link:not(.p-disabled):focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: inset 0 0 0 0.2rem rgb(62, 99, 145);
+  background-color: #2d4474 !important;
+}
+.p-toast .p-toast-message.p-toast-message-warn {
+  background: #fff2e2;
+  border: none !important;
+  border-width: 0 0 0 6px;
+  color: #cc8925;
+}
+
+
+.p-tabview .p-tabview-nav li .p-tabview-nav-link  {
+  background: #add1ee  !important;
+}
+.p-tabview-title {
+ color: rgb(255, 255, 255)  !important;
+}
+.p-tabview .p-tabview-nav {
+  padding-top: 20px !important;
+  padding-left: 20px !important;
+}
+
+.p-tabview .p-tabview-nav li  {
+  margin-left: 12px !important;
+}
 
 @import "primeflex/primeflex.css";
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "animate.css";
-@import "primeicons/primeicons.css"; */
+@import "primeicons/primeicons.css";
 
 
 @import url('tailwindcss/base.css') layer(tw-base);

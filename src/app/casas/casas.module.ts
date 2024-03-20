@@ -34,6 +34,8 @@ import { CasasRoutingModule } from './casas-routing.module';
 import { CreatePropiedadComponent } from './pages/create-propiedad/create-propiedad.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { ReplaceCommaPipe } from './pipes/replace-comma.pipe';
+import { ChileanCurrencyPipe } from './pipes/chileanCurrencyPipi';
+
 import { SidebarComponent } from '../component/sidebar/sidebar.component';
 import { SharedModule } from "../shared/shared.module";
 import { PropertiesComponent } from './pages/properties/properties.component';
@@ -62,6 +64,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     SidebarComponent,
     SortByPipe,
     ReplaceCommaPipe,
+    ChileanCurrencyPipe,
     LandingComponent,
     CreatePropiedadComponent,
     PropertiesComponent,
