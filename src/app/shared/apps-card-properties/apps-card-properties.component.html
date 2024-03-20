@@ -41,9 +41,9 @@
       </div>
     </div>
   </div>
-  <p-toast position="bottom-center" key="c" (onClose)="onReject()" [baseZIndex]="5000" class="bg-white rounded-full border shadow-xl">
+  <p-toast position="bottom-center" key="c" (onClose)="onReject()" [baseZIndex]="5000" class="bg-white rounded-full border-lg shadow-xl">
     <ng-template let-message pTemplate="message">
-      <div class="justify-center flex flex-col items-center mb-3 h-42 rounded-full border shadow-xl">
+      <div class="justify-center flex flex-col items-center mb-3 h-42">
         <div class="justify-center text-center items-center">
           <div class="ml-7">
             <img src="assets/img/deletee.svg" alt="Icono de llamada"  class="w-2 ml-8 mb-2">
@@ -70,7 +70,7 @@
             <button type="button" pButton (click)="onReject()" label="No" class=" bg-white rounded-full border shadow-xl border-blue-500 text-blue-500"></button>
           </div>
           <div class="p-col-6">
-            <button type="button" pButton (click)="onConfirm()" label="Yes" class="bg-red-500 rounded-full border"></button>
+            <button type="button" pButton (click)="onConfirm()" label="Si" class="bg-red-500 rounded-full border"></button>
           </div>
         </div>
       </div>
