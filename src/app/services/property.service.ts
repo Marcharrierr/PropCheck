@@ -87,7 +87,7 @@ export class PropertyService {
     const body = { status: 'INACTIVO' };
 
     // Realiza la solicitud DELETE con el cuerpo especificado
-    return this.http.patch<any>(`http://34.173.203.168:3500/propcheck/property/${clientId}/status`, body).pipe(
+    return this.http.patch<any>(`https://api.propcheck.ai/propcheck/property/${clientId}/status`, body).pipe(
       catchError(error => {
         console.log(error);
         return throwError('Error fetching data');
@@ -95,7 +95,7 @@ export class PropertyService {
     );
   }
   getPropertiesdebtdetail(clientId: number): Observable<any> {
-    return this.http.get<any>(`http://34.173.203.168:3500/propcheck/property/2/debt`).pipe(
+    return this.http.get<any>(`https://api.propcheck.ai/propcheck/property/2/debt`).pipe(
       catchError(error => {
         console.log(error);
         return throwError('Error fetching data');
