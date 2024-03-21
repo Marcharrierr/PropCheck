@@ -50,28 +50,28 @@ export class AuthService {
   login(email: string, password: string): Observable<boolean> {
     const url = `${this.baseUrl}/propcheck/auth/login`;
     const body = { email, password };
-  
+
     return this.http.post<LoginResponse>(url, body).pipe(
       mergeMap(({ user, token, id }) => {
         localStorage.setItem('token', token);
         localStorage.setItem('id', id.toString());
-  
+
         return this.dataAgent.getAgent().pipe(
           mergeMap((agentData) => {
             localStorage.setItem('agentData', JSON.stringify(agentData));
             console.log('AGENTE');
             console.log(agentData);
-  
+
             // Llamar para obtener datos del cliente
             return this.dataClient.getClient().pipe(
               tap((clientData) => {
                 localStorage.setItem('clientData', JSON.stringify(clientData));
                 console.log('CLIENTE');
                 console.log(clientData);
-  
+
                 // Establecer la autenticación
                 this.setAuthentication(user, token, id.toString());
-  
+
                 // Redirigir a la página de propiedades
                 this.router.navigate(['/propiedades/list']);
               }),
@@ -91,8 +91,8 @@ export class AuthService {
       catchError((err) => throwError(err.error.message))
     );
   }
-  
-  
+
+
   //Ver estatus de token
   checkOutStatus(): Observable<boolean> {
     const url = `${this.baseUrl}/auth/check-token`;
