@@ -1,5 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'primeng/resources/primeng.css';
+@import "primeicons/primeicons.css";
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import url('tailwindcss/components.css') layer(tw-components);
+@import url('tailwindcss/utilities.css') layer(tw-utilities);
+@import url('tailwindcss/base.css') layer(tw-base);
+@import 'primeng/resources/themes/lara-light-blue/theme.css';
+@import 'primeicons/primeicons.css';
 
+@tailwind components;
+@tailwind utilities;
+
+
+@import "primeflex/primeflex.css";
+@import "animate.css";
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -48,18 +62,5 @@ body {
   margin-left: 12px !important;
 }
 
-@import "primeflex/primeflex.css";
-@import "primeng/resources/themes/lara-light-blue/theme.css";
-@import "animate.css";
-@import "primeicons/primeicons.css";
 
 
-@import url('tailwindcss/base.css') layer(tw-base);
-@import 'primeng/resources/themes/lara-light-blue/theme.css';
-@import 'primeng/resources/primeng.css';
-@import 'primeicons/primeicons.css';
-
-/*@import url('tailwindcss/components.css') layer(tw-components);*/
-/*@import url('tailwindcss/utilities.css') layer(tw-utilities);*/
-@tailwind components;
-@tailwind utilities;
