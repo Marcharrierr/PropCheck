@@ -10,14 +10,28 @@ body {
     font-size: 14px;
   }
 }
+.toast {
+  background-color: white !important; /* Establecer el color de fondo en blanco */
+}
 
-
+.p-toast .p-toast-message .p-toast-message-content {
+  padding: 1rem;
+  border-width: 0 0 0 6px;
+  background: rgb(255, 255, 255);
+}
 .p-tabview .p-tabview-nav li .p-tabview-nav-link:not(.p-disabled):focus {
   outline: 0 none;
   outline-offset: 0;
   box-shadow: inset 0 0 0 0.2rem rgb(62, 99, 145);
   background-color: #2d4474 !important;
 }
+.p-toast .p-toast-message.p-toast-message-warn {
+  background: #fff2e2;
+  border: none !important;
+  border-width: 0 0 0 6px;
+  color: #cc8925;
+}
+
 
 .p-tabview .p-tabview-nav li .p-tabview-nav-link  {
   background: #add1ee  !important;
@@ -39,6 +53,13 @@ body {
 @import "animate.css";
 @import "primeicons/primeicons.css";
 
-@tailwind base;
+
+@import url('tailwindcss/base.css') layer(tw-base);
+@import 'primeng/resources/themes/lara-light-blue/theme.css';
+@import 'primeng/resources/primeng.css';
+@import 'primeicons/primeicons.css';
+
+/*@import url('tailwindcss/components.css') layer(tw-components);*/
+/*@import url('tailwindcss/utilities.css') layer(tw-utilities);*/
 @tailwind components;
 @tailwind utilities;

@@ -1,52 +1,83 @@
+
 <div class="container bg-white">
   <div class="grid grid-cols-1 justify-center gap-4">
-    <div *ngFor="let casa of casas"
-      class="card-component rounded-lg overflow-hidden shadow-lg mt-1 border border-gray-300 p-3 pb-6 -mb-3">
-      <div class="flex justify-between items-center mb-2 p-3">
-        <div>
-          <h1 class="text-xl font-bold">{{ casa.community_name }}</h1>
-          <p>{{ casa.address }}, Dpto. {{casa.department}}</p>
-          <p>{{ casa.department }}</p>
+    <div class="card" *ngIf="status === 'loading'">
+      <!-- <p-progressSpinner ariaLabel="loading"></p-progressSpinner> -->
+    </div>
 
+      <div *ngFor="let casa of casas"
+      class="card-component rounded-lg overflow-hidden shadow-lg mt-1 border border-gray-300 p-3 pb-6 -mb-3 lg:min-w-propertiesList">
+      <div *ngIf="status === 'success'" class="flex justify-between items-center  p-3">
+        <div class="h-28" (click)="redirectToPropertyDetail(casa.id)">
+          <h1 class="text-lg font-bold">{{ casa.community_name }}</h1>
+          <p>{{ casa.address }}, Dpto. {{casa.department}}</p>
           <p>{{ casa.municipality }}</p>
         </div>
-        <i class="fa-solid fa-building text-blue-900 text-7xl"></i>
+        <img src="assets/img/casa.svg" class="fa-solid fa-building text-blue-900">
       </div>
-      <div class="grid grid-rows-2">
-        <div class="flex space-x-2 ml-3">
+
+      <div class="grid grid-rows-2 mt-1">
+        <div class="flex space-x-2 ml-4">
           <!-- Botones con iconos de Font Awesome -->
-          <button class="w-1 h-2 rounded-full focus:outline-none ml-2">
-            <img src="assets/img/llama.svg" alt="Icono de llamada">
-          </button>
-
-          <button class="w-1 h-1 rounded-full focus:outline-none">
-            <img src="assets/img/agua2.svg" alt="Icono de llamada">
-          </button>
-          <button class="w-1 h-1 rounded-full focus:outline-none">
-            <img src="assets/img/fuego.svg" alt="Icono de llamada">
-          </button>
-          <button class="w-1 h-1 rounded-full focus:outline-none">
-            <img src="assets/img/reci.svg" alt="Icono de llamada">
-          </button>
-
-          <button class="w-1 h-1 rounded-full focus:outline-none">
-            <img src="assets/img/edificio.svg" alt="Icono de llamada">
-          </button>
-
-          <button class="w-1 h-1 rounded-full focus:outline-none">
-            <img src="assets/img/casapago.svg" alt="Icono de llamada">
-          </button>
+          <div *ngFor="let icono of iconos" class="w-6 h-8 min-w-icon min-h-icon rounded-full flex items-center justify-center" [ngClass]="{'bg-green-500': casa.activo, 'bg-gray-500': !casa.activo}">
+            <button class="w-6 h-12 rounded-full flex items-center justify-center">
+              <img [src]="icono.ruta" alt="Icono de llamada" class="w-12">
+            </button>
+          </div>
           <!-- Nuevo botón de descarga -->
         </div>
+
         <div class="flex space-x-2 ml-auto">
-          <button class="w-3 h-3 rounded-full  focus:outline-none ml-6" (click)="descargarInforme()">
+          <button class="w-3 h-3 rounded-full  focus:outline-none ml-6">
             <img src="assets/img/editarCard.svg" alt="Icono de llamada">
           </button>
-          <button class="w-3 h-3 rounded-full focus:outline-none" (click)="descargarInforme()">
+          <!-- Modifica el botón para llamar a la función confirmDelete -->
+          <!-- Agrega el p-confirmDialog al HTML -->
+
+          <button class="w-3 h-3 rounded-full focus:outline-none" type="button"  (click)="showConfirm(casa.id)">
             <img src="assets/img/delete.svg" alt="Icono de llamada">
           </button>
         </div>
       </div>
     </div>
   </div>
+  <p-toast position="bottom-center" key="c" (onClose)="onReject()" [baseZIndex]="5000" class="bg-white rounded-full border shadow-xl">
+    <ng-template let-message pTemplate="message">
+      <div class="justify-center flex flex-col items-center mb-3 h-42 rounded-full border shadow-xl">
+        <div class="justify-center text-center items-center">
+          <div class="ml-7">
+            <img src="assets/img/deletee.svg" alt="Icono de llamada"  class="w-2 ml-8 mb-2">
+
+          </div>
+          <!-- <i class="pi pi-exclamation-triangle" style="font-size: 3rem"></i> -->
+          <h4 class="text-blue-600 font-bold">{{message.summary}}</h4>
+          <p class="text-black mb-3">{{message.detail}}</p>
+        </div>
+        <div class=" bg-white w-full rounded-lg border shadow-xl">
+          <div class="flex justify-between items-center mb-2 p-3">
+            <div class="h-22 ">
+              <h1 class="text-sm font-bold text-black"> {{deleteproperty.community_name}} </h1>
+              <p class="text-xs text-black">{{ deleteproperty.address }}, Dpto. {{deleteproperty.department}}</p>
+              <p class="text-xs text-black"> {{deleteproperty.department}} </p>
+              <p class="text-xs text-black"> {{deleteproperty.municipality}}</p>
+            </div>
+            <img src="assets/img/casa.svg" class="w-2 text-blue-900">
+          </div>
+
+        </div>
+        <div class="justify-center flex flex-rows items-center mb-3 mt-4">
+          <div class="p-col-6 mr-7 w-full">
+            <button type="button" pButton (click)="onReject()" label="No" class=" bg-white rounded-full border shadow-xl border-blue-500 text-blue-500"></button>
+          </div>
+          <div class="p-col-6">
+            <button type="button" pButton (click)="onConfirm()" label="Yes" class="bg-red-500 rounded-full border"></button>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-toast>
+
 </div>
+
+
+

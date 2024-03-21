@@ -26,6 +26,8 @@ import { MessagesModule } from 'primeng/messages';
 import { RippleModule } from 'primeng/ripple';
 import { StyleClassModule } from 'primeng/styleclass';
 import { MenubarModule } from 'primeng/menubar';
+import { InformeComponent } from './informe/informe.component';
+import { QuienessomosComponent } from './quienes-somos/quienessomos.component';
 
 
 @NgModule({
@@ -33,6 +35,8 @@ import { MenubarModule } from 'primeng/menubar';
     AppComponent,
     HomePageComponent,
     CarouselComponent,
+    InformeComponent,
+    QuienessomosComponent,
   ],
   imports: [
     AnimateModule,
@@ -56,6 +60,7 @@ import { MenubarModule } from 'primeng/menubar';
     RippleModule,
     SharedModule,
     StyleClassModule,
+
 
   ],
   providers: [],

@@ -1,103 +1,110 @@
-<!-- Sidebar -->
-<div
-  class="bg-blue-primary-propcheck w-100 h-16 static align-items-center flex justify-between"
->
-  <p-button
-    styleClass="flex w-auto h-3 ml-4 text-white text-sm p-button-text justify-start p-3"
-    (click)="sidebarVisible = true"
-    icon="pi pi-bars text-3xl"
-  ></p-button>
-
-  <!--SideBar-->
-  <div class="flex-1 align-items-center justify-items-start ml-3">
-    <p-image
-      src="/assets/img/Logo PropCheck final_blanco.jpeg"
-      alt="Propcheck Image"
-      height="40"
-      width="40"
-      class="m-1 ml-3 translate-x-3 animate__animated animate__fadeInLeft"
-    ></p-image>
-  </div>
-  <p-sidebar [(visible)]="sidebarVisible">
-    <!-- Logo internos Sidebar -->
-    <div class="card flex justify-content-center mb-4">
-      <p-image
-        src="/assets/img/Logo PropCheck final_blanco.jpeg"
-        alt="Propcheck"
-        height="130"
-        width="130"
-      ></p-image>
+<!--  Menu encabezado  -->
+<div class="bg-blue-primary-propcheck w-full">
+  <div
+    class="max-w-7xl mx-auto flex justify-center items-center px-2 gap-2 min-h-16"
+  >
+    <button class="p-2" (click)="sidebarVisible = true">
+      <img
+        class="h-12 w-auto"
+        height="64px"
+        width="64px"
+        src="/assets/img/menu.svg"
+        alt="user logo"
+      />
+    </button>
+    <div class="grow align-items-center">
+      <a href="/" class="logo flex-shrink-0">
+        <img
+          class="h-12 w-auto"
+          height="64px"
+          width="64px"
+          src="/assets/img/Logo PropCheck.svg"
+          alt="Logo Propcheck"
+        />
+      </a>
     </div>
-    <!-- Contenido interno Sidebar -->
-    <ng-template pTemplate="body">
-      <div class="flex-row">
-        <div class="flex ml-5 mb-3 text-900 justify-content-start">
-          <img src="../../../assets/img/home-interno.svg" alt="" />
-          <p-button
-            label="Home"
-            styleClass=" w-auto h-auto text-white text-lg p-button-text p-1rem"
-            routerLink="/propiedades/list"
-            (click)="sidebarVisible = false"
-          ></p-button>
-        </div>
-        <div class="flex ml-5 mb-3 text-900 justify-content-start">
-          <img src="../../../assets/img/propiedades.svg" alt="" />
-          <p-button
-            label="Propiedades"
-            styleClass="w-auto h-auto text-white text-lg p-button-text p-1rem"
-            routerLink="/propiedades/properties"
-            (click)="sidebarVisible = false"
-          ></p-button>
-        </div>
 
-        <div class="flex ml-5 mb-3 text-900 justify-content-start">
-          <img src="../../../assets/img/informes.svg" alt="" />
-          <p-button
-            label="Tus informes"
-            styleClass="w-auto h-auto text-white text-lg p-button-text p-1rem"
-            routerLink="/propiedades/reports"
-            (click)="sidebarVisible = false"
-          ></p-button>
-        </div>
-
-        <div class="flex ml-5 mb-3 text-900 justify-content-start">
-          <img src="../../../assets/img/user.svg" alt="" />
-          <p-button
-            label="Perfil"
-            styleClass="w-auto h-auto text-white text-lg p-button-text p-1rem"
-            routerLink="/propiedades/property-user-profile"
-            (click)="sidebarVisible = false"
-          ></p-button>
-        </div>
-
-        <div class="flex ml-5 mb-3 text-900 justify-content-start">
-          <img src="../../../assets/img/mesayuda.svg" alt="" />
-          <p-button
-            label="Mesa de ayuda"
-            styleClass="w-auto h-auto text-white text-lg p-button-text p-1rem"
-            routerLink="/propiedades/list"
-            (click)="sidebarVisible = false"
-          ></p-button>
-        </div>
-
-        <div class="flex">
+    <p-sidebar [(visible)]="sidebarVisible">
+      <!-- Logo internos Sidebar -->
+      <div class="card flex justify-content-center mb-4">
+        <p-image
+          src="/assets/img/Logo PropCheck final_blanco.jpeg"
+          alt="Propcheck"
+          height="130"
+          width="130"
+        ></p-image>
+      </div>
+      <!-- Contenido interno Sidebar -->
+      <ng-template pTemplate="body">
+        <div class="flex-row">
           <div class="flex ml-5 mb-3 text-900 justify-content-start">
-            <img src="../../../assets/img/cerrarSesion.svg" alt="" />
+            <img src="../../../assets/img/home-interno.svg" alt="" />
             <p-button
-              label="Cerrar Sesión"
-              styleClass="w-auto h-auto text-white text-lg p-button-text p-1rem"
-              (click)="onLogout()"
-              routerLink="/"
+              label="Home"
+              styleClass=" w-auto h-auto text-white text-lg p-button-text p-1rem"
+              routerLink="/propiedades/list"
+              (click)="sidebarVisible = false"
             ></p-button>
           </div>
+          <div class="flex ml-5 mb-3 text-900 justify-content-start">
+            <img src="../../../assets/img/propiedades.svg" alt="" />
+            <p-button
+              label="Propiedades"
+              styleClass="w-auto h-auto text-white text-lg p-button-text p-1rem"
+              routerLink="/propiedades/properties"
+              (click)="sidebarVisible = false"
+            ></p-button>
+          </div>
+
+          <div class="flex ml-5 mb-3 text-900 justify-content-start">
+            <img src="../../../assets/img/informes.svg" alt="" />
+            <p-button
+              label="Tus informes"
+              styleClass="w-auto h-auto text-white text-lg p-button-text p-1rem"
+              routerLink="/propiedades/reports"
+              (click)="sidebarVisible = false"
+            ></p-button>
+          </div>
+
+          <div class="flex ml-5 mb-3 text-900 justify-content-start">
+            <img src="../../../assets/img/user.svg" alt="" />
+            <p-button
+              label="Perfil"
+              styleClass="w-auto h-auto text-white text-lg p-button-text p-1rem"
+              routerLink="/propiedades/property-user-profile"
+              (click)="sidebarVisible = false"
+            ></p-button>
+          </div>
+
+          <div class="flex ml-5 mb-3 text-900 justify-content-start">
+            <img src="../../../assets/img/mesayuda.svg" alt="" />
+            <p-button
+              label="Mesa de ayuda"
+              styleClass="w-auto h-auto text-white text-lg p-button-text p-1rem"
+              routerLink="/propiedades/list"
+              (click)="sidebarVisible = false"
+            ></p-button>
+          </div>
+
+          <div class="flex">
+            <div class="flex ml-5 mb-3 text-900 justify-content-start">
+              <img src="../../../assets/img/cerrarSesion.svg" alt="" />
+              <p-button
+                label="Cerrar Sesión"
+                styleClass="w-auto h-auto text-white text-lg p-button-text p-1rem"
+                (click)="onLogout()"
+                routerLink="/"
+              ></p-button>
+            </div>
+          </div>
         </div>
-      </div>
-    </ng-template>
-  </p-sidebar>
-  <div class="flex justify-items-end">
-    <label
-      class="px-24 text-white text-sm whitespace-nowrap p-button-text font-['Helvetica'] leading-[normal]"
-      >Bienvenido, Usuario</label
+      </ng-template>
+    </p-sidebar>
+    <div
+      class="flex justify-items-end flex-wrap font-['Helvetica'] text-white text-sm gap-x-2"
     >
+      <span class="inline-block">Bienvenido {{ agentData.name }}</span
+      ><span class="inline-block"> {{ clientData.name }}</span>
+    </div>
   </div>
 </div>

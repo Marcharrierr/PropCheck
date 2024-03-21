@@ -22,15 +22,20 @@ module.exports = {
       minWidth: {
         'lg': '50px',
         '350px': '250px',
-        '400px': '435px',
+        '400px': '300px',
         '320px': '290px',
-        '800px': '890px',
+        '800px': '620px',
         'search': '10px',
         'cardList': '1200px',
         'icon': '30px',
         "wcardReport": '300px',
         'list': '1000px',
-
+        'propertiesList': '410px',
+        'mincardmetrics': '1100px',
+        'mincardmetricsMs': '450px'
+      },
+      Width: {
+        '400px': '300px',
       },
       minHeight: {
         'lg': '220px',
