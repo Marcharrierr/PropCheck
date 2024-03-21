@@ -32,6 +32,15 @@ const routes: Routes = [
     //canActivate: [isAuthenticatedGuard],
     loadChildren: () => import('./casas/pages/landing/landing.component').then(m => m.LandingComponent),
   },
+
+  {
+    path: 'verifica-informe',
+    component: InformeComponent
+  },
+  {
+    path: 'quienes-somos',
+    component: QuienessomosComponent
+  },
   {
     path: 'verifica-informe',
     component: InformeComponent

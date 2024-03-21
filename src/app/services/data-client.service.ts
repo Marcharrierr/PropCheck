@@ -22,10 +22,10 @@ export class DataClient {
   }
 
   getClient(): Observable<any> {
-    const client_id = this.getClientId();
+    const id = this.getClientId();
 
-    if (client_id) {
-      const url = `${this.baseUrl}/${client_id}`;
+    if (id) {
+      const url = `${this.baseUrl}/${id}`;
       return this.http.get(url);
     } else {
       return new Observable();

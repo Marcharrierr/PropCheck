@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Property } from '../../../interfaces/property.interface';
 import { PropertyService } from '../../../services/property.service';
 
-import { Municipality, PropertyServices, Region, Type } from '../../../interfaces/property_service.interface';
+import { Municipality, PropertyServices, Region } from '../../../interfaces/property_service.interface';
 import { PropertyServiceService } from '../../../services/property-service.service';
 import { CreateServiceService } from '../../../services/create-service.service';
 import { switchMap } from 'rxjs';
@@ -37,6 +37,12 @@ class TablaHash {
   ]
 })
 export class EditPropiedadesPageComponent implements OnInit {
+
+  value!: string;
+  checked!: boolean;
+
+  //loading: boolean = true;
+
 
   private tablaHash = new TablaHash();
 
@@ -111,9 +117,9 @@ export class EditPropiedadesPageComponent implements OnInit {
 
 
 
-  get type(): Type[] {
-    return this.propertyService.type;
-  }
+  // get type(): Type[] {
+  //   return this.propertyService.type;
+  // }
 
   get region(): Region[] {
     return this.propertyService.region;
@@ -295,7 +301,7 @@ export class EditPropiedadesPageComponent implements OnInit {
   }
 
 
-  public formType!: Type;
+  // public formType!: Type;
   public formRegion!: Region;
   public formMunicipality!: Municipality;
   public luzControl!: string;
@@ -366,9 +372,9 @@ export class EditPropiedadesPageComponent implements OnInit {
   }
 
 
-  onTypeChange(newValue: Type) {
-    this.myProperty.controls['type'].setValue(newValue);
-  }
+  // onTypeChange(newValue: Type) {
+  //   this.myProperty.controls['type'].setValue(newValue);
+  // }
 
 
 
@@ -382,7 +388,7 @@ export class EditPropiedadesPageComponent implements OnInit {
     this.community_rut = 1;
     this.community_dv = '9';
     this.community_name = this.myProperty.get('community_name')!.value;
-    this.formType = this.myProperty.get('type')!.value;
+    // this.formType = this.myProperty.get('type')!.value;
     this.formRegion = this.myProperty.get('region')!.value;
     this.formMunicipality = this.myProperty.get('municipality')!.value;
     this.address = this.myProperty.get('address')!.value;

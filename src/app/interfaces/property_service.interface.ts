@@ -6,15 +6,6 @@ export interface PropertyServices {
 }
 
 
-export enum Type {
-
-  departamento = 'Departamento',
-  casa = 'Casa',
-  galpon = 'Galpón',
-  local = 'Local',
-  estacionamiento = 'Estacionamiento'
-
-}
 
 export enum Region {
 

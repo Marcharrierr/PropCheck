@@ -10,72 +10,75 @@
     </div>
     <div class="flex-col justify-center">
       <!-- Datos propiedades -->
-      <div class="flex flex-col md:flex-row mb-2 items-center">
-        <!-- Dropdowns -->
-        <div class="mx-auto p-field">
-          <label
-            class="ml-5 text-black text-sm font-normal font-['Helvetica']"
-            for="miDropdown"
-            >Tipo de propiedad</label
-          >
-          <p-dropdown
-            id="miDropdown"
-            placeholder="Seleccione"
-            styleClass="flex items-center mx-4 mb-4 w-21rem md:w-17rem  h-10 rounded-[10px] shadow"
-          >
-          </p-dropdown>
+      <form [formGroup]="myProperty" (ngSubmit)="onSubmitProperty()">
+        <div class="flex flex-col md:flex-row mb-2 items-center">
+          <!-- Dropdowns -->
+          <div class="mx-auto p-field">
+            <label
+              class="ml-5 text-black text-sm font-normal font-['Helvetica']"
+              >Tipo de propiedad</label
+            >
+            <p-dropdown
+              [options]="typeProperties"
+              formControlName="type"
+              placeholder="Seleccione"
+              styleClass="flex items-center mx-4 mb-4 w-21rem md:w-17rem h-10 rounded-[10px] shadow"
+            ></p-dropdown>
+          </div>
+          <div class="mx-auto p-field">
+            <label
+              class="ml-5 text-black text-sm font-normal font-['Helvetica']"
+              >Región</label
+            >
+            <p-dropdown
+              formControlName="region"
+              [options]="region"
+              placeholder="Seleccione"
+              styleClass="flex items-center mx-4 mb-4 w-21rem md:w-17rem  h-10 rounded-[10px] shadow"
+            >
+            </p-dropdown>
+          </div>
+          <div class="mx-auto p-field">
+            <label
+              class="ml-5 text-black text-sm font-normal font-['Helvetica']"
+              >Comuna</label
+            >
+            <p-dropdown
+              formControlName="municipality"
+              [options]="municipalityControl.value"
+              placeholder="Seleccione"
+              styleClass="flex items-center mx-4 mb-4 w-21rem md:w-17rem  h-10 rounded-[10px] shadow"
+            >
+            </p-dropdown>
+          </div>
+          <div class="mx-auto p-field">
+            <span class="p-float-label">
+              <input
+                pInputText
+                id="address"
+                formControlName="address"
+                type="text"
+                class="w-21rem md:w-17rem h-10 mx-4 rounded-[10px] shadow"
+              />
+              <label
+                class="text-black text-sm ml-4 font-normal font-['Helvetica']"
+                htmlFor="direccion"
+              >
+                Ingrese dirección</label
+              >
+            </span>
+          </div>
         </div>
-        <div class="mx-auto p-field">
-          <label
-            class="ml-5 text-black text-sm font-normal font-['Helvetica']"
-            for="miDropdown"
-            >Región</label
-          >
-          <p-dropdown
-            id="miDropdown"
-            placeholder="Seleccione"
-            styleClass="flex items-center mx-4 mb-4 w-21rem md:w-17rem  h-10 rounded-[10px] shadow"
-          >
-          </p-dropdown>
-        </div>
-        <div class="mx-auto p-field">
-          <label
-            class="ml-5 text-black text-sm font-normal font-['Helvetica']"
-            for="miDropdown"
-            >Comuna</label
-          >
-          <p-dropdown
-            id="miDropdown"
-            placeholder="Seleccione"
-            styleClass="flex items-center mx-4 mb-4 w-21rem md:w-17rem  h-10 rounded-[10px] shadow"
-          >
-          </p-dropdown>
-        </div>
-        <div class="mx-auto p-field">
-          <label
-            class="ml-5 text-black text-sm font-normal font-['Helvetica']"
-            for="miDropdown"
-            >Dirección</label
-          >
-          <p-dropdown
-            id="miDropdown"
-            placeholder="Seleccione"
-            styleClass="flex items-center mx-4 mb-4 w-21rem md:w-17rem  h-10 rounded-[10px] shadow"
-          >
-          </p-dropdown>
-        </div>
-      </div>
+      </form>
     </div>
-    <!-- Inputs -->
+    <!-- Datos cuentas -->
     <div class="flex-col justify-center">
       <div class="flex flex-col md:flex-row">
         <div class="flex md:mb-2 my-3 mx-auto">
           <span class="p-float-label">
             <input
               pInputText
-              id="username"
               class="w-21rem md:w-17rem h-10 mx-4 rounded-[10px] shadow"
-              (ngModel)="(value)"
             />
             <label
               class="text-black text-sm ml-4 font-normal font-['Helvetica']"
@@ -89,9 +92,10 @@
           <span class="p-float-label">
             <input
               pInputText
-              id="username"
+              id="community_name"
+              formControlName="community_name"
+              type="text"
               class="w-21rem md:w-17rem h-10 mx-4 rounded-[10px] shadow"
-              (ngModel)="(value)"
             />
             <label
               class="text-black text-sm ml-4 font-normal font-['Helvetica']"
@@ -105,9 +109,10 @@
           <span class="p-float-label">
             <input
               pInputText
-              id="username"
+              formControlName="department"
+              id="department"
+              type="text"
               class="w-21rem md:w-17rem h-10 mx-4 rounded-[10px] shadow"
-              (ngModel)="(value)"
             />
             <label
               class="text-black text-sm ml-4 font-normal font-['Helvetica']"
@@ -121,9 +126,10 @@
           <span class="p-float-label">
             <input
               pInputText
-              id="username"
+              id="tower"
+              formControlName="tower"
+              type="text"
               class="w-21rem md:w-17rem h-10 mx-4 rounded-[10px] shadow"
-              (ngModel)="(value)"
             />
             <label
               class="text-black text-sm ml-4 font-normal font-['Helvetica']"
@@ -148,219 +154,284 @@
     <!-- Servicios asociados -->
     <div class="flex m-2">
       <div class="w-full md:w-1/2 justify-center">
-        <div class="flex flex-wrap justify-center">
-          <!-- Tarjeta LUZ-->
-          <div
-            class="m-2 card bg-white rounded-xl shadow-xl border-1 border-slate-300"
-          >
-            <div class="card-body p-2">
-              <div class="mx-auto p-field">
-                <div class="flex items-center" for="miDropdown">
-                  <img
-                    class="flex ml-4 h-8 text-blue-950"
-                    src="../../../../assets/img/Luz.svg"
-                    alt="Luz"
-                  />
-                  <label
-                    class="flex-1 ml-2 justify-start text-black text-base font-normal font-['Helvetica']"
-                    >LUZ</label
-                  >
-                  <div class="card flex mr-4">
-                    <p-inputSwitch (ngModel)="(checked)"></p-inputSwitch>
-                  </div>
-                </div>
-                <p-dropdown
-                  id="miDropdown"
-                  placeholder="Seleccione proveedor"
-                  styleClass="flex items-center mx-4 w-15rem h-10 rounded-[10px] shadow"
-                >
-                </p-dropdown>
-                <input
-                  pInputText
-                  id="username"
-                  class="w-15rem h-10 mx-4 mt-2 mb-2 rounded-[10px] shadow"
-                  (ngModel)="(value)"
-                />
-              </div>
-            </div>
-          </div>
-          <!-- Tarjeta Agua-->
-          <div
-            class="m-2 card bg-white rounded-xl shadow-xl border-1 border-slate-300"
-          >
-            <div class="card-body p-2">
-              <div class="mx-auto p-field">
-                <div class="flex items-center" for="miDropdown">
-                  <img
-                    class="flex ml-4 h-8 text-blue-950"
-                    src="../../../../assets/img/agua-azul.svg"
-                    alt="Agua"
-                  />
-                  <label
-                    class="flex-1 ml-2 justify-start text-black text-base font-normal font-['Helvetica']"
-                    >AGUA</label
-                  >
-                  <div class="card flex mr-4">
-                    <p-inputSwitch (ngModel)="(checked)"></p-inputSwitch>
-                  </div>
-                </div>
-                <p-dropdown
-                  id="miDropdown"
-                  placeholder="Seleccione proveedor"
-                  styleClass="flex items-center mx-4 w-15rem h-10 rounded-[10px] shadow"
-                >
-                </p-dropdown>
-                <input
-                  pInputText
-                  id="username"
-                  class="w-15rem h-10 mx-4 mt-2 mb-2 rounded-[10px] shadow"
-                  (ngModel)="(value)"
-                />
-              </div>
-            </div>
-          </div>
-          <!-- Tarjeta Gas-->
-          <div
-            class="m-2 card bg-white rounded-xl shadow-xl border-1 border-slate-300"
-          >
-            <div class="card-body p-2">
-              <div class="mx-auto p-field">
-                <div class="flex items-center" for="miDropdown">
-                  <img
-                    class="flex ml-4 h-8 text-blue-950"
-                    src="../../../../assets/img/Gas.svg"
-                    alt="Gas"
-                  />
-                  <label
-                    class="flex-1 ml-2 justify-start text-black text-base font-normal font-['Helvetica']"
-                    >GAS</label
-                  >
-                  <div class="card flex mr-4">
-                    <p-inputSwitch (ngModel)="(checked)"></p-inputSwitch>
-                  </div>
-                </div>
-                <p-dropdown
-                  id="miDropdown"
-                  placeholder="Seleccione proveedor"
-                  styleClass="flex items-center mx-4 w-15rem h-10 rounded-[10px] shadow"
-                >
-                </p-dropdown>
-                <input
-                  pInputText
-                  id="username"
-                  class="w-15rem h-10 mx-4 mt-2 mb-2 rounded-[10px] shadow"
-                  (ngModel)="(value)"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="m-2 card bg-white rounded-xl shadow-xl border-1 border-slate-300"
-          >
-            <div class="card-body p-2">
-              <div class="mx-auto p-field">
-                <div class="flex items-center" for="miDropdown">
-                  <img
-                    class="flex ml-4 h-8 text-blue-950"
-                    src="../../../../assets/img/Gc.svg"
-                    alt="gc"
-                  />
-                  <label
-                    class="flex-1 ml-2 justify-start text-black text-sm font-normal font-['Helvetica']"
-                    >GASTOS COMUNES</label
-                  >
-                  <div class="card flex mr-4">
-                    <p-inputSwitch (ngModel)="(checked)"></p-inputSwitch>
-                  </div>
-                </div>
-                <p-dropdown
-                  id="miDropdown"
-                  placeholder="Seleccione proveedor"
-                  styleClass="flex items-center mx-4 w-15rem h-10 rounded-[10px] shadow"
-                >
-                </p-dropdown>
-                <input
-                  pInputText
-                  id="username"
-                  class="w-15rem h-10 mx-4 mt-2 mb-2 rounded-[10px] shadow"
-                  (ngModel)="(value)"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="w-full sm:w-1/2">
+        <form
+          [formGroup]="myPropertyService"
+          (ngSubmit)="onSubmitPropertyService()"
+        >
           <div class="flex flex-wrap justify-center">
+            <!-- Tarjeta LUZ-->
             <div
-              class="m-2 bg-white rounded-xl shadow-xl border-1 border-slate-300"
+              class="m-2 card bg-white rounded-xl shadow-xl border-1 border-slate-300"
             >
               <div class="card-body p-2">
                 <div class="mx-auto p-field">
                   <div class="flex items-center" for="miDropdown">
                     <img
                       class="flex ml-4 h-8 text-blue-950"
-                      src="../../../../assets/img/Aseo.svg"
-                      alt="Aseo"
+                      src="../../../../assets/img/Luz.svg"
+                      alt="Luz"
                     />
                     <label
                       class="flex-1 ml-2 justify-start text-black text-base font-normal font-['Helvetica']"
-                      >ASEO</label
+                      >LUZ</label
                     >
                     <div class="card flex mr-4">
-                      <p-inputSwitch (ngModel)="(checked)"></p-inputSwitch>
+                      <p-inputSwitch
+                        formControlName="luzNoService"
+                        inputId="ns"
+                        (onChange)="onCheckboxChange($event, 'luz')"
+                      ></p-inputSwitch>
                     </div>
                   </div>
-
+                  <p-dropdown
+                    *ngIf="serviceProperties"
+                    [options]="serviceProperties['luz']"
+                    formControlName="luzControl"
+                    placeholder="Seleccione proveedor"
+                    optionLabel="description"
+                    (onChange)="onDropdownChange($event.value.id, 'luz')"
+                    styleClass="flex items-center mx-4 w-15rem h-10 rounded-[10px] shadow"
+                  >
+                  </p-dropdown>
                   <input
                     pInputText
-                    id="username"
+                    formControlName="luz"
+                    id="luz"
+                    type="text"
+                    placeholder="12345678-9"
                     class="w-15rem h-10 mx-4 mt-2 mb-2 rounded-[10px] shadow"
-                    (ngModel)="(value)"
                   />
                 </div>
               </div>
             </div>
+            <!-- Tarjeta Agua-->
             <div
-              class="m-2 bg-white rounded-xl shadow-xl border-1 border-slate-300"
+              class="m-2 card bg-white rounded-xl shadow-xl border-1 border-slate-300"
             >
               <div class="card-body p-2">
                 <div class="mx-auto p-field">
                   <div class="flex items-center" for="miDropdown">
                     <img
                       class="flex ml-4 h-8 text-blue-950"
-                      src="../../../../assets/img/Contri.svg"
-                      alt="Contribuciones"
+                      src="../../../../assets/img/agua-azul.svg"
+                      alt="Agua"
                     />
                     <label
                       class="flex-1 ml-2 justify-start text-black text-base font-normal font-['Helvetica']"
-                      >CONTRIBUCIONES</label
+                      >AGUA</label
                     >
                     <div class="card flex mr-4">
-                      <p-inputSwitch (ngModel)="(checked)"></p-inputSwitch>
+                      <p-inputSwitch
+                        formControlName="aguaNoService"
+                        inputId="ns"
+                        (onChange)="onCheckboxChange($event, 'agua')"
+                      ></p-inputSwitch>
                     </div>
                   </div>
-
+                  <p-dropdown
+                    *ngIf="serviceProperties"
+                    [options]="serviceProperties['agua']"
+                    formControlName="aguaControl"
+                    placeholder="Seleccione proveedor"
+                    optionLabel="description"
+                    (onChange)="onDropdownChange($event.value.id, 'agua')"
+                    styleClass="flex items-center mx-4 w-15rem h-10 rounded-[10px] shadow"
+                  >
+                  </p-dropdown>
                   <input
                     pInputText
-                    id="username"
+                    id="agua"
+                    type="text"
+                    formControlName="agua"
+                    placeholder="12345678-9 o 1234567"
                     class="w-15rem h-10 mx-4 mt-2 mb-2 rounded-[10px] shadow"
-                    (ngModel)="(value)"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Tarjeta Gas-->
+            <div
+              class="m-2 card bg-white rounded-xl shadow-xl border-1 border-slate-300"
+            >
+              <div class="card-body p-2">
+                <div class="mx-auto p-field">
+                  <div class="flex items-center" for="miDropdown">
+                    <img
+                      class="flex ml-4 h-8 text-blue-950"
+                      src="../../../../assets/img/Gas.svg"
+                      alt="Gas"
+                    />
+                    <label
+                      class="flex-1 ml-2 justify-start text-black text-base font-normal font-['Helvetica']"
+                      >GAS</label
+                    >
+                    <div class="card flex mr-4">
+                      <p-inputSwitch
+                        formControlName="gasNoService"
+                        inputId="ns"
+                        (onChange)="onCheckboxChange($event, 'gas')"
+                      ></p-inputSwitch>
+                    </div>
+                  </div>
+                  <p-dropdown
+                    *ngIf="serviceProperties"
+                    [options]="serviceProperties['gas']"
+                    formControlName="gasControl"
+                    placeholder="Seleccione proveedor"
+                    optionLabel="description"
+                    (onChange)="onDropdownChange($event.value.id, 'gas')"
+                    styleClass="flex items-center mx-4 w-15rem h-10 rounded-[10px] shadow"
+                  >
+                  </p-dropdown>
+                  <input
+                    pInputText
+                    formControlName="gas"
+                    id="gas"
+                    type="number"
+                    placeholder="12345678"
+                    class="w-15rem h-10 mx-4 mt-2 mb-2 rounded-[10px] shadow"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="m-2 card bg-white rounded-xl shadow-xl border-1 border-slate-300"
+            >
+              <div class="card-body p-2">
+                <div class="mx-auto p-field">
+                  <div class="flex items-center" for="miDropdown">
+                    <img
+                      class="flex ml-4 h-8 text-blue-950"
+                      src="../../../../assets/img/Gc.svg"
+                      alt="gc"
+                    />
+                    <label
+                      class="flex-1 ml-2 justify-start text-black text-sm font-normal font-['Helvetica']"
+                      >GASTOS COMUNES</label
+                    >
+                    <div class="card flex mr-4">
+                      <p-inputSwitch
+                        formControlName="ggccNoService"
+                        inputId="ns"
+                        (onChange)="onCheckboxChange($event, 'ggcc')"
+                      ></p-inputSwitch>
+                    </div>
+                  </div>
+                  <p-dropdown
+                    *ngIf="serviceProperties"
+                    [options]="serviceProperties['ggcc']"
+                    formControlName="ggccControl"
+                    placeholder="Seleccione proveedor"
+                    optionLabel="description"
+                    (onChange)="onDropdownChange($event.value.id, 'ggcc')"
+                    styleClass="flex items-center mx-4 w-15rem h-10 rounded-[10px] shadow"
+                  >
+                  </p-dropdown>
+                  <input
+                    pInputText
+                    formControlName="ggcc"
+                    id="ggcc"
+                    type="text"
+                    placeholder="123456"
+                    class="w-15rem h-10 mx-4 mt-2 mb-2 rounded-[10px] shadow"
                   />
                 </div>
               </div>
             </div>
           </div>
-          <!--Boton crear propiedad-->
-          <div class="flex justify-center mt-4">
-            <button
-              class="bg-blue-800 hover:bg-blue-900 text-lg md:text-xl font-normal px-16 py-2 md:px-28 md:py-2.5 text-white rounded-3xl 0"
-            >
-              CREAR PROPIEDAD
-            </button>
+
+          <div class="w-full sm:w-1/2">
+            <div class="flex flex-wrap justify-center">
+              <div
+                class="m-2 bg-white rounded-xl shadow-xl border-1 border-slate-300"
+              >
+                <div class="card-body p-2">
+                  <div class="mx-auto p-field">
+                    <div class="flex items-center" for="miDropdown">
+                      <img
+                        class="flex ml-4 h-8 text-blue-950"
+                        src="../../../../assets/img/Aseo.svg"
+                        alt="Aseo"
+                      />
+                      <label
+                        class="flex-1 ml-2 justify-start text-black text-base font-normal font-['Helvetica']"
+                        >ASEO</label
+                      >
+                      <div class="card flex mr-4">
+                        <p-inputSwitch
+                          formControlName="aseoNoService"
+                          inputId="ns"
+                          (onChange)="onCheckboxChange($event, 'aseo')"
+                        ></p-inputSwitch>
+                      </div>
+                    </div>
+
+                    <input
+                      pInputText
+                      id="aseo"
+                      formControlName="aseo"
+                      placeholder="123-123"
+                      type="text"
+                      class="w-15rem h-10 mx-4 mt-2 mb-2 rounded-[10px] shadow"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="m-2 bg-white rounded-xl shadow-xl border-1 border-slate-300"
+              >
+                <div class="card-body p-2">
+                  <div class="mx-auto p-field">
+                    <div class="flex items-center" for="miDropdown">
+                      <img
+                        class="flex ml-4 h-8 text-blue-950"
+                        src="../../../../assets/img/Contri.svg"
+                        alt="Contribuciones"
+                      />
+                      <label
+                        class="flex-1 ml-2 justify-start text-black text-base font-normal font-['Helvetica']"
+                        >CONTRIBUCIONES</label
+                      >
+                      <div class="card flex mr-4">
+                        <p-inputSwitch
+                          formControlName="contriNoService"
+                          inputId="ns"
+                          (onChange)="onCheckboxChange($event, 'contri')"
+                        ></p-inputSwitch>
+                      </div>
+                    </div>
+
+                    <input
+                      pInputText
+                      id="contri"
+                      formControlName="contri"
+                      placeholder="123-123"
+                      type="text"
+                      class="w-15rem h-10 mx-4 mt-2 mb-2 rounded-[10px] shadow"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Boton crear propiedad o volver-->
+            <div class="flex justify-center mt-6 m-4">
+              <button
+                class="bg-white hover:bg-gray-200 text-sm md:text-xl font-normal mr-1 md:mr-3 px-14 py-1 md:px-36 md:py-2 text-blue-800 border-2 border-blue-800 hover:border-blue-900 rounded-3xl"
+                routerLink="/propiedades/properties"
+              >
+                VOLVER
+              </button>
+              <button
+                (click)="onSubmitButton()"
+                class="bg-blue-800 hover:bg-blue-700 text-sm md:text-xl font-normal px-10 py-1 md:px-20 md:py-2 text-white rounded-3xl"
+              >
+                <!--[disabled]="!myProperty.valid" -->
+                GUARDAR PROPIEDAD
+              </button>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>

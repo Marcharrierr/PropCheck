@@ -35,7 +35,9 @@ export class AppComponent {
         //this.router.navigateByUrl('/');
         //this.router.navigateByUrl('/auth/recover');
         //this.router.navigateByUrl('/auth/login');
+        //this.router.navigateByUrl('/propiedades/properties');
         //this.router.navigateByUrl('/propiedades/crear-propiedad');
+        //this.router.navigateByUrl('/propiedades/edit-propiedades');
 
 
         return;

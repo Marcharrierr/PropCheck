@@ -35,3 +35,8 @@ export interface ServiceData {
   modified: string;
   provider_id: number;
 }
+
+export interface TypeProperties {
+  type: string;
+  value: string;
+}
