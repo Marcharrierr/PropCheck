@@ -17,7 +17,7 @@ export class CreateServiceService {
 
 
   crearProperty(datosFormulario: any): Observable<any> {
-    const url = 'http://localhost:3000/api/propertys/';
+    const url = `${this.baseUrl}/propcheck/property/`;
     const datosPropiedad = {
       "community_rut": 1,
       "community_dv": "9",
@@ -57,46 +57,11 @@ export class CreateServiceService {
 
   createPropertyService(propertyServiceData: any): Observable<any> {
     if (!this.property_id) {
-      throw new Error('No se ha establecido el property_d');
+      throw new Error('No se ha establecido el property_id');
     }
 
-    // const formattedData = propertyServiceData.services.map((service: any) => {
-    //   let serviceId;
-    //   switch (service.key) {
-    //     case 'luz':
-    //       serviceId = service['luzId'] ? service['luzId'] : undefined;
-    //       break;
-    //     case 'agua':
-    //       serviceId = service['aguaId'] ? service['aguaId'] : undefined;
-    //       break;
-    //     case 'gas':
-    //       serviceId = service['gasId'] ? service['gasId'] : undefined;
-    //       break;
-    //     case 'gc':
-    //       serviceId = service['gcId'] ? service['gcId'] : undefined;
-    //       break;
-    //     case 'contri':
-    //       serviceId = 14;
-    //       break;
-    //     case 'aseo':
-    //       serviceId = 13;
-    //       break;
-    //     default:
-    //       serviceId = undefined;
-    //   }
 
-    //   return {
-    //     "property_id": this.property_id,
-    //     "service_id": serviceId,
-    //     "service_client_id": service.value,
-    //     "created": new Date().toISOString(),
-    //     "modified": new Date().toISOString()
-    //   };
-    // });
-
-    // console.log(' Service : ', formattedData);
-
-    return this.http.post(`http://localhost:3000/api/propertys/${this.property_id}/services`, propertyServiceData)
+    return this.http.post(`${this.baseUrl}/propcheck/property/${this.property_id}/services`, propertyServiceData)
       .pipe(
         tap(response => console.log('Respuesta de la API:', response)),
         catchError(err => {

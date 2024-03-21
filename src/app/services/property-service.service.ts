@@ -13,12 +13,12 @@ export class PropertyServiceService {
 
   private readonly baseUrl: string = environment.baseUrl;
 
-  API_URL: string = 'http://localhost:3000/api'
+  // API_URL: string = 'http://localhost:3000/api'
 
 
 
   getServiceProperties(): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/service-propertys`);
+    return this.http.get<any>(`${this.baseUrl}/propcheck/service`);
   }
 
 

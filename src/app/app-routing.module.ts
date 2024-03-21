@@ -30,6 +30,7 @@ const routes: Routes = [
     //canActivate: [isAuthenticatedGuard],
     loadChildren: () => import('./casas/pages/landing/landing.component').then(m => m.LandingComponent),
   },
+
   {
     path: '',
     redirectTo: '',
@@ -39,10 +40,6 @@ const routes: Routes = [
     path: '**',
     redirectTo: ''
   },
-  {
-    path: 'recover-password',
-    component: RecoverPageComponent
-  }
 
 ];
 

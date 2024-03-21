@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, pipe, catchError, of, throwError } from 'rxjs';
 import { environment } from '../../environments/environments';
-import { Property } from '../interfaces/property.interface';
-import { Municipality, PropertyServices, Region, Type } from '../interfaces/property_service.interface';
+import { Property, TypeProperties } from '../interfaces/property.interface';
+import { Municipality, PropertyServices, Region } from '../interfaces/property_service.interface';
 import { ApiResponse } from '../interfaces/dbtsSummary.dto';
 
 @Injectable({
@@ -13,7 +13,6 @@ export class PropertyService {
 
   private readonly baseUrl: string = environment.baseUrl;
 
-  private _type: Type[] = [Type.casa, Type.departamento, Type.estacionamiento, Type.galpon, Type.local]
   private _region: Region[] = [Region.coquimbo, Region.santiago]
   private _municipality: Municipality[] = [
     Municipality.buin,
@@ -47,9 +46,7 @@ export class PropertyService {
     private http: HttpClient
   ) { }
 
-  get type(): Type[] {
-    return [... this._type]
-  }
+
 
   get region(): Region[] {
     return [... this._region]
@@ -65,6 +62,7 @@ export class PropertyService {
 
   getPropertiesByClientId(clientId: number): Observable<Property[]> {
     return this.http.get<Property[]>(`https://api.propcheck.ai/propcheck/client/3/property`);
+
   }
   getPropertiesdebt(clientId: number): Observable<any> {
     return this.http.get<any>(`https://api.propcheck.ai/propcheck/client/4/debts-summary`).pipe(
@@ -83,6 +81,11 @@ export class PropertyService {
     );
   }
 
+
+
+  getTypeProperties(type: string): Observable<TypeProperties[]> {
+    return this.http.get<TypeProperties[]>(`${this.baseUrl}/propcheck/property/type`);
+  }
 
   getPropertiesById(id: number): Observable<Property[]> {
     return this.http.get<Property[]>(`http://localhost:3000/api/propertys/id/${id}`);
