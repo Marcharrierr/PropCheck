@@ -20,17 +20,17 @@ const routes: Routes = [
     path: '',
     component: LayoutPageComponent,
     children: [
-      { path: 'reports', component:  PropertyReportsComponent},
-      { path: 'property-user-profile', component:  PropertyUserProfileComponent},
-      { path: 'reset-password', component:  UserResetPasswordComponent},
+      { path: 'reports', component: PropertyReportsComponent },
+      { path: 'property-user-profile', component: PropertyUserProfileComponent },
+      { path: 'reset-password', component: UserResetPasswordComponent },
       { path: 'list', component: ListPageComponent },
       { path: 'property-detail/:id', component: PropertyDetailComponent },
       { path: 'properties', component: PropertiesComponent },
       { path: 'perfil', component: PerfilCasasPageComponent },
       { path: 'landing', component: LandingComponent },
       { path: 'crear-propiedad', component: CreatePropiedadComponent },
-      { path: 'editar-propiedad/:id', component: EditPropiedadesPageComponent },
-      { path: ':id', component: EditPropiedadesPageComponent },
+      { path: 'edit-propiedad/:id', component: EditPropiedadesPageComponent },
+      //{ path: ':id', component: EditPropiedadesPageComponent },
       { path: '**', redirectTo: 'list' },
 
     ]

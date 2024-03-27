@@ -63,20 +63,18 @@ export class PropertyService {
 
 
   getPropertiesByClientId(clientId: number): Observable<Property[]> {
-    return this.http.get<Property[]>(`http://localhost:3000/api/propertys/2`);
+    return this.http.get<Property[]>(`${this.baseUrl}/property/2`);
   }
 
   getPropertiesById(id: number): Observable<Property[]> {
-    return this.http.get<Property[]>(`http://localhost:3000/api/propertys/id/${id}`);
+    return this.http.get<Property[]>(`${this.baseUrl}/property/${id}`);
   }
 
   getPropertyServiceById(id: number): Observable<PropertyServices[]> {
-    return this.http.get<PropertyServices[]>(`http://localhost:3000/api/property-service/${id}`);
+    return this.http.get<PropertyServices[]>(`${this.baseUrl}/property-service/${id}`);
   }
 
 
 
-  deleteProperty(id: number) {
 
-  }
 }

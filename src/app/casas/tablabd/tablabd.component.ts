@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { PrimeNGConfig } from 'primeng/api';
 
@@ -221,11 +221,15 @@ export class TablabdComponent implements OnInit {
   loading: boolean = true;
   // casas: any;
   constructor(
-    private config: PrimeNGConfig,
     private route: ActivatedRoute,
-    private propertyService: PropertyService
-    )
-  {}
+    private config: PrimeNGConfig,
+    private propertyService: PropertyService,
+    private router: Router
+  ) { }
+
+  editarPropiedad(id: string) {
+    this.router.navigate(['/editar-propiedad', id]);
+  }
 
   isLandingComponent() {
     return this.route.snapshot.url[0].path === 'landing';
@@ -241,6 +245,8 @@ export class TablabdComponent implements OnInit {
   totalPages: number = 0; // Total de páginas
 
   ngOnInit() {
+
+
     this.getproperties();
     this.filterData();
     this.calculateTotalPages();

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable, pipe, catchError, of, throwError } from 'rxjs';
+import { Observable, pipe, catchError, of, throwError, BehaviorSubject } from 'rxjs';
 import { environment } from '../../environments/environments';
 import { Property, TypeProperties } from '../interfaces/property.interface';
 import { Municipality, PropertyServices, Region } from '../interfaces/property_service.interface';
@@ -13,7 +13,7 @@ export class PropertyService {
 
   private readonly baseUrl: string = environment.baseUrl;
 
-  private _region: Region[] = [Region.coquimbo, Region.santiago]
+  private _region: Region[] = [Region.coquimbo, Region.metropolitana]
   private _municipality: Municipality[] = [
     Municipality.buin,
     Municipality.conchali,
@@ -57,7 +57,8 @@ export class PropertyService {
     return [... this._municipality]
   }
 
-
+  private propertiesSource = new BehaviorSubject<any[]>([]);
+  currentProperties = this.propertiesSource.asObservable();
 
 
   getPropertiesByClientId(clientId: number): Observable<Property[]> {
@@ -107,10 +108,21 @@ export class PropertyService {
   }
 
   getPropertiesById(id: number): Observable<Property[]> {
-    return this.http.get<Property[]>(`http://localhost:3000/api/propertys/id/${id}`);
+    return this.http.get<Property[]>(`${this.baseUrl}/propertys/id/${id}`);
   }
 
   getPropertyServiceById(id: number): Observable<PropertyServices[]> {
-    return this.http.get<PropertyServices[]>(`http://localhost:3000/api/property-service/${id}`);
+    return this.http.get<PropertyServices[]>(`${this.baseUrl}/propcheck/property/${id}/service`);
   }
+
+
+  setProperties(properties: any[]) {
+    this.propertiesSource.next(properties);
+  }
+
+  getProperties() {
+    return this.propertiesSource.getValue();
+  }
+
+
 }

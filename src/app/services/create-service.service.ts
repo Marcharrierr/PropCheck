@@ -18,6 +18,10 @@ export class CreateServiceService {
 
   crearProperty(datosFormulario: any): Observable<any> {
     const url = `${this.baseUrl}/propcheck/property/`;
+
+    const clientDataString = localStorage.getItem('clientData');
+    const clientData = clientDataString ? JSON.parse(clientDataString) : null;
+
     const datosPropiedad = {
       "community_rut": 1,
       "community_dv": "9",
@@ -28,8 +32,7 @@ export class CreateServiceService {
       "address": datosFormulario.address,
       "tower": datosFormulario.tower,
       "department": datosFormulario.department,
-      "status": "Activo",
-      "client_id": Number(localStorage.getItem('id'))
+      "client_id": clientData.id,
     };
     console.log(datosPropiedad)
     return this.http.post<any>(url, datosPropiedad)
@@ -61,7 +64,7 @@ export class CreateServiceService {
     }
 
 
-    return this.http.post(`${this.baseUrl}/propcheck/property/${this.property_id}/services`, propertyServiceData)
+    return this.http.post(`${this.baseUrl}/propcheck/property/${this.property_id}/service`, propertyServiceData)
       .pipe(
         tap(response => console.log('Respuesta de la API:', response)),
         catchError(err => {

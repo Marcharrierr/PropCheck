@@ -9,10 +9,9 @@ import { PropertyService } from '../../../services/property.service';
 export class PropertiesComponent {
   constructor(
     private propertyService: PropertyService
-    )
-  {}
+  ) { }
   casas: any;
-  status: 'success' | 'error'| 'loading' = 'loading';
+  status: 'success' | 'error' | 'loading' = 'loading';
   clientId!: 3;
   searchText: string = '';
   filteredCasas: any = [];
@@ -90,6 +89,7 @@ export class PropertiesComponent {
       this.propertyService.getPropertiesByClientId(2).subscribe(
         (properties) => {
           this.casas = properties.filter((casa: any) => casa.status == 'ACTIVO');
+          this.propertyService.setProperties(this.casas);
           console.log(this.casas)
           this.filterData();
           this.calculateTotalPages();

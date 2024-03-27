@@ -126,7 +126,6 @@ export class CreatePropiedadComponent implements OnInit {
     this.propertyServiceService.getServiceProperties().subscribe(data => {
       this.serviceProperties = data;
 
-      console.log('servicios: ', data)
       // this.loading = false;
     });
 
@@ -148,27 +147,35 @@ export class CreatePropiedadComponent implements OnInit {
   aguaNoService: boolean = false;
   gasNoService: boolean = false;
   ggccNoService: boolean = false;
+  aseoNoService: boolean = false;
+  contriNoService: boolean = false;
 
 
 
   onCheckboxChange(event: any, category: string) {
+    console.log(`Cambio en el switch para ${category}`);
     const noServiceControl = this.myPropertyService.get(`${category}NoService`);
     const control = this.myPropertyService.get(category);
     const controlControl = this.myPropertyService.get(`${category}Control`);
 
-    if (noServiceControl && control && controlControl) {
+    if (noServiceControl && control) {
       noServiceControl.setValue(event.checked);
-      // Si el switch está apagado (false), deshabilita los controles
       if (!event.checked) {
         control.disable();
-        controlControl.disable();
+        // Intenta deshabilitar controlControl solo si existe
+        if (controlControl) {
+          controlControl.disable();
+        }
       } else {
-        // Si el switch está encendido (true), habilita los controles
         control.enable();
-        controlControl.enable();
+        // Intenta habilitar controlControl solo si existe
+        if (controlControl) {
+          controlControl.enable();
+        }
       }
     }
 
+    // Actualización de variables de instancia basada en la categoría
     switch (category) {
       case 'luz':
         this.luzNoService = this.myPropertyService.get('luzNoService')!.value;
@@ -180,12 +187,16 @@ export class CreatePropiedadComponent implements OnInit {
         this.gasNoService = this.myPropertyService.get('gasNoService')!.value;
         break;
       case 'ggcc':
-        this.ggccNoService = this.myPropertyService.get('gcNoService')!.value;
+        this.ggccNoService = this.myPropertyService.get('ggccNoService')!.value;
+        break;
+      case 'aseo':
+        this.aseoNoService = this.myPropertyService.get('aseoNoService')!.value;
+        break;
+      case 'contri':
+        this.contriNoService = this.myPropertyService.get('contriNoService')!.value;
         break;
     }
-
   }
-
 
 
 
@@ -198,10 +209,6 @@ export class CreatePropiedadComponent implements OnInit {
       console.error(`Control ${category}Id does not exist.`);
     }
   }
-
-
-
-
 
   validateServices(): boolean {
     const serviceNames = ['luz', 'agua', 'gas', 'ggcc', 'contri', 'aseo'];
@@ -251,7 +258,6 @@ export class CreatePropiedadComponent implements OnInit {
     this.tower = this.myProperty.get('tower')!.value;
     this.department = this.myProperty.get('department')!.value;
 
-
   };
 
   onSubmitPropertyService() {
@@ -295,8 +301,8 @@ export class CreatePropiedadComponent implements OnInit {
         error: (error: any) => {
           console.error("mensaje de error:", error);
           Swal.fire({
-            title: 'Error al crear la propiedad',
-            text: 'Ha ocurrido un error al intentar crear la propiedad. Por favor, inténtelo de nuevo más tarde.',
+            title: 'Error ',
+            text: 'No puede dejar campos en blanco para crear la propiedad',
             icon: 'error',
             confirmButtonText: 'Entendido'
           });
@@ -318,7 +324,7 @@ export class CreatePropiedadComponent implements OnInit {
 
     for (let key of serviceNames) {
       const nameNoService = `${key}NoService`;
-      if (!this.myPropertyService.get(nameNoService)?.value) {
+      if (this.myPropertyService.get(nameNoService)?.value) {
         const service_id = this.myPropertyService.get(`${key}Id`)?.value;
         const service_client_id = this.myPropertyService.get(key)?.value;
         servicios.push({
@@ -328,20 +334,20 @@ export class CreatePropiedadComponent implements OnInit {
           created: new Date().toISOString(),
           modified: new Date().toISOString()
         });
+        console.log("Datos a enviar: ", { servicios });
       }
     }
-    console.log("Datos a enviar: ", { servicios });
 
     this.createService.createPropertyService(servicios).subscribe({
       next: (response: any) => {
         console.log("property:", this.myProperty.value)
-        console.log(response);
+        console.log("RESPUESTA: ", response);
         Swal.fire({
           title: '¡Propiedad creada con éxito!',
           icon: 'success',
           confirmButtonText: 'Aceptar',
         }).then(() => {
-          this.router.navigate(['/propiedades/landing']);
+          this.router.navigate(['/propiedades/properties']);
         });
       },
       error: (error: any) => {

@@ -8,9 +8,9 @@
     >
       Crear Propiedad
     </div>
-    <div class="flex-col justify-center">
-      <!-- Datos propiedades -->
-      <form [formGroup]="myProperty" (ngSubmit)="onSubmitProperty()">
+    <form [formGroup]="myProperty" (ngSubmit)="onSubmitProperty()">
+      <div class="flex-col justify-center">
+        <!-- Datos propiedades -->
         <div class="flex flex-col md:flex-row mb-2 items-center">
           <!-- Dropdowns -->
           <div class="mx-auto p-field">
@@ -60,6 +60,7 @@
                 type="text"
                 class="w-21rem md:w-17rem h-10 mx-4 rounded-[10px] shadow"
               />
+
               <label
                 class="text-black text-sm ml-4 font-normal font-['Helvetica']"
                 htmlFor="direccion"
@@ -69,78 +70,79 @@
             </span>
           </div>
         </div>
-      </form>
-    </div>
-    <!-- Datos cuentas -->
-    <div class="flex-col justify-center">
-      <div class="flex flex-col md:flex-row">
-        <div class="flex md:mb-2 my-3 mx-auto">
-          <span class="p-float-label">
-            <input
-              pInputText
-              class="w-21rem md:w-17rem h-10 mx-4 rounded-[10px] shadow"
-            />
-            <label
-              class="text-black text-sm ml-4 font-normal font-['Helvetica']"
-              htmlFor="Comunidad RUT"
-            >
-              Comunidad RUT</label
-            >
-          </span>
-        </div>
-        <div class="flex md:mb-2 my-3 mx-auto">
-          <span class="p-float-label">
-            <input
-              pInputText
-              id="community_name"
-              formControlName="community_name"
-              type="text"
-              class="w-21rem md:w-17rem h-10 mx-4 rounded-[10px] shadow"
-            />
-            <label
-              class="text-black text-sm ml-4 font-normal font-['Helvetica']"
-              htmlFor="Comunidad Nombre"
-            >
-              Comunidad Nombre</label
-            >
-          </span>
-        </div>
-        <div class="flex md:mb-2 my-3 mx-auto">
-          <span class="p-float-label">
-            <input
-              pInputText
-              formControlName="department"
-              id="department"
-              type="text"
-              class="w-21rem md:w-17rem h-10 mx-4 rounded-[10px] shadow"
-            />
-            <label
-              class="text-black text-sm ml-4 font-normal font-['Helvetica']"
-              htmlFor="Departamento"
-            >
-              Departamento</label
-            >
-          </span>
-        </div>
-        <div class="flex md:mb-2 my-3 mx-auto">
-          <span class="p-float-label">
-            <input
-              pInputText
-              id="tower"
-              formControlName="tower"
-              type="text"
-              class="w-21rem md:w-17rem h-10 mx-4 rounded-[10px] shadow"
-            />
-            <label
-              class="text-black text-sm ml-4 font-normal font-['Helvetica']"
-              htmlFor="Torre"
-            >
-              Torre</label
-            >
-          </span>
+      </div>
+      <!-- Datos cuentas -->
+      <div class="flex-col justify-center">
+        <div class="flex flex-col md:flex-row">
+          <div class="flex md:mb-2 my-3 mx-auto">
+            <span class="p-float-label">
+              <input
+                pInputText
+                class="w-21rem md:w-17rem h-10 mx-4 rounded-[10px] shadow"
+              />
+              <label
+                class="text-black text-sm ml-4 font-normal font-['Helvetica']"
+                htmlFor="Comunidad RUT"
+              >
+                Comunidad RUT</label
+              >
+            </span>
+          </div>
+          <div class="flex md:mb-2 my-3 mx-auto">
+            <span class="p-float-label">
+              <input
+                pInputText
+                id="community_name"
+                formControlName="community_name"
+                type="text"
+                class="w-21rem md:w-17rem h-10 mx-4 rounded-[10px] shadow"
+              />
+
+              <label
+                class="text-black text-sm ml-4 font-normal font-['Helvetica']"
+                htmlFor="Comunidad Nombre"
+              >
+                Comunidad Nombre</label
+              >
+            </span>
+          </div>
+          <div class="flex md:mb-2 my-3 mx-auto">
+            <span class="p-float-label">
+              <input
+                pInputText
+                id="department"
+                formControlName="department"
+                type="text"
+                class="w-21rem md:w-17rem h-10 mx-4 rounded-[10px] shadow"
+              />
+              <label
+                class="text-black text-sm ml-4 font-normal font-['Helvetica']"
+                htmlFor="Departamento"
+              >
+                Departamento</label
+              >
+            </span>
+          </div>
+          <div class="flex md:mb-2 my-3 mx-auto">
+            <span class="p-float-label">
+              <input
+                pInputText
+                id="tower"
+                formControlName="tower"
+                type="text"
+                class="w-21rem md:w-17rem h-10 mx-4 rounded-[10px] shadow"
+              />
+              <label
+                class="text-black text-sm ml-4 font-normal font-['Helvetica']"
+                htmlFor="Torre"
+              >
+                Torre</label
+              >
+            </span>
+          </div>
         </div>
       </div>
-    </div>
+    </form>
     <div
       class="flex mt-4 mb-3 justify-center items-center text-blue-950 text-[22px] font-bold font-['Helvetica']"
     >
@@ -427,7 +429,7 @@
                 class="bg-blue-800 hover:bg-blue-700 text-sm md:text-xl font-normal px-10 py-1 md:px-20 md:py-2 text-white rounded-3xl"
               >
                 <!--[disabled]="!myProperty.valid" -->
-                GUARDAR PROPIEDAD
+                CREAR PROPIEDAD
               </button>
             </div>
           </div>
